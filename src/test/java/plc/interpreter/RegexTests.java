@@ -46,9 +46,20 @@ public class RegexTests {
                 Arguments.of("Alphanumeric", "thelegend27@gmail.com", true),
                 Arguments.of("UF Domain", "otherdomain@ufl.edu", true),
                 Arguments.of("Missing Domain Dot", "missingdot@gmailcom", false),
-                Arguments.of("Symbols", "symbols#$%@gmail.com", false)
+                Arguments.of("Symbols", "symbols#$%@gmail.com", false),
+                Arguments.of("Dot before @", "dot.before@gmail.com", true),
+                Arguments.of("Yahoo Domain", "yahoodomain@yahoo.com", true),
+                Arguments.of("Dash before @", "dash-before@gmail.com", true),
+                Arguments.of("Two Dots before @", "two.dots.before@yahoo.com", true),
+                Arguments.of("Number as domain", "numberdomain@1.com", true),
+                Arguments.of("Two Dots after @", "twodots@after.com.com", false),
+                Arguments.of("One letter after domain", "oneletter@gmail.c", false),
+                Arguments.of("Parentheses", "parentheses()@yahoo.com", false),
+                Arguments.of("Missing @ sign", "missingatsigngmail.com", false),
+                Arguments.of("Symbols as domain", "symbolsdomain@#$%.com", false)
         );
     }
+
 
     @ParameterizedTest
     @MethodSource
