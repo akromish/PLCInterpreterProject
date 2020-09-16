@@ -10,9 +10,9 @@ public class Regex {
 
     public static final Pattern
             EMAIL = Pattern.compile("[A-Za-z0-9._-]+@[A-Za-z0-9-]*\\.[a-z]{2,3}"),
-            FILE_NAMES = Pattern.compile("(?<name>(^([^.]*)))(.*?)(\\.[^.]*class|java)"),
+            FILE_NAMES = Pattern.compile("(?<name>(^([^.]*)))(.*\\.(class|java))"),
             EVEN_STRINGS = Pattern.compile("(?=(^(..)*$))(^(.){10,20}$)"),
-            INTEGER_LIST = Pattern.compile("\\[\\]|\\[([0-9],)*([0-9])+\\]"),
+            INTEGER_LIST = Pattern.compile("\\[\\]|\\[([1-9][0-9]*,\\s?)*([1-9][0-9]*)+\\]"),
             IDENTIFIER = Pattern.compile(""),
             NUMBER = Pattern.compile(""),
             STRING = Pattern.compile("");

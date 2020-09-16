@@ -76,7 +76,17 @@ public class RegexTests {
                 Arguments.of("Java File", "Regex.tar.java", true),
                 Arguments.of("Java Class", "RegexTests.class", true),
                 Arguments.of("Directory", "directory", false),
-                Arguments.of("Python File", "scrippy.py", false)
+                Arguments.of("Python File", "scrippy.py", false),
+                Arguments.of("2 extensions", "2extensions.pdf.java", true),
+                Arguments.of("java and class", "regex.java.class", true),
+                Arguments.of("class and java", "regex.class.java", true),
+                Arguments.of("No base, java", ".java", true),
+                Arguments.of("No base, class", ".class", true),
+                Arguments.of("java before end", "regex.java.tar", false),
+                Arguments.of("class before end", "regex.class.tar", false),
+                Arguments.of("start with java", "java.regex.tar", false),
+                Arguments.of("start with class", "class.regex.tar", false),
+                Arguments.of("dot after extension", "regex.tar..class.", false)
         );
     }
 
@@ -91,7 +101,19 @@ public class RegexTests {
                 Arguments.of("14 Characters", "thishas14chars", true),
                 Arguments.of("10 Characters", "i<3pancakes!", true),
                 Arguments.of("6 Characters", "6chars", false),
-                Arguments.of("15 Characters", "i<3pancakes!!", false)
+                Arguments.of("15 Characters", "i<3pancakes!!", false),
+                Arguments.of("12 Characters", "12characters", true),
+                Arguments.of("14 Characters", "14charactersss", true),
+                Arguments.of("16 Characters", "16charactersssss", true),
+                Arguments.of("18 Characters", "18charactersssssss", true),
+                Arguments.of("20 Characters", "20charactersssssssss", true),
+                Arguments.of("White Space", "w h i t e s p a ce", true),
+                Arguments.of("Symbols pass", "@#$*&^%)*%*(&%", true),
+                Arguments.of("22 Characters", "22charactersssssssssss", false),
+                Arguments.of("11 Characters", "11character", false),
+                Arguments.of("Symbols fail", "^&($&!(^#&%^@", false),
+                Arguments.of("Sentence Test", "This sentence has many characters and thus should fail this test.", false),
+                Arguments.of("Empty string","", false)
         );
     }
 
@@ -108,7 +130,18 @@ public class RegexTests {
                 Arguments.of("Multiple Elements", "[1,2,3]", true),
                 Arguments.of("Missing Brackets", "1,2,3", false),
                 Arguments.of("Missing Commas", "[1 2 3]", false),
-                Arguments.of("Trailing Comma", "[1,2,3,]", false)
+                Arguments.of("Trailing Comma", "[1,2,3,]", false),
+                Arguments.of("Single space after comma all numbers", "[1, 2, 3]", true),
+                Arguments.of("Single space after one comma", "[1, 2,3]", true),
+                Arguments.of("Many elements", "[3,5,1,7,2,7,2,1,6,3]", true),
+                Arguments.of("Numbers with more than 2 digits", "[12511,34631,2367]", true),
+                Arguments.of("Two Digit Numbers", "[10,20,30]", true),
+                Arguments.of("Negative Numbers", "[-1,-2,-3]", false),
+                Arguments.of("Symbols", "[!,@,#]", false),
+                Arguments.of("Multiple square brackets", "[1][2][3]", false),
+                Arguments.of("Space after number, no comma", "[1 ]", false),
+                Arguments.of("Zero in list", "[1,5,0,5]", false),
+                Arguments.of("Decimals", "[1.1,5.1,5]", false)
         );
     }
 
