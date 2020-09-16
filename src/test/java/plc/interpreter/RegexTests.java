@@ -158,12 +158,13 @@ public class RegexTests {
                 Arguments.of("No alphanumeric chars", "<=>", true),
                 Arguments.of("Begin with number", "42=life", false),
                 Arguments.of("Contains commas", "why,are,there,commas,", false),
-                Arguments.of("Empty String", "", true), //might be false, double check
+                Arguments.of("Empty String", "", false),
                 Arguments.of("Only period", ".", false),
                 Arguments.of("Two periods", "..", true),
                 Arguments.of("Carrot", "^", false),
                 Arguments.of("Period followed by number", ".21", true),
                 Arguments.of("Space between two strings", "hello world", false)
+                //need one more true
                 );
     }
 

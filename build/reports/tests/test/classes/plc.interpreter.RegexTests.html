@@ -29,7 +29,7 @@
 </td>
 <td>
 <div class="infoBox" id="failures">
-<div class="counter">3</div>
+<div class="counter">0</div>
 <p>failures</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.054s</div>
+<div class="counter">0.058s</div>
 <p>duration</p>
 </div>
 </td>
@@ -50,8 +50,8 @@
 </div>
 </td>
 <td>
-<div class="infoBox failures" id="successRate">
-<div class="percent">96%</div>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
 <p>successful</p>
 </div>
 </td>
@@ -61,494 +61,10 @@
 <div id="tabs">
 <ul class="tabLinks">
 <li>
-<a href="#tab0">Failed tests</a>
-</li>
-<li>
-<a href="#tab1">Tests</a>
+<a href="#tab0">Tests</a>
 </li>
 </ul>
 <div id="tab0" class="tab">
-<h2>Failed tests</h2>
-<div class="test">
-<a name="testStringRegex(String, String, boolean)[1]"></a>
-<h3 class="failures">[1] Empty quotations, &quot;&quot;, true</h3>
-<span class="code">
-<pre>org.opentest4j.AssertionFailedError: expected: &lt;true&gt; but was: &lt;false&gt;
-	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
-	at org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
-	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1124)
-	at plc.interpreter.RegexTests.test(RegexTests.java:214)
-	at plc.interpreter.RegexTests.testStringRegex(RegexTests.java:195)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:686)
-	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
-	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
-	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
-	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestTemplateMethod(TimeoutExtension.java:92)
-	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
-	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
-	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
-	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$6(TestMethodTestDescriptor.java:212)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:208)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:137)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:71)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:135)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask$DefaultDynamicTestExecutor.execute(NodeTestTask.java:198)
-	at org.junit.jupiter.engine.descriptor.TestTemplateTestDescriptor.execute(TestTemplateTestDescriptor.java:138)
-	at org.junit.jupiter.engine.descriptor.TestTemplateTestDescriptor.lambda$execute$2(TestTemplateTestDescriptor.java:106)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
-	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:177)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
-	at java.base/java.util.stream.ReferencePipeline$11$1.accept(ReferencePipeline.java:442)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
-	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:948)
-	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:658)
-	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:274)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
-	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:948)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
-	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
-	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:497)
-	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:274)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
-	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
-	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
-	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:497)
-	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:274)
-	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
-	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
-	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:497)
-	at org.junit.jupiter.engine.descriptor.TestTemplateTestDescriptor.execute(TestTemplateTestDescriptor.java:106)
-	at org.junit.jupiter.engine.descriptor.TestTemplateTestDescriptor.execute(TestTemplateTestDescriptor.java:41)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:135)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:248)
-	at org.junit.platform.launcher.core.DefaultLauncher.lambda$execute$5(DefaultLauncher.java:211)
-	at org.junit.platform.launcher.core.DefaultLauncher.withInterceptedStreams(DefaultLauncher.java:226)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:199)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:132)
-	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:99)
-	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:79)
-	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:75)
-	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:61)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
-	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
-	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
-	at com.sun.proxy.$Proxy2.stop(Unknown Source)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.stop(TestWorker.java:133)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
-	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:182)
-	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:164)
-	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:414)
-	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
-	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:48)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
-	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:56)
-	at java.base/java.lang.Thread.run(Thread.java:832)
-</pre>
-</span>
-</div>
-<div class="test">
-<a name="testStringRegex(String, String, boolean)[2]"></a>
-<h3 class="failures">[2] Three char string between quotations, &quot;abc&quot;, true</h3>
-<span class="code">
-<pre>org.opentest4j.AssertionFailedError: expected: &lt;true&gt; but was: &lt;false&gt;
-	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
-	at org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
-	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1124)
-	at plc.interpreter.RegexTests.test(RegexTests.java:214)
-	at plc.interpreter.RegexTests.testStringRegex(RegexTests.java:195)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:686)
-	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
-	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
-	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
-	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestTemplateMethod(TimeoutExtension.java:92)
-	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
-	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
-	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
-	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$6(TestMethodTestDescriptor.java:212)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:208)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:137)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:71)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:135)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask$DefaultDynamicTestExecutor.execute(NodeTestTask.java:198)
-	at org.junit.jupiter.engine.descriptor.TestTemplateTestDescriptor.execute(TestTemplateTestDescriptor.java:138)
-	at org.junit.jupiter.engine.descriptor.TestTemplateTestDescriptor.lambda$execute$2(TestTemplateTestDescriptor.java:106)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
-	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:177)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
-	at java.base/java.util.stream.ReferencePipeline$11$1.accept(ReferencePipeline.java:442)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
-	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:948)
-	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:658)
-	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:274)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
-	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:948)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
-	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
-	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:497)
-	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:274)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
-	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
-	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
-	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:497)
-	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:274)
-	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
-	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
-	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:497)
-	at org.junit.jupiter.engine.descriptor.TestTemplateTestDescriptor.execute(TestTemplateTestDescriptor.java:106)
-	at org.junit.jupiter.engine.descriptor.TestTemplateTestDescriptor.execute(TestTemplateTestDescriptor.java:41)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:135)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:248)
-	at org.junit.platform.launcher.core.DefaultLauncher.lambda$execute$5(DefaultLauncher.java:211)
-	at org.junit.platform.launcher.core.DefaultLauncher.withInterceptedStreams(DefaultLauncher.java:226)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:199)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:132)
-	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:99)
-	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:79)
-	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:75)
-	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:61)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
-	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
-	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
-	at com.sun.proxy.$Proxy2.stop(Unknown Source)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.stop(TestWorker.java:133)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
-	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:182)
-	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:164)
-	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:414)
-	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
-	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:48)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
-	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:56)
-	at java.base/java.lang.Thread.run(Thread.java:832)
-</pre>
-</span>
-</div>
-<div class="test">
-<a name="testStringRegex(String, String, boolean)[3]"></a>
-<h3 class="failures">[3] String between quotations with newline literal, &quot;Hello,
-World&quot;, true</h3>
-<span class="code">
-<pre>org.opentest4j.AssertionFailedError: expected: &lt;true&gt; but was: &lt;false&gt;
-	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
-	at org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
-	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1124)
-	at plc.interpreter.RegexTests.test(RegexTests.java:214)
-	at plc.interpreter.RegexTests.testStringRegex(RegexTests.java:195)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:686)
-	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
-	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
-	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
-	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestTemplateMethod(TimeoutExtension.java:92)
-	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
-	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
-	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
-	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$6(TestMethodTestDescriptor.java:212)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:208)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:137)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:71)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:135)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask$DefaultDynamicTestExecutor.execute(NodeTestTask.java:198)
-	at org.junit.jupiter.engine.descriptor.TestTemplateTestDescriptor.execute(TestTemplateTestDescriptor.java:138)
-	at org.junit.jupiter.engine.descriptor.TestTemplateTestDescriptor.lambda$execute$2(TestTemplateTestDescriptor.java:106)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
-	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:177)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
-	at java.base/java.util.stream.ReferencePipeline$11$1.accept(ReferencePipeline.java:442)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
-	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:948)
-	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:658)
-	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:274)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
-	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:948)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
-	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
-	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:497)
-	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:274)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
-	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
-	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
-	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:497)
-	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:274)
-	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
-	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
-	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:497)
-	at org.junit.jupiter.engine.descriptor.TestTemplateTestDescriptor.execute(TestTemplateTestDescriptor.java:106)
-	at org.junit.jupiter.engine.descriptor.TestTemplateTestDescriptor.execute(TestTemplateTestDescriptor.java:41)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:135)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:248)
-	at org.junit.platform.launcher.core.DefaultLauncher.lambda$execute$5(DefaultLauncher.java:211)
-	at org.junit.platform.launcher.core.DefaultLauncher.withInterceptedStreams(DefaultLauncher.java:226)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:199)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:132)
-	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:99)
-	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:79)
-	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:75)
-	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:61)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
-	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
-	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
-	at com.sun.proxy.$Proxy2.stop(Unknown Source)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.stop(TestWorker.java:133)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
-	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:182)
-	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:164)
-	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:414)
-	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
-	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:48)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
-	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:56)
-	at java.base/java.lang.Thread.run(Thread.java:832)
-</pre>
-</span>
-</div>
-</div>
-<div id="tab1" class="tab">
 <h2>Tests</h2>
 <table>
 <thead>
@@ -574,7 +90,7 @@ World&quot;, true</h3>
 <tr>
 <td class="success">[12] Parentheses, parentheses()@yahoo.com, false</td>
 <td class="success">testEmailRegex(String, String, boolean)[12]</td>
-<td class="success">0.001s</td>
+<td class="success">0s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -586,7 +102,7 @@ World&quot;, true</h3>
 <tr>
 <td class="success">[14] Symbols as domain, symbolsdomain@#$%.com, false</td>
 <td class="success">testEmailRegex(String, String, boolean)[14]</td>
-<td class="success">0.001s</td>
+<td class="success">0s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -604,7 +120,7 @@ World&quot;, true</h3>
 <tr>
 <td class="success">[3] Missing Domain Dot, missingdot@gmailcom, false</td>
 <td class="success">testEmailRegex(String, String, boolean)[3]</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -616,13 +132,13 @@ World&quot;, true</h3>
 <tr>
 <td class="success">[5] Dot before @, dot.before@gmail.com, true</td>
 <td class="success">testEmailRegex(String, String, boolean)[5]</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">[6] Yahoo Domain, yahoodomain@yahoo.com, true</td>
 <td class="success">testEmailRegex(String, String, boolean)[6]</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -640,13 +156,13 @@ World&quot;, true</h3>
 <tr>
 <td class="success">[9] Number as domain, numberdomain@1.com, true</td>
 <td class="success">testEmailRegex(String, String, boolean)[9]</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">[10] White Space, w h i t e s p a ce, true</td>
 <td class="success">testEvenStringsRegex(String, String, boolean)[10]</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -658,19 +174,19 @@ World&quot;, true</h3>
 <tr>
 <td class="success">[12] 22 Characters, 22charactersssssssssss, false</td>
 <td class="success">testEvenStringsRegex(String, String, boolean)[12]</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">[13] 11 Characters, 11character, false</td>
 <td class="success">testEvenStringsRegex(String, String, boolean)[13]</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">[14] Symbols fail, ^&amp;($&amp;!(^#&amp;%^@, false</td>
 <td class="success">testEvenStringsRegex(String, String, boolean)[14]</td>
-<td class="success">0.001s</td>
+<td class="success">0s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -682,7 +198,7 @@ World&quot;, true</h3>
 <tr>
 <td class="success">[16] Empty string, , false</td>
 <td class="success">testEvenStringsRegex(String, String, boolean)[16]</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -712,19 +228,19 @@ World&quot;, true</h3>
 <tr>
 <td class="success">[5] 12 Characters, 12characters, true</td>
 <td class="success">testEvenStringsRegex(String, String, boolean)[5]</td>
-<td class="success">0.001s</td>
+<td class="success">0s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">[6] 14 Characters, 14charactersss, true</td>
 <td class="success">testEvenStringsRegex(String, String, boolean)[6]</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">[7] 16 Characters, 16charactersssss, true</td>
 <td class="success">testEvenStringsRegex(String, String, boolean)[7]</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -736,7 +252,7 @@ World&quot;, true</h3>
 <tr>
 <td class="success">[9] 20 Characters, 20charactersssssssss, true</td>
 <td class="success">testEvenStringsRegex(String, String, boolean)[9]</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -772,13 +288,13 @@ World&quot;, true</h3>
 <tr>
 <td class="success">[1] Java File, Regex.tar.java, true</td>
 <td class="success">testFileNamesRegex(String, String, boolean)[1]</td>
-<td class="success">0.021s</td>
+<td class="success">0.022s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">[2] Java Class, RegexTests.class, true</td>
 <td class="success">testFileNamesRegex(String, String, boolean)[2]</td>
-<td class="success">0.001s</td>
+<td class="success">0s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -796,7 +312,7 @@ World&quot;, true</h3>
 <tr>
 <td class="success">[5] 2 extensions, 2extensions.pdf.java, true</td>
 <td class="success">testFileNamesRegex(String, String, boolean)[5]</td>
-<td class="success">0.001s</td>
+<td class="success">0s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -856,7 +372,7 @@ World&quot;, true</h3>
 <tr>
 <td class="success">[4] Begin with number, 42=life, false</td>
 <td class="success">testIdentifierRegex(String, String, boolean)[4]</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -866,7 +382,7 @@ World&quot;, true</h3>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">[6] Empty String, , true</td>
+<td class="success">[6] Empty String, , false</td>
 <td class="success">testIdentifierRegex(String, String, boolean)[6]</td>
 <td class="success">0s</td>
 <td class="success">passed</td>
@@ -874,7 +390,7 @@ World&quot;, true</h3>
 <tr>
 <td class="success">[7] Only period, ., false</td>
 <td class="success">testIdentifierRegex(String, String, boolean)[7]</td>
-<td class="success">0.001s</td>
+<td class="success">0s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -898,37 +414,37 @@ World&quot;, true</h3>
 <tr>
 <td class="success">[11] Two Digit Numbers, [10,20,30], true</td>
 <td class="success">testIntegerListRegex(String, String, boolean)[11]</td>
-<td class="success">0.001s</td>
+<td class="success">0s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">[12] Negative Numbers, [-1,-2,-3], false</td>
 <td class="success">testIntegerListRegex(String, String, boolean)[12]</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">[13] Symbols, [!,@,#], false</td>
 <td class="success">testIntegerListRegex(String, String, boolean)[13]</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">[14] Multiple square brackets, [1][2][3], false</td>
 <td class="success">testIntegerListRegex(String, String, boolean)[14]</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">[15] Space after number, no comma, [1 ], false</td>
 <td class="success">testIntegerListRegex(String, String, boolean)[15]</td>
-<td class="success">0.001s</td>
+<td class="success">0s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">[16] Zero in list, [1,5,0,5], false</td>
 <td class="success">testIntegerListRegex(String, String, boolean)[16]</td>
-<td class="success">0.001s</td>
+<td class="success">0s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -952,13 +468,13 @@ World&quot;, true</h3>
 <tr>
 <td class="success">[3] Multiple Elements, [1,2,3], true</td>
 <td class="success">testIntegerListRegex(String, String, boolean)[3]</td>
-<td class="success">0.001s</td>
+<td class="success">0s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">[4] Missing Brackets, 1,2,3, false</td>
 <td class="success">testIntegerListRegex(String, String, boolean)[4]</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -988,7 +504,7 @@ World&quot;, true</h3>
 <tr>
 <td class="success">[9] Many elements, [3,5,1,7,2,7,2,1,6,3], true</td>
 <td class="success">testIntegerListRegex(String, String, boolean)[9]</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -1012,31 +528,31 @@ World&quot;, true</h3>
 <tr>
 <td class="success">[2] Negative number with decimal between numbers, -1.0, true</td>
 <td class="success">testNumberRegex(String, String, boolean)[2]</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">[3] Six digits with decimal in middle, 007.000, true</td>
 <td class="success">testNumberRegex(String, String, boolean)[3]</td>
-<td class="success">0.001s</td>
+<td class="success">0s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">[4] Digit followed by decimal only , 1., false</td>
 <td class="success">testNumberRegex(String, String, boolean)[4]</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">[5] Digit preceded by decimal only , .5, false</td>
 <td class="success">testNumberRegex(String, String, boolean)[5]</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">[6] Negative followed by decimal and digit, -.5, false</td>
 <td class="success">testNumberRegex(String, String, boolean)[6]</td>
-<td class="success">0.001s</td>
+<td class="success">0s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -1054,27 +570,27 @@ World&quot;, true</h3>
 <tr>
 <td class="success">[9] Positive followed by 0 , +0, true</td>
 <td class="success">testNumberRegex(String, String, boolean)[9]</td>
-<td class="success">0.001s</td>
+<td class="success">0s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="failures">[1] Empty quotations, &quot;&quot;, true</td>
-<td class="failures">testStringRegex(String, String, boolean)[1]</td>
-<td class="failures">0.002s</td>
-<td class="failures">failed</td>
+<td class="success">[1] Empty quotations, &quot;&quot;, true</td>
+<td class="success">testStringRegex(String, String, boolean)[1]</td>
+<td class="success">0s</td>
+<td class="success">passed</td>
 </tr>
 <tr>
-<td class="failures">[2] Three char string between quotations, &quot;abc&quot;, true</td>
-<td class="failures">testStringRegex(String, String, boolean)[2]</td>
-<td class="failures">0.001s</td>
-<td class="failures">failed</td>
+<td class="success">[2] Three char string between quotations, &quot;abc&quot;, true</td>
+<td class="success">testStringRegex(String, String, boolean)[2]</td>
+<td class="success">0s</td>
+<td class="success">passed</td>
 </tr>
 <tr>
-<td class="failures">[3] String between quotations with newline literal, &quot;Hello,
+<td class="success">[3] String between quotations with newline literal, &quot;Hello,
 World&quot;, true</td>
-<td class="failures">testStringRegex(String, String, boolean)[3]</td>
-<td class="failures">0s</td>
-<td class="failures">failed</td>
+<td class="success">testStringRegex(String, String, boolean)[3]</td>
+<td class="success">0s</td>
+<td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">[4] Only one quotation mark, &quot;unterminated, false</td>
@@ -1098,7 +614,7 @@ World&quot;, true</td>
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 6.6</a> at Sep 16, 2020, 9:59:43 AM</p>
+<a href="http://www.gradle.org">Gradle 6.6</a> at Sep 16, 2020, 11:54:24 AM</p>
 </div>
 </div>
 </body>
