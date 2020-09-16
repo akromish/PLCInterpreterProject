@@ -86,7 +86,9 @@ public class RegexTests {
                 Arguments.of("class before end", "regex.class.tar", false),
                 Arguments.of("start with java", "java.regex.tar", false),
                 Arguments.of("start with class", "class.regex.tar", false),
-                Arguments.of("dot after extension", "regex.tar..class.", false)
+                Arguments.of("dot after extension", "regex.tar..class.", false),
+                Arguments.of("empty string", "", false),
+                Arguments.of("only space char", " ", false)
         );
     }
 
@@ -113,8 +115,10 @@ public class RegexTests {
                 Arguments.of("11 Characters", "11character", false),
                 Arguments.of("Symbols fail", "^&($&!(^#&%^@", false),
                 Arguments.of("Sentence Test", "This sentence has many characters and thus should fail this test.", false),
-                Arguments.of("Empty string","", false)
-        );
+                Arguments.of("Empty string","", false),
+                Arguments.of("Literals","\n\b\t", false)
+
+                );
     }
 
     @ParameterizedTest
@@ -141,8 +145,10 @@ public class RegexTests {
                 Arguments.of("Multiple square brackets", "[1][2][3]", false),
                 Arguments.of("Space after number, no comma", "[1 ]", false),
                 Arguments.of("Zero in list", "[1,5,0,5]", false),
-                Arguments.of("Decimals", "[1.1,5.1,5]", false)
-        );
+                Arguments.of("Decimals", "[1.1,5.1,5]", false),
+                Arguments.of("Missing first bracket", "1,2,3]", false),
+                Arguments.of("Missing last bracket", "[1,2,3", false)
+                );
     }
 
     @ParameterizedTest
@@ -163,8 +169,9 @@ public class RegexTests {
                 Arguments.of("Two periods", "..", true),
                 Arguments.of("Carrot", "^", false),
                 Arguments.of("Period followed by number", ".21", true),
-                Arguments.of("Space between two strings", "hello world", false)
-                //need one more true
+                Arguments.of("Space between two strings", "hello world", false),
+                Arguments.of("Literal", "\n", false),
+                Arguments.of("Only underscores", "______", true)
                 );
     }
 
@@ -186,7 +193,9 @@ public class RegexTests {
                 Arguments.of("Positive and negative followed by digits ", "+-1231", false),
                 Arguments.of("Positive followed by 0 ", "+0", true),
                 Arguments.of("Positive followed by non digit ", "+a.2", false),
-                Arguments.of("Double digit", "21", true)
+                Arguments.of("Double digit", "21", true),
+                Arguments.of("Two Decimals", "0..0", false),
+                Arguments.of("Only Decimals", "......", false)
                 );
     }
 
@@ -208,7 +217,8 @@ public class RegexTests {
                 Arguments.of("Numbers and letters", "\"1239ads8afasd2\"", true),
                 Arguments.of("Wrong escape sequence", "\"\\j\"", false),
                 Arguments.of("Three space characters", "\"   \"", true),
-                Arguments.of("Three space characters with carrot in middle", "\" ^  \"", true)
+                Arguments.of("Three space characters with carrot in middle", "\" ^  \"", true),
+                Arguments.of("Only backslash", "\"\\\"", false)
         );
     }
 
