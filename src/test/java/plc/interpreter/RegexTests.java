@@ -145,6 +145,54 @@ public class RegexTests {
         );
     }
 
+    @ParameterizedTest
+    @MethodSource
+    public void testIdentifierRegex(String test, String input, boolean success) {
+        test(input, Regex.IDENTIFIER, success);
+    }
+
+    public static Stream<Arguments> testIdentifierRegex() {
+        return Stream.of(
+                Arguments.of("Basic Identifier", "getName", true),
+                Arguments.of("Identifier with dash and question at end", "is-empty?", true),
+                Arguments.of("No alphanumeric chars", "<=>", true),
+                Arguments.of("Begin with number", "42=life", false),
+                Arguments.of("Contains commas", "why,are,there,commas,", false)
+                );
+    }
+
+    @ParameterizedTest
+    @MethodSource
+    public void testNumberRegex(String test, String input, boolean success) {
+        test(input, Regex.NUMBER, success);
+    }
+
+    public static Stream<Arguments> testNumberRegex() {
+        return Stream.of(
+                Arguments.of("Single Digit", "1", true),
+                Arguments.of("Negative number with decimal between numbers", "-1.0", true),
+                Arguments.of("Six digits with decimal in middle", "007.000", true),
+                Arguments.of("Digit followed by decimal only ", "1.", false),
+                Arguments.of("Digit preceded by decimal only", ".5", false)
+                );
+    }
+
+    @ParameterizedTest
+    @MethodSource
+    public void testStringRegex(String test, String input, boolean success) {
+        test(input, Regex.STRING, success);
+    }
+
+    public static Stream<Arguments> testStringRegex() {
+        return Stream.of(
+                Arguments.of("Empty quotations", "\"\"", true),
+                Arguments.of("Three char string between quotations", "\"abc\"", true),
+                Arguments.of("String between quotations with newline literal", "\"Hello,\nWorld\"", true),
+                Arguments.of("Only one quotation mark", "\"unterminated", false),
+                Arguments.of("Backlash with no accepted letter following ", "\"invalid\\escape\"", false)
+                );
+    }
+
     /**
      * Asserts that the input matches the given pattern and returns the matcher
      * for additional assertions.
