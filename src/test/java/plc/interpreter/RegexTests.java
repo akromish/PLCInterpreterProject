@@ -157,7 +157,13 @@ public class RegexTests {
                 Arguments.of("Identifier with dash and question at end", "is-empty?", true),
                 Arguments.of("No alphanumeric chars", "<=>", true),
                 Arguments.of("Begin with number", "42=life", false),
-                Arguments.of("Contains commas", "why,are,there,commas,", false)
+                Arguments.of("Contains commas", "why,are,there,commas,", false),
+                Arguments.of("Empty String", "", true),
+                Arguments.of("Only period", ".", false),
+                Arguments.of("Two periods", "..", true),
+                Arguments.of("Carrot", "^", false),
+                Arguments.of("Period followed by number", ".21", true),
+                Arguments.of("Space between two strings", "hello world", false)
                 );
     }
 
