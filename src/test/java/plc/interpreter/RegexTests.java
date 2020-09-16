@@ -158,7 +158,7 @@ public class RegexTests {
                 Arguments.of("No alphanumeric chars", "<=>", true),
                 Arguments.of("Begin with number", "42=life", false),
                 Arguments.of("Contains commas", "why,are,there,commas,", false),
-                Arguments.of("Empty String", "", true),
+                Arguments.of("Empty String", "", true), //might be false, double check
                 Arguments.of("Only period", ".", false),
                 Arguments.of("Two periods", "..", true),
                 Arguments.of("Carrot", "^", false),
@@ -179,7 +179,13 @@ public class RegexTests {
                 Arguments.of("Negative number with decimal between numbers", "-1.0", true),
                 Arguments.of("Six digits with decimal in middle", "007.000", true),
                 Arguments.of("Digit followed by decimal only ", "1.", false),
-                Arguments.of("Digit preceded by decimal only", ".5", false)
+                Arguments.of("Digit preceded by decimal only ", ".5", false),
+                Arguments.of("Negative followed by decimal and digit", "-.5", false),
+                Arguments.of("Negative followed only by decimal", "-.", false),
+                Arguments.of("Positive and negative followed by digits ", "+-1231", false),
+                Arguments.of("Positive followed by 0 ", "+0", true),
+                Arguments.of("Positive followed by non digit ", "+a.2", false),
+                Arguments.of("Double digit", "21", true)
                 );
     }
 
