@@ -15,6 +15,6 @@ public class Regex {
             INTEGER_LIST = Pattern.compile("\\[\\]|\\[([1-9][0-9]*,\\s?)*([1-9][0-9]*)+\\]"),
             IDENTIFIER = Pattern.compile("([A-Za-z_+\\-\\*/:!?<>=][A-Za-z_+\\-\\*/:!?<>=0-9]*|[A-Za-z_+\\-\\*/.:!?<>=][A-Za-z_+\\-\\*/.:!?<>=0-9]+)"),
             NUMBER = Pattern.compile("(\\+|-)?\\d+\\.\\d+|(\\+|-)?\\d+"),
-            STRING = Pattern.compile("^\"\"$|\"([\\w\\d\\s*.?!,\"'@#]|\\n)+\""); //how many identifiers should we include
+            STRING = Pattern.compile("^\\\"\\\"$|\\\"(\\\\n|\\\\b|\\\\r|\\\\t|[^\\\\])+\\\""); //how many identifiers should we include
 
 }

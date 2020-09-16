@@ -208,7 +208,7 @@ public class RegexTests {
                 Arguments.of("Numbers and letters", "\"1239ads8afasd2\"", true),
                 Arguments.of("Wrong escape sequence", "\"\\j\"", false),
                 Arguments.of("Three space characters", "\"   \"", true),
-                Arguments.of("Three space characters with carrot in middle", "\" ^  \"", false)
+                Arguments.of("Three space characters with carrot in middle", "\" ^  \"", true)
         );
     }
 
