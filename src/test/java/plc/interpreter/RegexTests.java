@@ -202,8 +202,14 @@ public class RegexTests {
                 Arguments.of("Three char string between quotations", "\"abc\"", true),
                 Arguments.of("String between quotations with newline literal", "\"Hello,\nWorld\"", true),
                 Arguments.of("Only one quotation mark", "\"unterminated", false),
-                Arguments.of("Backlash with no accepted letter following ", "\"invalid\\escape\"", false)
-                );
+                Arguments.of("Empty String", "", false),
+                Arguments.of("Three quotation marks", "\"\"\"", true),
+                Arguments.of("Only one quotation mark", "\"unterminated", false),
+                Arguments.of("Numbers and letters", "\"1239ads8afasd2\"", true),
+                Arguments.of("Wrong escape sequence", "\"\\j\"", false),
+                Arguments.of("Three space characters", "\"   \"", true),
+                Arguments.of("Three space characters with carrot in middle", "\" ^  \"", false)
+        );
     }
 
     /**
