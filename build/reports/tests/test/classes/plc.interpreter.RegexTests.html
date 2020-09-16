@@ -23,7 +23,7 @@
 <tr>
 <td>
 <div class="infoBox" id="tests">
-<div class="counter">104</div>
+<div class="counter">108</div>
 <p>tests</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.047s</div>
+<div class="counter">0.069s</div>
 <p>duration</p>
 </div>
 </td>
@@ -76,39 +76,63 @@
 </tr>
 </thead>
 <tr>
-<td class="success">[10] Two Dots after @, twodots@after.com.com, false</td>
+<td class="success">[10] Dot in the beginning, .dotatstart@outlook.com, true</td>
 <td class="success">testEmailRegex(String, String, boolean)[10]</td>
-<td class="success">0.001s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">[11] One letter after domain, oneletter@gmail.c, false</td>
-<td class="success">testEmailRegex(String, String, boolean)[11]</td>
 <td class="success">0s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">[12] Parentheses, parentheses()@yahoo.com, false</td>
+<td class="success">[11] Multiple dots in a row, multipledots@yahoo..com, false</td>
+<td class="success">testEmailRegex(String, String, boolean)[11]</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">[12] Spaces in email, spaces in email @gmail.com, false</td>
 <td class="success">testEmailRegex(String, String, boolean)[12]</td>
 <td class="success">0s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">[13] Missing @ sign, missingatsigngmail.com, false</td>
+<td class="success">[13] Multiple @ signs, multiple@signs@gmail.com, false</td>
 <td class="success">testEmailRegex(String, String, boolean)[13]</td>
 <td class="success">0s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">[14] Symbols as domain, symbolsdomain@#$%.com, false</td>
+<td class="success">[14] Two Dots after @, twodots@after.com.com, false</td>
 <td class="success">testEmailRegex(String, String, boolean)[14]</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">[15] One letter after domain, oneletter@gmail.c, false</td>
+<td class="success">testEmailRegex(String, String, boolean)[15]</td>
+<td class="success">0s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">[16] Parentheses, parentheses()@yahoo.com, false</td>
+<td class="success">testEmailRegex(String, String, boolean)[16]</td>
+<td class="success">0s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">[17] Missing @ sign, missingatsigngmail.com, false</td>
+<td class="success">testEmailRegex(String, String, boolean)[17]</td>
+<td class="success">0s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">[18] Symbols as domain, symbolsdomain@#$%.com, false</td>
+<td class="success">testEmailRegex(String, String, boolean)[18]</td>
 <td class="success">0s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">[1] Alphanumeric, thelegend27@gmail.com, true</td>
 <td class="success">testEmailRegex(String, String, boolean)[1]</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -126,7 +150,7 @@
 <tr>
 <td class="success">[4] Symbols, symbols#$%@gmail.com, false</td>
 <td class="success">testEmailRegex(String, String, boolean)[4]</td>
-<td class="success">0.001s</td>
+<td class="success">0s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -138,7 +162,7 @@
 <tr>
 <td class="success">[6] Yahoo Domain, yahoodomain@yahoo.com, true</td>
 <td class="success">testEmailRegex(String, String, boolean)[6]</td>
-<td class="success">0.001s</td>
+<td class="success">0s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -150,7 +174,7 @@
 <tr>
 <td class="success">[8] Two Dots before @, two.dots.before@yahoo.com, true</td>
 <td class="success">testEmailRegex(String, String, boolean)[8]</td>
-<td class="success">0.001s</td>
+<td class="success">0s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -162,7 +186,7 @@
 <tr>
 <td class="success">[10] White Space, w h i t e s p a ce, true</td>
 <td class="success">testEvenStringsRegex(String, String, boolean)[10]</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -174,13 +198,13 @@
 <tr>
 <td class="success">[12] 22 Characters, 22charactersssssssssss, false</td>
 <td class="success">testEvenStringsRegex(String, String, boolean)[12]</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">[13] 11 Characters, 11character, false</td>
 <td class="success">testEvenStringsRegex(String, String, boolean)[13]</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -223,7 +247,7 @@
 <tr>
 <td class="success">[3] 6 Characters, 6chars, false</td>
 <td class="success">testEvenStringsRegex(String, String, boolean)[3]</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -235,7 +259,7 @@
 <tr>
 <td class="success">[5] 12 Characters, 12characters, true</td>
 <td class="success">testEvenStringsRegex(String, String, boolean)[5]</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -247,31 +271,31 @@
 <tr>
 <td class="success">[7] 16 Characters, 16charactersssss, true</td>
 <td class="success">testEvenStringsRegex(String, String, boolean)[7]</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">[8] 18 Characters, 18charactersssssss, true</td>
 <td class="success">testEvenStringsRegex(String, String, boolean)[8]</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">[9] 20 Characters, 20charactersssssssss, true</td>
 <td class="success">testEvenStringsRegex(String, String, boolean)[9]</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">[10] java before end, regex.java.tar, false</td>
 <td class="success">testFileNamesRegex(String, String, boolean)[10]</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">[11] class before end, regex.class.tar, false</td>
 <td class="success">testFileNamesRegex(String, String, boolean)[11]</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -283,19 +307,19 @@
 <tr>
 <td class="success">[13] start with class, class.regex.tar, false</td>
 <td class="success">testFileNamesRegex(String, String, boolean)[13]</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">[14] dot after extension, regex.tar..class., false</td>
 <td class="success">testFileNamesRegex(String, String, boolean)[14]</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">[15] empty string, , false</td>
 <td class="success">testFileNamesRegex(String, String, boolean)[15]</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -307,7 +331,7 @@
 <tr>
 <td class="success">[1] Java File, Regex.tar.java, true</td>
 <td class="success">testFileNamesRegex(String, String, boolean)[1]</td>
-<td class="success">0.022s</td>
+<td class="success">0.020s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -319,7 +343,7 @@
 <tr>
 <td class="success">[3] Directory, directory, false</td>
 <td class="success">testFileNamesRegex(String, String, boolean)[3]</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -331,7 +355,7 @@
 <tr>
 <td class="success">[5] 2 extensions, 2extensions.pdf.java, true</td>
 <td class="success">testFileNamesRegex(String, String, boolean)[5]</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -343,19 +367,19 @@
 <tr>
 <td class="success">[7] class and java, regex.class.java, true</td>
 <td class="success">testFileNamesRegex(String, String, boolean)[7]</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">[8] No base, java, .java, true</td>
 <td class="success">testFileNamesRegex(String, String, boolean)[8]</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">[9] No base, class, .class, true</td>
 <td class="success">testFileNamesRegex(String, String, boolean)[9]</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -374,7 +398,7 @@
 <td class="success">[12] Literal, 
 , false</td>
 <td class="success">testIdentifierRegex(String, String, boolean)[12]</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -386,37 +410,37 @@
 <tr>
 <td class="success">[1] Basic Identifier, getName, true</td>
 <td class="success">testIdentifierRegex(String, String, boolean)[1]</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">[2] Identifier with dash and question at end, is-empty?, true</td>
 <td class="success">testIdentifierRegex(String, String, boolean)[2]</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">[3] No alphanumeric chars, &lt;=&gt;, true</td>
 <td class="success">testIdentifierRegex(String, String, boolean)[3]</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">[4] Begin with number, 42=life, false</td>
 <td class="success">testIdentifierRegex(String, String, boolean)[4]</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">[5] Contains commas, why,are,there,commas,, false</td>
 <td class="success">testIdentifierRegex(String, String, boolean)[5]</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">[6] Empty String, , false</td>
 <td class="success">testIdentifierRegex(String, String, boolean)[6]</td>
-<td class="success">0.001s</td>
+<td class="success">0s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -440,13 +464,13 @@
 <tr>
 <td class="success">[10] Numbers with more than 2 digits, [12511,34631,2367], true</td>
 <td class="success">testIntegerListRegex(String, String, boolean)[10]</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">[11] Two Digit Numbers, [10,20,30], true</td>
 <td class="success">testIntegerListRegex(String, String, boolean)[11]</td>
-<td class="success">0.001s</td>
+<td class="success">0s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -458,7 +482,7 @@
 <tr>
 <td class="success">[13] Symbols, [!,@,#], false</td>
 <td class="success">testIntegerListRegex(String, String, boolean)[13]</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -482,7 +506,7 @@
 <tr>
 <td class="success">[17] Decimals, [1.1,5.1,5], false</td>
 <td class="success">testIntegerListRegex(String, String, boolean)[17]</td>
-<td class="success">0.001s</td>
+<td class="success">0s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -506,7 +530,7 @@
 <tr>
 <td class="success">[2] Single Element, [1], true</td>
 <td class="success">testIntegerListRegex(String, String, boolean)[2]</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -518,19 +542,19 @@
 <tr>
 <td class="success">[4] Missing Brackets, 1,2,3, false</td>
 <td class="success">testIntegerListRegex(String, String, boolean)[4]</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">[5] Missing Commas, [1 2 3], false</td>
 <td class="success">testIntegerListRegex(String, String, boolean)[5]</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">[6] Trailing Comma, [1,2,3,], false</td>
 <td class="success">testIntegerListRegex(String, String, boolean)[6]</td>
-<td class="success">0.001s</td>
+<td class="success">0s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -548,19 +572,19 @@
 <tr>
 <td class="success">[9] Many elements, [3,5,1,7,2,7,2,1,6,3], true</td>
 <td class="success">testIntegerListRegex(String, String, boolean)[9]</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">[10] Positive followed by non digit , +a.2, false</td>
 <td class="success">testNumberRegex(String, String, boolean)[10]</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">[11] Double digit, 21, true</td>
 <td class="success">testNumberRegex(String, String, boolean)[11]</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -572,19 +596,19 @@
 <tr>
 <td class="success">[13] Only Decimals, ......, false</td>
 <td class="success">testNumberRegex(String, String, boolean)[13]</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">[1] Single Digit, 1, true</td>
 <td class="success">testNumberRegex(String, String, boolean)[1]</td>
-<td class="success">0.001s</td>
+<td class="success">0s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">[2] Negative number with decimal between numbers, -1.0, true</td>
 <td class="success">testNumberRegex(String, String, boolean)[2]</td>
-<td class="success">0.001s</td>
+<td class="success">0s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -602,7 +626,7 @@
 <tr>
 <td class="success">[5] Digit preceded by decimal only , .5, false</td>
 <td class="success">testNumberRegex(String, String, boolean)[5]</td>
-<td class="success">0.001s</td>
+<td class="success">0s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -620,19 +644,19 @@
 <tr>
 <td class="success">[8] Positive and negative followed by digits , +-1231, false</td>
 <td class="success">testNumberRegex(String, String, boolean)[8]</td>
-<td class="success">0.001s</td>
+<td class="success">0s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">[9] Positive followed by 0 , +0, true</td>
 <td class="success">testNumberRegex(String, String, boolean)[9]</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">[10] Three space characters, &quot;   &quot;, true</td>
 <td class="success">testStringRegex(String, String, boolean)[10]</td>
-<td class="success">0.001s</td>
+<td class="success">0s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -644,7 +668,7 @@
 <tr>
 <td class="success">[12] Only backslash, &quot;\&quot;, false</td>
 <td class="success">testStringRegex(String, String, boolean)[12]</td>
-<td class="success">0.001s</td>
+<td class="success">0s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -656,7 +680,7 @@
 <tr>
 <td class="success">[2] Three char string between quotations, &quot;abc&quot;, true</td>
 <td class="success">testStringRegex(String, String, boolean)[2]</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -681,7 +705,7 @@ World&quot;, true</td>
 <tr>
 <td class="success">[6] Three quotation marks, &quot;&quot;&quot;, true</td>
 <td class="success">testStringRegex(String, String, boolean)[6]</td>
-<td class="success">0.001s</td>
+<td class="success">0s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -699,7 +723,7 @@ World&quot;, true</td>
 <tr>
 <td class="success">[9] Wrong escape sequence, &quot;\j&quot;, false</td>
 <td class="success">testStringRegex(String, String, boolean)[9]</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -712,7 +736,7 @@ World&quot;, true</td>
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 6.6</a> at Sep 16, 2020, 4:17:01 PM</p>
+<a href="http://www.gradle.org">Gradle 6.6</a> at Sep 16, 2020, 4:39:06 PM</p>
 </div>
 </div>
 </body>
