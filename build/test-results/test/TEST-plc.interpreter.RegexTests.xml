@@ -1,78 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="plc.interpreter.RegexTests" tests="108" skipped="0" failures="0" errors="0" timestamp="2020-09-16T20:39:06" hostname="DESKTOP-EL2G3TJ" time="0.119">
+<testsuite name="plc.interpreter.RegexTests" tests="108" skipped="0" failures="0" errors="0" timestamp="2020-09-16T20:55:17" hostname="AKRAM" time="0.126">
   <properties/>
-  <testcase name="[1] Java File, Regex.tar.java, true" classname="plc.interpreter.RegexTests" time="0.02"/>
-  <testcase name="[2] Java Class, RegexTests.class, true" classname="plc.interpreter.RegexTests" time="0.001"/>
+  <testcase name="[1] Java File, Regex.tar.java, true" classname="plc.interpreter.RegexTests" time="0.021"/>
+  <testcase name="[2] Java Class, RegexTests.class, true" classname="plc.interpreter.RegexTests" time="0.0"/>
   <testcase name="[3] Directory, directory, false" classname="plc.interpreter.RegexTests" time="0.001"/>
-  <testcase name="[4] Python File, scrippy.py, false" classname="plc.interpreter.RegexTests" time="0.0"/>
+  <testcase name="[4] Python File, scrippy.py, false" classname="plc.interpreter.RegexTests" time="0.001"/>
   <testcase name="[5] 2 extensions, 2extensions.pdf.java, true" classname="plc.interpreter.RegexTests" time="0.001"/>
-  <testcase name="[6] java and class, regex.java.class, true" classname="plc.interpreter.RegexTests" time="0.001"/>
-  <testcase name="[7] class and java, regex.class.java, true" classname="plc.interpreter.RegexTests" time="0.001"/>
-  <testcase name="[8] No base, java, .java, true" classname="plc.interpreter.RegexTests" time="0.001"/>
-  <testcase name="[9] No base, class, .class, true" classname="plc.interpreter.RegexTests" time="0.001"/>
-  <testcase name="[10] java before end, regex.java.tar, false" classname="plc.interpreter.RegexTests" time="0.001"/>
+  <testcase name="[6] java and class, regex.java.class, true" classname="plc.interpreter.RegexTests" time="0.0"/>
+  <testcase name="[7] class and java, regex.class.java, true" classname="plc.interpreter.RegexTests" time="0.0"/>
+  <testcase name="[8] No base, java, .java, true" classname="plc.interpreter.RegexTests" time="0.0"/>
+  <testcase name="[9] No base, class, .class, true" classname="plc.interpreter.RegexTests" time="0.0"/>
+  <testcase name="[10] java before end, regex.java.tar, false" classname="plc.interpreter.RegexTests" time="0.0"/>
   <testcase name="[11] class before end, regex.class.tar, false" classname="plc.interpreter.RegexTests" time="0.001"/>
-  <testcase name="[12] start with java, java.regex.tar, false" classname="plc.interpreter.RegexTests" time="0.001"/>
-  <testcase name="[13] start with class, class.regex.tar, false" classname="plc.interpreter.RegexTests" time="0.001"/>
-  <testcase name="[14] dot after extension, regex.tar..class., false" classname="plc.interpreter.RegexTests" time="0.001"/>
+  <testcase name="[12] start with java, java.regex.tar, false" classname="plc.interpreter.RegexTests" time="0.0"/>
+  <testcase name="[13] start with class, class.regex.tar, false" classname="plc.interpreter.RegexTests" time="0.0"/>
+  <testcase name="[14] dot after extension, regex.tar..class., false" classname="plc.interpreter.RegexTests" time="0.0"/>
   <testcase name="[15] empty string, , false" classname="plc.interpreter.RegexTests" time="0.001"/>
   <testcase name="[16] only space char,  , false" classname="plc.interpreter.RegexTests" time="0.0"/>
-  <testcase name="[1] Single Digit, 1, true" classname="plc.interpreter.RegexTests" time="0.0"/>
-  <testcase name="[2] Negative number with decimal between numbers, -1.0, true" classname="plc.interpreter.RegexTests" time="0.0"/>
-  <testcase name="[3] Six digits with decimal in middle, 007.000, true" classname="plc.interpreter.RegexTests" time="0.0"/>
+  <testcase name="[1] Single Digit, 1, true" classname="plc.interpreter.RegexTests" time="0.001"/>
+  <testcase name="[2] Negative number with decimal between numbers, -1.0, true" classname="plc.interpreter.RegexTests" time="0.001"/>
+  <testcase name="[3] Six digits with decimal in middle, 007.000, true" classname="plc.interpreter.RegexTests" time="0.001"/>
   <testcase name="[4] Digit followed by decimal only , 1., false" classname="plc.interpreter.RegexTests" time="0.0"/>
   <testcase name="[5] Digit preceded by decimal only , .5, false" classname="plc.interpreter.RegexTests" time="0.0"/>
   <testcase name="[6] Negative followed by decimal and digit, -.5, false" classname="plc.interpreter.RegexTests" time="0.0"/>
   <testcase name="[7] Negative followed only by decimal, -., false" classname="plc.interpreter.RegexTests" time="0.0"/>
   <testcase name="[8] Positive and negative followed by digits , +-1231, false" classname="plc.interpreter.RegexTests" time="0.0"/>
-  <testcase name="[9] Positive followed by 0 , +0, true" classname="plc.interpreter.RegexTests" time="0.001"/>
-  <testcase name="[10] Positive followed by non digit , +a.2, false" classname="plc.interpreter.RegexTests" time="0.001"/>
+  <testcase name="[9] Positive followed by 0 , +0, true" classname="plc.interpreter.RegexTests" time="0.0"/>
+  <testcase name="[10] Positive followed by non digit , +a.2, false" classname="plc.interpreter.RegexTests" time="0.0"/>
   <testcase name="[11] Double digit, 21, true" classname="plc.interpreter.RegexTests" time="0.001"/>
-  <testcase name="[12] Two Decimals, 0..0, false" classname="plc.interpreter.RegexTests" time="0.001"/>
-  <testcase name="[13] Only Decimals, ......, false" classname="plc.interpreter.RegexTests" time="0.001"/>
+  <testcase name="[12] Two Decimals, 0..0, false" classname="plc.interpreter.RegexTests" time="0.0"/>
+  <testcase name="[13] Only Decimals, ......, false" classname="plc.interpreter.RegexTests" time="0.0"/>
   <testcase name="[1] 14 Characters, thishas14chars, true" classname="plc.interpreter.RegexTests" time="0.0"/>
   <testcase name="[2] 10 Characters, i&lt;3pancakes!, true" classname="plc.interpreter.RegexTests" time="0.0"/>
-  <testcase name="[3] 6 Characters, 6chars, false" classname="plc.interpreter.RegexTests" time="0.001"/>
-  <testcase name="[4] 15 Characters, i&lt;3pancakes!!, false" classname="plc.interpreter.RegexTests" time="0.001"/>
+  <testcase name="[3] 6 Characters, 6chars, false" classname="plc.interpreter.RegexTests" time="0.0"/>
+  <testcase name="[4] 15 Characters, i&lt;3pancakes!!, false" classname="plc.interpreter.RegexTests" time="0.0"/>
   <testcase name="[5] 12 Characters, 12characters, true" classname="plc.interpreter.RegexTests" time="0.001"/>
-  <testcase name="[6] 14 Characters, 14charactersss, true" classname="plc.interpreter.RegexTests" time="0.0"/>
+  <testcase name="[6] 14 Characters, 14charactersss, true" classname="plc.interpreter.RegexTests" time="0.001"/>
   <testcase name="[7] 16 Characters, 16charactersssss, true" classname="plc.interpreter.RegexTests" time="0.001"/>
   <testcase name="[8] 18 Characters, 18charactersssssss, true" classname="plc.interpreter.RegexTests" time="0.001"/>
-  <testcase name="[9] 20 Characters, 20charactersssssssss, true" classname="plc.interpreter.RegexTests" time="0.001"/>
-  <testcase name="[10] White Space, w h i t e s p a ce, true" classname="plc.interpreter.RegexTests" time="0.001"/>
-  <testcase name="[11] Symbols pass, @#$*&amp;^%)*%*(&amp;%, true" classname="plc.interpreter.RegexTests" time="0.001"/>
-  <testcase name="[12] 22 Characters, 22charactersssssssssss, false" classname="plc.interpreter.RegexTests" time="0.001"/>
-  <testcase name="[13] 11 Characters, 11character, false" classname="plc.interpreter.RegexTests" time="0.001"/>
-  <testcase name="[14] Symbols fail, ^&amp;($&amp;!(^#&amp;%^@, false" classname="plc.interpreter.RegexTests" time="0.001"/>
+  <testcase name="[9] 20 Characters, 20charactersssssssss, true" classname="plc.interpreter.RegexTests" time="0.0"/>
+  <testcase name="[10] White Space, w h i t e s p a ce, true" classname="plc.interpreter.RegexTests" time="0.0"/>
+  <testcase name="[11] Symbols pass, @#$*&amp;^%)*%*(&amp;%, true" classname="plc.interpreter.RegexTests" time="0.0"/>
+  <testcase name="[12] 22 Characters, 22charactersssssssssss, false" classname="plc.interpreter.RegexTests" time="0.0"/>
+  <testcase name="[13] 11 Characters, 11character, false" classname="plc.interpreter.RegexTests" time="0.0"/>
+  <testcase name="[14] Symbols fail, ^&amp;($&amp;!(^#&amp;%^@, false" classname="plc.interpreter.RegexTests" time="0.0"/>
   <testcase name="[15] Sentence Test, This sentence has many characters and thus should fail this test., false" classname="plc.interpreter.RegexTests" time="0.0"/>
-  <testcase name="[16] Empty string, , false" classname="plc.interpreter.RegexTests" time="0.0"/>
+  <testcase name="[16] Empty string, , false" classname="plc.interpreter.RegexTests" time="0.001"/>
   <testcase name="[17] Literals, &#10;?&#9;, false" classname="plc.interpreter.RegexTests" time="0.0"/>
-  <testcase name="[1] Empty List, [], true" classname="plc.interpreter.RegexTests" time="0.0"/>
-  <testcase name="[2] Single Element, [1], true" classname="plc.interpreter.RegexTests" time="0.001"/>
-  <testcase name="[3] Multiple Elements, [1,2,3], true" classname="plc.interpreter.RegexTests" time="0.001"/>
+  <testcase name="[1] Empty List, [], true" classname="plc.interpreter.RegexTests" time="0.001"/>
+  <testcase name="[2] Single Element, [1], true" classname="plc.interpreter.RegexTests" time="0.0"/>
+  <testcase name="[3] Multiple Elements, [1,2,3], true" classname="plc.interpreter.RegexTests" time="0.0"/>
   <testcase name="[4] Missing Brackets, 1,2,3, false" classname="plc.interpreter.RegexTests" time="0.001"/>
   <testcase name="[5] Missing Commas, [1 2 3], false" classname="plc.interpreter.RegexTests" time="0.001"/>
   <testcase name="[6] Trailing Comma, [1,2,3,], false" classname="plc.interpreter.RegexTests" time="0.0"/>
   <testcase name="[7] Single space after comma all numbers, [1, 2, 3], true" classname="plc.interpreter.RegexTests" time="0.0"/>
   <testcase name="[8] Single space after one comma, [1, 2,3], true" classname="plc.interpreter.RegexTests" time="0.0"/>
-  <testcase name="[9] Many elements, [3,5,1,7,2,7,2,1,6,3], true" classname="plc.interpreter.RegexTests" time="0.001"/>
-  <testcase name="[10] Numbers with more than 2 digits, [12511,34631,2367], true" classname="plc.interpreter.RegexTests" time="0.001"/>
+  <testcase name="[9] Many elements, [3,5,1,7,2,7,2,1,6,3], true" classname="plc.interpreter.RegexTests" time="0.0"/>
+  <testcase name="[10] Numbers with more than 2 digits, [12511,34631,2367], true" classname="plc.interpreter.RegexTests" time="0.0"/>
   <testcase name="[11] Two Digit Numbers, [10,20,30], true" classname="plc.interpreter.RegexTests" time="0.0"/>
   <testcase name="[12] Negative Numbers, [-1,-2,-3], false" classname="plc.interpreter.RegexTests" time="0.0"/>
-  <testcase name="[13] Symbols, [!,@,#], false" classname="plc.interpreter.RegexTests" time="0.001"/>
-  <testcase name="[14] Multiple square brackets, [1][2][3], false" classname="plc.interpreter.RegexTests" time="0.001"/>
-  <testcase name="[15] Space after number, no comma, [1 ], false" classname="plc.interpreter.RegexTests" time="0.0"/>
-  <testcase name="[16] Zero in list, [1,5,0,5], false" classname="plc.interpreter.RegexTests" time="0.0"/>
+  <testcase name="[13] Symbols, [!,@,#], false" classname="plc.interpreter.RegexTests" time="0.0"/>
+  <testcase name="[14] Multiple square brackets, [1][2][3], false" classname="plc.interpreter.RegexTests" time="0.0"/>
+  <testcase name="[15] Space after number, no comma, [1 ], false" classname="plc.interpreter.RegexTests" time="0.001"/>
+  <testcase name="[16] Zero in list, [1,5,0,5], false" classname="plc.interpreter.RegexTests" time="0.001"/>
   <testcase name="[17] Decimals, [1.1,5.1,5], false" classname="plc.interpreter.RegexTests" time="0.0"/>
   <testcase name="[18] Missing first bracket, 1,2,3], false" classname="plc.interpreter.RegexTests" time="0.0"/>
-  <testcase name="[19] Missing last bracket, [1,2,3, false" classname="plc.interpreter.RegexTests" time="0.0"/>
-  <testcase name="[1] Alphanumeric, thelegend27@gmail.com, true" classname="plc.interpreter.RegexTests" time="0.001"/>
+  <testcase name="[19] Missing last bracket, [1,2,3, false" classname="plc.interpreter.RegexTests" time="0.001"/>
+  <testcase name="[1] Alphanumeric, thelegend27@gmail.com, true" classname="plc.interpreter.RegexTests" time="0.0"/>
   <testcase name="[2] UF Domain, otherdomain@ufl.edu, true" classname="plc.interpreter.RegexTests" time="0.0"/>
   <testcase name="[3] Missing Domain Dot, missingdot@gmailcom, false" classname="plc.interpreter.RegexTests" time="0.0"/>
   <testcase name="[4] Symbols, symbols#$%@gmail.com, false" classname="plc.interpreter.RegexTests" time="0.0"/>
   <testcase name="[5] Dot before @, dot.before@gmail.com, true" classname="plc.interpreter.RegexTests" time="0.0"/>
   <testcase name="[6] Yahoo Domain, yahoodomain@yahoo.com, true" classname="plc.interpreter.RegexTests" time="0.0"/>
-  <testcase name="[7] Dash before @, dash-before@gmail.com, true" classname="plc.interpreter.RegexTests" time="0.0"/>
+  <testcase name="[7] Dash before @, dash-before@gmail.com, true" classname="plc.interpreter.RegexTests" time="0.001"/>
   <testcase name="[8] Two Dots before @, two.dots.before@yahoo.com, true" classname="plc.interpreter.RegexTests" time="0.0"/>
   <testcase name="[9] Number as domain, numberdomain@1.com, true" classname="plc.interpreter.RegexTests" time="0.0"/>
   <testcase name="[10] Dot in the beginning, .dotatstart@outlook.com, true" classname="plc.interpreter.RegexTests" time="0.0"/>
@@ -80,14 +80,14 @@
   <testcase name="[12] Spaces in email, spaces in email @gmail.com, false" classname="plc.interpreter.RegexTests" time="0.0"/>
   <testcase name="[13] Multiple @ signs, multiple@signs@gmail.com, false" classname="plc.interpreter.RegexTests" time="0.0"/>
   <testcase name="[14] Two Dots after @, twodots@after.com.com, false" classname="plc.interpreter.RegexTests" time="0.001"/>
-  <testcase name="[15] One letter after domain, oneletter@gmail.c, false" classname="plc.interpreter.RegexTests" time="0.0"/>
-  <testcase name="[16] Parentheses, parentheses()@yahoo.com, false" classname="plc.interpreter.RegexTests" time="0.0"/>
+  <testcase name="[15] One letter after domain, oneletter@gmail.c, false" classname="plc.interpreter.RegexTests" time="0.001"/>
+  <testcase name="[16] Parentheses, parentheses()@yahoo.com, false" classname="plc.interpreter.RegexTests" time="0.001"/>
   <testcase name="[17] Missing @ sign, missingatsigngmail.com, false" classname="plc.interpreter.RegexTests" time="0.0"/>
   <testcase name="[18] Symbols as domain, symbolsdomain@#$%.com, false" classname="plc.interpreter.RegexTests" time="0.0"/>
-  <testcase name="[1] Basic Identifier, getName, true" classname="plc.interpreter.RegexTests" time="0.001"/>
+  <testcase name="[1] Basic Identifier, getName, true" classname="plc.interpreter.RegexTests" time="0.0"/>
   <testcase name="[2] Identifier with dash and question at end, is-empty?, true" classname="plc.interpreter.RegexTests" time="0.001"/>
-  <testcase name="[3] No alphanumeric chars, &lt;=&gt;, true" classname="plc.interpreter.RegexTests" time="0.001"/>
-  <testcase name="[4] Begin with number, 42=life, false" classname="plc.interpreter.RegexTests" time="0.001"/>
+  <testcase name="[3] No alphanumeric chars, &lt;=&gt;, true" classname="plc.interpreter.RegexTests" time="0.0"/>
+  <testcase name="[4] Begin with number, 42=life, false" classname="plc.interpreter.RegexTests" time="0.0"/>
   <testcase name="[5] Contains commas, why,are,there,commas,, false" classname="plc.interpreter.RegexTests" time="0.001"/>
   <testcase name="[6] Empty String, , false" classname="plc.interpreter.RegexTests" time="0.0"/>
   <testcase name="[7] Only period, ., false" classname="plc.interpreter.RegexTests" time="0.0"/>
@@ -95,20 +95,20 @@
   <testcase name="[9] Carrot, ^, false" classname="plc.interpreter.RegexTests" time="0.0"/>
   <testcase name="[10] Period followed by number, .21, true" classname="plc.interpreter.RegexTests" time="0.0"/>
   <testcase name="[11] Space between two strings, hello world, false" classname="plc.interpreter.RegexTests" time="0.0"/>
-  <testcase name="[12] Literal, &#10;, false" classname="plc.interpreter.RegexTests" time="0.001"/>
-  <testcase name="[13] Only underscores, ______, true" classname="plc.interpreter.RegexTests" time="0.0"/>
+  <testcase name="[12] Literal, &#10;, false" classname="plc.interpreter.RegexTests" time="0.0"/>
+  <testcase name="[13] Only underscores, ______, true" classname="plc.interpreter.RegexTests" time="0.001"/>
   <testcase name="[1] Empty quotations, &quot;&quot;, true" classname="plc.interpreter.RegexTests" time="0.0"/>
-  <testcase name="[2] Three char string between quotations, &quot;abc&quot;, true" classname="plc.interpreter.RegexTests" time="0.001"/>
-  <testcase name="[3] String between quotations with newline literal, &quot;Hello,&#10;World&quot;, true" classname="plc.interpreter.RegexTests" time="0.0"/>
+  <testcase name="[2] Three char string between quotations, &quot;abc&quot;, true" classname="plc.interpreter.RegexTests" time="0.0"/>
+  <testcase name="[3] String between quotations with newline literal, &quot;Hello,&#10;World&quot;, true" classname="plc.interpreter.RegexTests" time="0.001"/>
   <testcase name="[4] Only one quotation mark, &quot;unterminated, false" classname="plc.interpreter.RegexTests" time="0.0"/>
   <testcase name="[5] Empty String, , false" classname="plc.interpreter.RegexTests" time="0.0"/>
-  <testcase name="[6] Three quotation marks, &quot;&quot;&quot;, true" classname="plc.interpreter.RegexTests" time="0.0"/>
+  <testcase name="[6] Three quotation marks, &quot;&quot;&quot;, true" classname="plc.interpreter.RegexTests" time="0.001"/>
   <testcase name="[7] Only one quotation mark, &quot;unterminated, false" classname="plc.interpreter.RegexTests" time="0.0"/>
   <testcase name="[8] Numbers and letters, &quot;1239ads8afasd2&quot;, true" classname="plc.interpreter.RegexTests" time="0.0"/>
-  <testcase name="[9] Wrong escape sequence, &quot;\j&quot;, false" classname="plc.interpreter.RegexTests" time="0.001"/>
-  <testcase name="[10] Three space characters, &quot;   &quot;, true" classname="plc.interpreter.RegexTests" time="0.0"/>
-  <testcase name="[11] Three space characters with carrot in middle, &quot; ^  &quot;, true" classname="plc.interpreter.RegexTests" time="0.0"/>
-  <testcase name="[12] Only backslash, &quot;\&quot;, false" classname="plc.interpreter.RegexTests" time="0.0"/>
+  <testcase name="[9] Wrong escape sequence, &quot;\j&quot;, false" classname="plc.interpreter.RegexTests" time="0.0"/>
+  <testcase name="[10] Three space characters, &quot;   &quot;, true" classname="plc.interpreter.RegexTests" time="0.001"/>
+  <testcase name="[11] Three space characters with carrot in middle, &quot; ^  &quot;, true" classname="plc.interpreter.RegexTests" time="0.001"/>
+  <testcase name="[12] Only backslash, &quot;\&quot;, false" classname="plc.interpreter.RegexTests" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
