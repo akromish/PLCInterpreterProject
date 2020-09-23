@@ -130,14 +130,17 @@ public final class Lexer {
          * Returns true if there is a character at index + offset.
          */
         public boolean has(int offset) {
-            throw new UnsupportedOperationException(); //TODO
+            if(input.length()-1 <= index+offset){
+                return true;
+            }
+            return false;
         }
 
         /**
          * Gets the character at index + offset.
          */
         public char get(int offset) {
-            throw new UnsupportedOperationException(); //TODO
+            return input.charAt(index+offset);
         }
 
         /**
@@ -145,14 +148,15 @@ public final class Lexer {
          * length of the literal being built.
          */
         public void advance() {
-            throw new UnsupportedOperationException(); //TODO
+            index++;
+            length++;
         }
 
         /**
          * Resets the length to zero, skipping any consumed characters.
          */
         public void reset() {
-            throw new UnsupportedOperationException(); //TODO
+            length = 0;
         }
 
         /**
@@ -161,6 +165,7 @@ public final class Lexer {
          * <em>starting</em> index.
          */
         public Token emit(Token.Type type) {
+            length = 0;
             throw new UnsupportedOperationException(); //TODO
         }
 
