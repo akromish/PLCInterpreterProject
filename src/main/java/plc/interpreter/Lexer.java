@@ -41,11 +41,9 @@ public final class Lexer {
     private List<Token> lex() throws ParseException {
 
         List<Token> tList = new ArrayList<>();
-        for(int i = 0; i < chars.length; i++) {
-            if(chars.get(i) != '\n' && chars.get(i) != '\r' && chars.get(i) != '\t') {
-                tList.add(lexToken());
-            }
-        }
+        while(chars.has(0)){
+            tList.add(lexToken());
+       }
         return tList;
     }
 
@@ -122,13 +120,14 @@ public final class Lexer {
      * if the characters matched.
      */
     private boolean match(String... patterns) {
-        if(peek(patterns)){
-           chars.advance();
-           return true;
+
+        boolean check = false;
+        while(peek(patterns)){
+            chars.advance();
+            check = true;
         }
-        else {
-            return false;
-        }
+        return check;
+
     }
 
     /**
