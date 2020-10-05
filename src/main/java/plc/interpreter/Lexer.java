@@ -39,7 +39,7 @@ public final class Lexer {
      * also handle skipping whitespace.
      */
     private List<Token> lex() throws ParseException {
-        List<Token> tList = null;
+        List<Token> tList = new ArrayList<Token>();
         for(int i = 0; i < chars.length; i++) {
             if(chars.get(i) != '\n' && chars.get(i) != '\r' && chars.get(i) != '\t') {
                 tList.add(lexToken());
@@ -85,7 +85,9 @@ public final class Lexer {
      * </pre>
      */
     private Token lexToken() throws ParseException {
-        throw new UnsupportedOperationException(); //TODO
+        if(Character.isDigit(chars.get(0)) || chars.get(0) == '+') {
+
+        }
     }
 
     private Token lexIdentifier() {
@@ -106,9 +108,8 @@ public final class Lexer {
      * return true for the sequence {@code 'a', 'b', 'c'}
      */
     private boolean peek(String... patterns) {
-        for(int i =0;i<patterns.length;i++){
-            char temp = patterns[i].charAt(0);
-            if(temp != chars.get(0)){
+        for (int i = 0; i < patterns.length; i++) {
+            if (!chars.has(i) || !String.valueOf(chars.get(i)).matches(patterns[i])) {
                 return false;
             }
         }
@@ -124,7 +125,9 @@ public final class Lexer {
            chars.advance();
            return true;
         }
-        return false;
+        else {
+            return false;
+        }
     }
 
     /**
@@ -146,10 +149,7 @@ public final class Lexer {
          * Returns true if there is a character at index + offset.
          */
         public boolean has(int offset) {
-            if(input.length()-1 <= index+offset){
-                return true;
-            }
-            return false;
+            return index + offset < input.length();
         }
 
         /**
@@ -181,8 +181,9 @@ public final class Lexer {
          * <em>starting</em> index.
          */
         public Token emit(Token.Type type) {
-            length = 0;
-            throw new UnsupportedOperationException(); //TODO
+            int start = index - length;
+            reset(); //
+            return new Token(type, input.substring(start, index), start);
         }
 
     }
