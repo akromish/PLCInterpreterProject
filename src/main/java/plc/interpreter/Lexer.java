@@ -84,8 +84,17 @@ public final class Lexer {
      * </pre>
      */
     private Token lexToken() throws ParseException {
-        if(Character.isDigit(chars.get(0)) || chars.get(0) == '+') {
-
+        if(peek("[+-]?[0-9]+(\\.[0-9]+)?")) {
+            return lexNumber();
+        }
+        else if(peek("[A-Za-z_+\\-*/:!?<>=][A-Za-z0-9_+\\-*/.:!?<>=]*|\\.[A-Za-z0-9_+\\-*/.:!?<>=]+")) {
+            return lexIdentifier();
+        }
+        else if(peek("\"([^\"\\\\]|\\\\[bnrt\'\"\\\\])*\"")) {
+            return lexString();
+        }
+        else {
+            return lexOperator();
         }
     }
 
@@ -98,6 +107,10 @@ public final class Lexer {
     }
 
     private Token lexString() throws ParseException {
+        throw new UnsupportedOperationException(); //TODO
+    }
+
+    private Token lexOperator() throws ParseException {
         throw new UnsupportedOperationException(); //TODO
     }
 
@@ -120,7 +133,6 @@ public final class Lexer {
      * if the characters matched.
      */
     private boolean match(String... patterns) {
-
         boolean check = false;
         while(peek(patterns)){
             chars.advance();
