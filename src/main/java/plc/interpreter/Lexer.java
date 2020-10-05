@@ -42,7 +42,11 @@ public final class Lexer {
 
         List<Token> tList = new ArrayList<>();
         while(chars.has(0)){
-            tList.add(lexToken());
+            if(chars.get(0)!=' ' && chars.get(0)!='\n' && chars.get(0)!='\t' && chars.get(0)!='r'){
+                tList.add(lexToken());
+            }else{
+                chars.reset();
+            }
        }
         return tList;
     }
@@ -84,31 +88,50 @@ public final class Lexer {
      * </pre>
      */
     private Token lexToken() throws ParseException {
-        if(peek("0","1","2","3","4","5","6","7","8","9","+","-")) {
+
+        if(match("[+-]","[0-9]") || match("[0-9]")){
             return lexNumber();
-        }
-        else if(peek("stuff")) {
+        }else if (match("[A-Za-z_+\\-*/:!?<>=]")||match("[.]","[A-Za-z0-9_+\\-*/.:!?<>=]")){
             return lexIdentifier();
-        }
-        else if(peek("gfdewg")) {
+        }else if(match("\"")){
             return lexString();
-        }
-        else {
+        }else{
             return lexOperator();
         }
+
+        // throw new UnsupportedOperationException(); needed
+
     }
 
     private Token lexIdentifier() {
-        throw new UnsupportedOperationException(); //TODO
+        while(match("[A-Za-z0-9_+\\\\-*/.:!?<>=]")){
+            // do nothing
+        }
+        return chars.emit(Token.Type.IDENTIFIER);
+
+        // need exception error
     }
 
     private Token lexNumber() {
-        match("0","1","2","3","4","5","6","7","8","9","+","-");
+
+        boolean notPeeked = true;
+        while (peek("[0-9]","[.]") || match("[0-9]")){
+            if (peek("[0-9]","[.]") && notPeeked){
+                notPeeked = false;
+                chars.advance();
+            }
+        }
         return chars.emit(Token.Type.NUMBER);
+
+        // throw new UnsupportedOperationException(); try catch to catch exception
     }
 
     private Token lexString() throws ParseException {
-        throw new UnsupportedOperationException(); //TODO
+        while (match("[^\"\\\\]|\\\\[bnrt\'\"\\\\]")){
+            //do nothing
+        }
+        return chars.emit(Token.Type.STRING);
+        //need exception catch
     }
 
     private Token lexOperator() throws ParseException {
