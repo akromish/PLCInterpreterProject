@@ -39,7 +39,13 @@ public final class Lexer {
      * also handle skipping whitespace.
      */
     private List<Token> lex() throws ParseException {
-        throw new UnsupportedOperationException(); //TODO
+        List<Token> tList = null;
+        for(int i = 0; i < chars.length; i++) {
+            if(chars.get(i) != '\n' && chars.get(i) != '\r' && chars.get(i) != '\t') {
+                tList.add(lexToken());
+            }
+        }
+        return tList; //TODO
     }
 
     /**
@@ -102,7 +108,7 @@ public final class Lexer {
     private boolean peek(String... patterns) {
         for(int i =0;i<patterns.length;i++){
             char temp = patterns[i].charAt(0);
-            if(temp != chars.get(i)){
+            if(temp != chars.get(0)){
                 return false;
             }
         }
