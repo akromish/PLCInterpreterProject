@@ -3,6 +3,7 @@ package plc.interpreter;
 import java.util.ArrayList;
 import java.util.List;
 
+
 /**
  * The lexer works through three main functions:
  *
@@ -20,9 +21,9 @@ import java.util.List;
  */
 public final class Lexer {
 
-    private final CharStream chars;
+    final CharStream chars;
 
-    private Lexer(String input) {
+    Lexer(String input) {
         chars = new CharStream(input);
     }
 
@@ -38,17 +39,18 @@ public final class Lexer {
      * of the input is reached, returning the list of tokens lexed. This should
      * also handle skipping whitespace.
      */
-    private List<Token> lex() throws ParseException {
-
-        List<Token> tList = new ArrayList<>();
+    List<Token> lex() throws ParseException {
+        ArrayList<Token> t = new ArrayList<Token>();
         while(chars.has(0)){
-            if(chars.get(0)!=' ' && chars.get(0)!='\n' && chars.get(0)!='\t' && chars.get(0)!='r'){
-                tList.add(lexToken());
-            }else{
+            if(match("[\t\n\b\r ]")){
                 chars.reset();
+            }else{
+                t.add(lexToken());
             }
-       }
-        return tList;
+        }
+        return t;
+
+        //throw new UnsupportedOperationException(); //TODO
     }
 
     /**
@@ -61,7 +63,7 @@ public final class Lexer {
      *
      * <pre>
      * {@code
-     *     private plc.interpreter.Token lexCharacter() {
+     *     Token lexCharacter() {
      *         if (!match("\'")) {
      *             //Your lexer should prevent this from happening, as it should
      *             // only try to lex a character literal if the next character
@@ -87,55 +89,74 @@ public final class Lexer {
      * }
      * </pre>
      */
-    private Token lexToken() throws ParseException {
-
-        if(match("[+-]","[0-9]") || match("[0-9]")){
-            return lexNumber();
+    Token lexToken() throws ParseException {
+//        try {
+        int res=0;
+        if (match("\"")){
+            res =1;
         }else if (match("[A-Za-z_+\\-*/:!?<>=]")||match("[.]","[A-Za-z0-9_+\\-*/.:!?<>=]")){
-            return lexIdentifier();
-        }else if(match("\"")){
-            return lexString();
-        }else{
-            return lexOperator();
+            res =2;
+        }
+        if(match("[0-9]") || match("[+-]","[0-9]")){
+            res =3;
         }
 
-        // throw new UnsupportedOperationException(); needed
+        switch (res) {
+            case 0:
+                chars.advance();
+                return chars.emit(Token.Type.OPERATOR);
+            case 1:
+                return lexString();
+            case 2:
+                return lexIdentifier();
+            case 3:
+                return lexNumber();
+            default:
+                break;
 
-    }
-
-    private Token lexIdentifier() {
-        while(match("[A-Za-z0-9_+\\\\-*/.:!?<>=]")){
-            // do nothing
         }
-        return chars.emit(Token.Type.IDENTIFIER);
-
-        // need exception error
+//        }catch (UnsupportedOperationException e){
+        throw new UnsupportedOperationException(); //TODO
+//        }
     }
 
-    private Token lexNumber() {
-
-        boolean notPeeked = true;
-        while (peek("[0-9]","[.]") || match("[0-9]")){
-            if (peek("[0-9]","[.]") && notPeeked){
-                notPeeked = false;
+    Token lexIdentifier() {
+        try {
+            while (peek("[A-Za-z0-9_+\\-*/.:!?<>=]")){
                 chars.advance();
             }
+            return chars.emit(Token.Type.IDENTIFIER);
+        }catch (UnsupportedOperationException e){
+            throw new UnsupportedOperationException(e); //TODO
         }
-        return chars.emit(Token.Type.NUMBER);
-
-        // throw new UnsupportedOperationException(); try catch to catch exception
     }
 
-    private Token lexString() throws ParseException {
-        while (match("[^\"\\\\]|\\\\[bnrt\'\"\\\\]")){
-            //do nothing
+    Token lexNumber() {
+        try {
+            boolean bool = true;
+            while (match("[0-9]")||peek("[.]","[0-9]")){
+                if (peek("[.]","[0-9]") && bool){
+                    chars.advance();
+                    bool = false;
+                }
+            }
+            return chars.emit(Token.Type.NUMBER);
+        }catch (UnsupportedOperationException e){
+            throw new UnsupportedOperationException(e); //TODO
+        }
+    }
+
+    Token lexString() throws ParseException {
+        while(match("([^\\\\\"']|\\\\[bnrt'\"\\\\])*")){}
+//        chars.index--;
+//        System.out.println(chars.get(0));
+        if(!match("\"")) {
+//            System.out.println(chars.index+ "khara" +chars.input.length());
+            throw new ParseException("ERR", chars.index);
+//            throw new UnsupportedOperationException();
         }
         return chars.emit(Token.Type.STRING);
-        //need exception catch
-    }
 
-    private Token lexOperator() throws ParseException {
-        throw new UnsupportedOperationException(); //TODO
     }
 
     /**
@@ -143,7 +164,7 @@ public final class Lexer {
      * which should be a regex. For example, {@code peek("a", "b", "c")} would
      * return true for the sequence {@code 'a', 'b', 'c'}
      */
-    private boolean peek(String... patterns) {
+    boolean peek(String... patterns) {
         for (int i = 0; i < patterns.length; i++) {
             if (!chars.has(i) || !String.valueOf(chars.get(i)).matches(patterns[i])) {
                 return false;
@@ -156,14 +177,16 @@ public final class Lexer {
      * Returns true in the same way as peek, but also advances the CharStream to
      * if the characters matched.
      */
-    private boolean match(String... patterns) {
-        boolean check = false;
-        while(peek(patterns)){
-            chars.advance();
-            check = true;
-        }
-        return check;
-
+    boolean match(String... patterns) {
+            if (peek(patterns)) {
+                for (int i = 0; i < patterns.length ; i++) {
+                    chars.advance();
+                }
+                return true;
+            }
+            else {
+                return false;
+            }
     }
 
     /**
@@ -171,44 +194,74 @@ public final class Lexer {
      * where in the input string the lexer currently is, and the builder
      * accumulates characters into the literal value for the next token.
      */
-    private static final class CharStream {
+    static final class CharStream {
 
-        private final String input;
-        private int index = 0;
-        private int length = 0;
+        final String input;
+        int index = 0;
+        int length = 0;
 
-        private CharStream(String input) {
+        CharStream(String input) {
             this.input = input;
         }
 
         /**
          * Returns true if there is a character at index + offset.
          */
-        public boolean has(int offset) {
-            return index + offset < input.length();
+        boolean has(int offset) {
+            try {
+                int val = index + offset;
+                char c = input.charAt(val);
+//                if(c == ' '){
+//                    return false;
+//                }else{
+                return true;
+//                }
+            }
+            catch (IndexOutOfBoundsException e){
+                return false;
+            }catch (Exception e){
+                throw new UnsupportedOperationException(e);//TODO
+            }
         }
 
         /**
          * Gets the character at index + offset.
          */
-        public char get(int offset) {
-            return input.charAt(index+offset);
+        char get(int offset) {
+            char temp='l';
+            try{
+                int val = index + offset;
+                char c = input.charAt(val);
+                return c;
+            }
+            catch (Exception e) {
+//                System.out.println(c);
+                throw new UnsupportedOperationException(); //TODO
+            }
         }
 
         /**
          * Advances to the next character, incrementing the current index and
          * length of the literal being built.
          */
-        public void advance() {
-            index++;
-            length++;
+        void advance() {
+            try {
+                index ++;
+                length ++;
+            }catch (Exception e) {
+                throw new UnsupportedOperationException(e); //TODO
+            }
         }
 
         /**
          * Resets the length to zero, skipping any consumed characters.
          */
-        public void reset() {
-            length = 0;
+        void reset() {
+            try{
+                length = 0;
+            }catch (Exception e){
+                throw new UnsupportedOperationException(e); //TODO
+            }
         }
 
         /**
@@ -216,10 +269,14 @@ public final class Lexer {
          * the length to zero. The index of the token should be the
          * <em>starting</em> index.
          */
-        public Token emit(Token.Type type) {
-            int start = index - length;
-            reset(); //
-            return new Token(type, input.substring(start, index), start);
+        Token emit(Token.Type type) {
+            try {
+                Token token = new Token(type, input.substring(index-length,index),index -length);
+                reset();
+                return token;
+            } catch (UnsupportedOperationException e) {
+                throw new UnsupportedOperationException(e); //TODO
+            }
         }
 
     }
