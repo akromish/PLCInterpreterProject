@@ -84,13 +84,13 @@ public final class Lexer {
      * </pre>
      */
     private Token lexToken() throws ParseException {
-        if(peek("[+-]?[0-9]+(\\.[0-9]+)?")) {
+        if(peek("0","1","2","3","4","5","6","7","8","9","+","-")) {
             return lexNumber();
         }
-        else if(peek("[A-Za-z_+\\-*/:!?<>=][A-Za-z0-9_+\\-*/.:!?<>=]*|\\.[A-Za-z0-9_+\\-*/.:!?<>=]+")) {
+        else if(peek("stuff")) {
             return lexIdentifier();
         }
-        else if(peek("\"([^\"\\\\]|\\\\[bnrt\'\"\\\\])*\"")) {
+        else if(peek("gfdewg")) {
             return lexString();
         }
         else {
@@ -103,7 +103,8 @@ public final class Lexer {
     }
 
     private Token lexNumber() {
-        throw new UnsupportedOperationException(); //TODO
+        match("0","1","2","3","4","5","6","7","8","9","+","-");
+        return chars.emit(Token.Type.NUMBER);
     }
 
     private Token lexString() throws ParseException {
