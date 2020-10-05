@@ -114,7 +114,11 @@ public final class Lexer {
      * if the characters matched.
      */
     private boolean match(String... patterns) {
-        throw new UnsupportedOperationException(); //TODO
+        if(peek(patterns)){
+           chars.advance();
+           return true;
+        }
+        return false;
     }
 
     /**
