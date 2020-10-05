@@ -39,13 +39,13 @@ public final class Lexer {
      * also handle skipping whitespace.
      */
     private List<Token> lex() throws ParseException {
-        List<Token> tList = null;
+        List<Token> tList = new ArrayList<>();
         for(int i = 0; i < chars.length; i++) {
             if(chars.get(i) != '\n' && chars.get(i) != '\r' && chars.get(i) != '\t') {
                 tList.add(lexToken());
             }
         }
-        return tList; //TODO
+        return tList;
     }
 
     /**
