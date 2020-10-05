@@ -1,8 +1,10 @@
 package plc.interpreter;
 
+import javax.swing.plaf.basic.BasicDesktopIconUI;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+
 
 /**
  * The parser takes the sequence of tokens emitted by the lexer and turns that
@@ -38,13 +40,10 @@ public final class Parser {
      */
     private Ast parse() {
         List<Ast> hi= new ArrayList<Ast>();
-        Ast.Term howdy = new Ast.Term("heyo",hi);
-
-//        while (tokens.has(0)){
-//            astList.add(parseAst());
-//        }
-
-        return howdy;
+        while(tokens.has(0)) {
+            hi.add(parseAst());
+        }
+        return new Ast.Term("source", hi);
     }
 
     /**
@@ -85,23 +84,39 @@ public final class Parser {
      * </pre>
      */
     private Ast parseAst() {
-        throw new UnsupportedOperationException(); //TODO
+        if(match(Token.Type.IDENTIFIER)) {
+            return parseIdentifier();
+        }
+        else if(match(Token.Type.STRING)) {
+            return parseStringLiteral();
+        }
+        else if(match(Token.Type.NUMBER)) {
+            return parseNumberLiteral();
+        }
+        else {
+            return parseTerm();
+        }
     }
 
-    private Ast parseTerm() {
-
+    private Ast.Term parseTerm() {
+        List<Ast> args = new ArrayList<>();
+        String name = tokens.get(-1).getLiteral();
+        return new Ast.Term(name, args);
     }
 
-    private Ast parseIdentifier() {
+    private Ast.Identifier parseIdentifier() {
 
+        return new Ast.Identifier(tokens.get(-1).getLiteral());
     }
 
-    private Ast parseNumberLiteral() {
+    private Ast.NumberLiteral parseNumberLiteral() {
 
+        return new Ast.NumberLiteral();
     }
 
-    private Ast parseStringLiteral() {
-        
+    private Ast.StringLiteral parseStringLiteral() {
+
+        return new Ast.StringLiteral(tokens.get(-1).getLiteral());
     }
 
     /**
@@ -116,11 +131,18 @@ public final class Parser {
      */
     private boolean peek(Object... patterns) {
         for (int i = 0; i < patterns.length; i++) {
-            if (!tokens.has(i) || tokens.get(i).getType() != patterns[i] || tokens.get(i).getLiteral() != patterns[i]) {
-                return false;
+            if (patterns[i] instanceof Token.Type) {
+                if(!tokens.has(0) || tokens.get(i).getType() != (Token.Type)patterns[i]) {
+                    return false;
+                }
+            }
+            else if (patterns[i] instanceof String) {
+                if(!tokens.has(0) || !tokens.get(i).getLiteral().equals((String)patterns[i])) {
+                    return false;
+                }
             }
         }
-        return true;//TODO
+        return true; //TODO
     }
 
     /**

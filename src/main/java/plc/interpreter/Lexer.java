@@ -90,11 +90,11 @@ public final class Lexer {
      * </pre>
      */
     Token lexToken() throws ParseException {
-//        try {
         int res=0;
         if (match("\"")){
             res =1;
-        }else if (match("[A-Za-z_+\\-*/:!?<>=]")||match("[.]","[A-Za-z0-9_+\\-*/.:!?<>=]")){
+        }
+        else if (match("[A-Za-z_+\\-*/:!?<>=]")||match("[.]","[A-Za-z0-9_+\\-*/.:!?<>=]")){
             res =2;
         }
         if(match("[0-9]") || match("[+-]","[0-9]")){

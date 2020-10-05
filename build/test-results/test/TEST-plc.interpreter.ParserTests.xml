@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="plc.interpreter.ParserTests" tests="1" skipped="1" failures="0" errors="0" timestamp="2020-10-05T21:53:36" hostname="DESKTOP-EL2G3TJ" time="0.953">
+  <properties/>
+  <testcase name="testExample1()" classname="plc.interpreter.ParserTests" time="0.953">
+    <skipped/>
+  </testcase>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
