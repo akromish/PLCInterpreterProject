@@ -100,7 +100,13 @@ public final class Lexer {
      * return true for the sequence {@code 'a', 'b', 'c'}
      */
     private boolean peek(String... patterns) {
-        throw new UnsupportedOperationException(); //TODO
+        for(int i =0;i<patterns.length;i++){
+            char temp = patterns[i].charAt(0);
+            if(temp != chars.get(i)){
+                return false;
+            }
+        }
+        return true;
     }
 
     /**
