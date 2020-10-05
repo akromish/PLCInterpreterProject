@@ -37,7 +37,14 @@ public final class Parser {
      * {@link Ast.Term} with the identifier {@code "source"}.
      */
     private Ast parse() {
-        throw new UnsupportedOperationException(); //TODO
+        List<Ast> hi= new ArrayList<Ast>();
+        Ast.Term howdy = new Ast.Term("heyo",hi);
+
+//        while (tokens.has(0)){
+//            astList.add(parseAst());
+//        }
+
+        return howdy;
     }
 
     /**
