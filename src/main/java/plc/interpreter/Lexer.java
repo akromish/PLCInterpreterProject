@@ -91,13 +91,14 @@ public final class Lexer {
      * </pre>
      */
 
+    // should use peek here
     private Token lexToken() throws ParseException {
 
-        if (match("[+-]", "[0-9]") || match("[0-9]")) {
+        if(peek("[0-9]") || peek("[+-]","[0-9]") || peek("[.]")){
             return lexNumber();
         } else if (match("[A-Za-z_+\\-*/:!?<>=]") || match("[.]", "[A-Za-z0-9_+\\-*/.:!?<>=]")) {
             return lexIdentifier();
-        } else if (match("\"")) {
+        } else if (peek("\"")) {
             return lexString();
         } else {
             return lexOperator();
@@ -106,33 +107,39 @@ public final class Lexer {
 
     }
 
-    private Token lexIdentifier() {
-        while (match("[A-Za-z0-9_+\\-*/.:!?<>=]")) {
-            // do nothing
+    private Token lexNumber() throws ParseException{
+
+        if(match("[+-]","[0-9]")) ;
+        else if (match("[0-9]")) ;
+        else throw new ParseException("starts with decimal", chars.index);
+
+        int decimal = 0;
+        while (peek("[.]","[0-9]") || match("[0-9]")){
+            if(match("[.]","[0-9]")){
+                decimal++;
+            }
         }
+        if(decimal>1){
+            throw new ParseException("more than one decimal", chars.index);
+        }
+        return chars.emit(Token.Type.NUMBER);
+    }
+
+    private Token lexIdentifier() {
+        while (match("[A-Za-z0-9_+\\-*/.:!?<>=]")) ;
         return chars.emit(Token.Type.IDENTIFIER);
         // need exception error?
     }
 
-
-    private Token lexNumber() {
-
-        boolean notMatched = true;
-        while (peek("[.]", "[0-9]") || match("[0-9]")) {
-            if (notMatched && match("[.]", "[0-9]")) {
-                notMatched = false;
-            }
-        }
-        return chars.emit(Token.Type.NUMBER);
-        // exception catch?
-    }
-
     private Token lexString() throws ParseException {
-        while (match("[^\"\\\\]|\\\\[bnrt'\"\\\\]")) {
-            //do nothing
-        }
+        match("\"");
+
+//        while (match("[^\"\\\\]|\\\\[bnrt'\"\\\\A-Za-z]")) ;
+
+        while (match("[A-Za-z]") || match("[\\]","[bnrt]"))
+
         if (!match("\"")) {
-            throw new ParseException("err", chars.index);
+            throw new ParseException("no terminating end quote", chars.index);
         }
         return chars.emit(Token.Type.STRING);
     }
@@ -140,7 +147,6 @@ public final class Lexer {
     private Token lexOperator() throws ParseException {
         chars.advance();
         return chars.emit(Token.Type.OPERATOR);
-        //throw new UnsupportedOperationException(); //TODO
     }
 
     /**

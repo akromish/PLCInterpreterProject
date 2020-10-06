@@ -146,7 +146,7 @@ public final class Parser {
     private Ast.StringLiteral parseStringLiteral() {
         while(match(Token.Type.STRING)) {
 
-        }
+        } // add more tests
         return new Ast.StringLiteral(tokens.get(-1).getLiteral().replaceAll("\"",""));
     }
 

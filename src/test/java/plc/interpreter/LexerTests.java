@@ -44,7 +44,10 @@ final class LexerTests {
                 Arguments.of("-1.0", true),
                 Arguments.of("007.000", true),
                 Arguments.of("1.", false),
-                Arguments.of(".5", false)
+                Arguments.of(".5", false),
+                Arguments.of("0..5", false),
+                Arguments.of("1. ", false)
+
         );
     }
 
