@@ -84,70 +84,67 @@ public final class Parser {
      * </pre>
      */
     private Ast parseAst() {
-        if(match(Token.Type.NUMBER)) {
+        System.out.println(tokens.get(0).getLiteral());
+        if(peek(Token.Type.NUMBER)) {
             System.out.println("Number");
             return parseNumberLiteral();
         }
-        else if(match(Token.Type.IDENTIFIER)) {
+        else if(peek(Token.Type.IDENTIFIER)) {
             System.out.println("Identifier");
             return parseIdentifier();
         }
-        else if(match(Token.Type.STRING)) {
+        else if(peek(Token.Type.STRING)) {
             System.out.println("String");
             return parseStringLiteral();
         }
-        else {
-            System.out.println("Operator");
-            return parseTerm();
+        else if(peek(Token.Type.OPERATOR)) {
+                System.out.println("Operator");
+                return parseTerm();
+
         }
+        return null;
     }
 
     private Ast.Term parseTerm() {
-        if (!match("(") || !peek('[')) {
+        if (!match("(") && !match('[')) {
             throw new ParseException("Expected opening parentheses or square bracket", tokens.index);
         }
         if (!match(Token.Type.IDENTIFIER)) {
             throw new ParseException("Expected an identifier.", tokens.index);
         }
         String name = tokens.get(-1).getLiteral();
-        System.out.println(name);
+       // System.out.println(name);
         List<Ast> args = new ArrayList<>();
-        while (!match(")") && !peek("]")) {
+        while (!match(")") && !match("]")) {
             args.add(parseAst());
-            if (!peek(")") && !peek("]")) {
-                throw new ParseException("Expected closing parenthesis or square bracket after argument.", tokens.index);
-            }
+        }
+        if (!match(")") && !match("]")) {
+            throw new ParseException("Expected closing parenthesis or square bracket after argument.", tokens.index);
         }
         return new Ast.Term(name, args);
     }
 
     private Ast.Identifier parseIdentifier() {
-        try {
-            while (match(Token.Type.IDENTIFIER)) {
-
-            }
-            return new Ast.Identifier(tokens.get(-1).getLiteral());
-        }catch (UnsupportedOperationException e){
-            throw new UnsupportedOperationException(e); //TODO
+        if (!match(Token.Type.IDENTIFIER)) {
+            throw new ParseException("Expected Identifier.", tokens.index);
         }
+        return new Ast.Identifier(tokens.get(0).getLiteral());
+
     }
 
     private Ast.NumberLiteral parseNumberLiteral() {
-        try {
-            while (match(Token.Type.NUMBER)) {
-
+        if (!match(Token.Type.NUMBER)) {
+            throw new ParseException("Expected Number", tokens.index);
             }
-            return new Ast.NumberLiteral(new BigDecimal(tokens.get(-1).getLiteral()));
-        } catch (UnsupportedOperationException e){
-            throw new UnsupportedOperationException(e); //TODO
-        }
+        return new Ast.NumberLiteral(new BigDecimal(tokens.get(0).getLiteral()));
+
     }
 
     private Ast.StringLiteral parseStringLiteral() {
-        while(match(Token.Type.STRING)) {
-
+        if(!match(Token.Type.STRING)) {
+            throw new ParseException("Expected String", tokens.index);
         } // add more tests
-        return new Ast.StringLiteral(tokens.get(-1).getLiteral().replaceAll("\"",""));
+        return new Ast.StringLiteral(tokens.get(0).getLiteral().replaceAll("\"",""));
     }
 
     /**
@@ -163,12 +160,12 @@ public final class Parser {
     private boolean peek(Object... patterns) {
         for (int i = 0; i < patterns.length; i++) {
             if (patterns[i] instanceof Token.Type) {
-                if(!tokens.has(0) || tokens.get(i).getType() != (Token.Type)patterns[i]) {
+                if(!tokens.has(i) || tokens.get(i).getType() != (Token.Type)patterns[i]) {
                     return false;
                 }
             }
             else if (patterns[i] instanceof String) {
-                if(!tokens.has(0) || !tokens.get(i).getLiteral().equals((String)patterns[i])) {
+                if(!tokens.has(i) || !tokens.get(i).getLiteral().equals((String)patterns[i])) {
                     return false;
                 }
             }
