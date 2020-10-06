@@ -60,6 +60,7 @@ final class LexerTests {
     private static Stream<Arguments> testString() {
         return Stream.of(
                 Arguments.of("\"\"", true),
+
                 Arguments.of("\"abc\"", true),
                 Arguments.of("\"Hello,\\nWorld\"", true),
                 Arguments.of("\"unterminated", false),

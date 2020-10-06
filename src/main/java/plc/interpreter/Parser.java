@@ -143,7 +143,10 @@ public final class Parser {
         if(!match(Token.Type.STRING)) {
             throw new ParseException("Expected String", tokens.index);
         } // add more tests
-        return new Ast.StringLiteral(tokens.get(-1).getLiteral().replaceAll("\"",""));
+        String lit = tokens.get(-1).getLiteral();
+        lit = lit.replaceAll("\"","");
+        lit = lit.replace("\\n", "\n");
+        return new Ast.StringLiteral(lit);
     }
 
     /**
