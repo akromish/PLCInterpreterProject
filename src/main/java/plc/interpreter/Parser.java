@@ -145,7 +145,18 @@ public final class Parser {
         } // add more tests
         String lit = tokens.get(-1).getLiteral();
         lit = lit.replaceAll("\"","");
-        lit = lit.replace("\\n", "\n");
+        while(lit.contains("\\b")){
+            lit = lit.replace("\\b", "\b");
+        }
+        while(lit.contains("\\n")){
+            lit = lit.replace("\\n", "\n");
+        }
+        while(lit.contains("\\r")){
+            lit = lit.replace("\\r", "\r");
+        }
+        while(lit.contains("\\t")){
+            lit = lit.replace("\\t", "\t");
+        }
         return new Ast.StringLiteral(lit);
     }
 

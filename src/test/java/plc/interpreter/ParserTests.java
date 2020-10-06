@@ -91,7 +91,7 @@ final class ParserTests {
 
     static Stream<Arguments> testNumber() {
         return Stream.of(
-                Arguments.of("Decimal", "(print 1.5", Arrays.asList(
+                Arguments.of("Decimal", "(print 1.5)", Arrays.asList(
                         new Ast.Term("print", Arrays.asList(new Ast.NumberLiteral(BigDecimal.valueOf(1.5))))
                 )),
                 Arguments.of("Signed", "(print -2)", Arrays.asList(
@@ -113,14 +113,20 @@ final class ParserTests {
 
     static Stream<Arguments> testString() {
         return Stream.of(
-//                Arguments.of("Empty", "(print \"\")", Arrays.asList(
-//                        new Ast.Term("print", Arrays.asList(new Ast.StringLiteral("")))
-//                )),
-//                Arguments.of("Alphanumeric", "(print \"abc123\")", Arrays.asList(
-//                        new Ast.Term("print", Arrays.asList(new Ast.StringLiteral("abc123")))
-//                )),
+                Arguments.of("Empty", "(print \"\")", Arrays.asList(
+                        new Ast.Term("print", Arrays.asList(new Ast.StringLiteral("")))
+                )),
+                Arguments.of("Alphanumeric", "(print \"abc123\")", Arrays.asList(
+                        new Ast.Term("print", Arrays.asList(new Ast.StringLiteral("abc123")))
+                )),
                 Arguments.of("Escape", "(print \"new\\nline\")", Arrays.asList(
                         new Ast.Term("print", Arrays.asList(new Ast.StringLiteral("new\nline")))
+                )),
+                Arguments.of("Escape", "(print \"new\\bline\")", Arrays.asList(
+                        new Ast.Term("print", Arrays.asList(new Ast.StringLiteral("new\bline")))
+                )),
+                Arguments.of("Escape", "(print \"new\\rline\")", Arrays.asList(
+                        new Ast.Term("print", Arrays.asList(new Ast.StringLiteral("new\rline")))
                 ))
         );
     }
