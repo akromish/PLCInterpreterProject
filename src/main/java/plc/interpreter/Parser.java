@@ -108,14 +108,13 @@ public final class Parser {
         if (!match("(") && !match('[')) {
             throw new ParseException("Expected opening parentheses or square bracket", tokens.index);
         }
-        if (!match(Token.Type.IDENTIFIER)) {
+        if (!peek(Token.Type.IDENTIFIER)) {
             throw new ParseException("Expected an identifier.", tokens.index);
         }
         String name = tokens.get(-1).getLiteral();
        // System.out.println(name);
         List<Ast> args = new ArrayList<>();
-        while (!peek(")") && !peek("]")) { //error
-            while (match(")") || match("]")) ;
+        while (!peek(")") && !peek("]")) {
             args.add(parseAst());
         }
         if (!match(")") && !match("]")) {
