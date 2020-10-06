@@ -39,11 +39,11 @@ public final class Parser {
      * {@link Ast.Term} with the identifier {@code "source"}.
      */
     private Ast parse() {
-        List<Ast> astList= new ArrayList<Ast>();
+        List<Ast> parseList= new ArrayList<Ast>();
         while(tokens.has(0)) {
-            astList.add(parseAst());
+            parseList.add(parseAst());
         }
-        return new Ast.Term("source", astList);
+        return new Ast.Term("source", parseList);
     }
 
     /**
@@ -84,41 +84,70 @@ public final class Parser {
      * </pre>
      */
     private Ast parseAst() {
-        if(match(Token.Type.IDENTIFIER)) {
-
+        if(match(Token.Type.NUMBER)) {
+            System.out.println("Number");
+            return parseNumberLiteral();
+        }
+        else if(match(Token.Type.IDENTIFIER)) {
+            System.out.println("Identifier");
             return parseIdentifier();
         }
         else if(match(Token.Type.STRING)) {
+            System.out.println("String");
             return parseStringLiteral();
         }
-        else if(match(Token.Type.NUMBER)) {
-            return parseNumberLiteral();
-        }
         else {
+            System.out.println("Operator");
             return parseTerm();
         }
     }
 
     private Ast.Term parseTerm() {
-        List<Ast> args = new ArrayList<>();
+        if (!match("(") || !peek('[')) {
+            throw new ParseException("Expected opening parentheses or square bracket", tokens.index);
+        }
+        if (!match(Token.Type.IDENTIFIER)) {
+            throw new ParseException("Expected an identifier.", tokens.index);
+        }
         String name = tokens.get(-1).getLiteral();
+        System.out.println(name);
+        List<Ast> args = new ArrayList<>();
+        while (!match(")") && !peek("]")) {
+            args.add(parseAst());
+            if (!peek(")") && !peek("]")) {
+                throw new ParseException("Expected closing parenthesis or square bracket after argument.", tokens.index);
+            }
+        }
         return new Ast.Term(name, args);
     }
 
-    private Ast.Identifier parseIdentifier() { // try
+    private Ast.Identifier parseIdentifier() {
+        try {
+            while (match(Token.Type.IDENTIFIER)) {
 
-        return new Ast.Identifier(tokens.get(-1).getLiteral());
+            }
+            return new Ast.Identifier(tokens.get(-1).getLiteral());
+        }catch (UnsupportedOperationException e){
+            throw new UnsupportedOperationException(e); //TODO
+        }
     }
 
     private Ast.NumberLiteral parseNumberLiteral() {
+        try {
+            while (match(Token.Type.NUMBER)) {
 
-        //return new Ast.NumberLiteral();
-        throw new UnsupportedOperationException();
+            }
+            return new Ast.NumberLiteral(new BigDecimal(tokens.get(-1).getLiteral()));
+        } catch (UnsupportedOperationException e){
+            throw new UnsupportedOperationException(e); //TODO
+        }
     }
 
     private Ast.StringLiteral parseStringLiteral() {
+        while(match(Token.Type.STRING)) {
 
-        return new Ast.StringLiteral(tokens.get(-1).getLiteral());
+        }
+        return new Ast.StringLiteral(tokens.get(-1).getLiteral().replaceAll("\"",""));
     }
 
     /**

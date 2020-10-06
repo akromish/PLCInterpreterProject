@@ -29,7 +29,11 @@
 </td>
 <td>
 <div class="infoBox" id="failures">
+<<<<<<< HEAD
 <div class="counter">19</div>
+=======
+<div class="counter">4</div>
+>>>>>>> b6b1a702f7b458ad0255af4ef48efaf9e65a8ba5
 <p>failures</p>
 </div>
 </td>
@@ -41,7 +45,11 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
+<<<<<<< HEAD
 <div class="counter">0.056s</div>
+=======
+<div class="counter">0.050s</div>
+>>>>>>> b6b1a702f7b458ad0255af4ef48efaf9e65a8ba5
 <p>duration</p>
 </div>
 </td>
@@ -51,7 +59,11 @@
 </td>
 <td>
 <div class="infoBox failures" id="successRate">
+<<<<<<< HEAD
 <div class="percent">5%</div>
+=======
+<div class="percent">80%</div>
+>>>>>>> b6b1a702f7b458ad0255af4ef48efaf9e65a8ba5
 <p>successful</p>
 </div>
 </td>
@@ -65,6 +77,12 @@
 </li>
 <li>
 <a href="#tab1">Tests</a>
+<<<<<<< HEAD
+=======
+</li>
+<li>
+<a href="#tab2">Standard output</a>
+>>>>>>> b6b1a702f7b458ad0255af4ef48efaf9e65a8ba5
 </li>
 </ul>
 <div id="tab0" class="tab">
@@ -73,6 +91,7 @@
 <a name="testExample1()"></a>
 <h3 class="failures">testExample1()</h3>
 <span class="code">
+<<<<<<< HEAD
 <pre>java.lang.IndexOutOfBoundsException: Index -1 out of bounds for length 5
 	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:64)
 	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:70)
@@ -84,6 +103,14 @@
 	at plc.interpreter.Parser.parseAst(Parser.java:98)
 	at plc.interpreter.Parser.parse(Parser.java:44)
 	at plc.interpreter.Parser.parse(Parser.java:34)
+=======
+<pre>org.opentest4j.AssertionFailedError: expected: &lt;(source (+ 1 -2.0))&gt; but was: &lt;(source (+ -2.0))&gt;
+	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
+	at org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1124)
+>>>>>>> b6b1a702f7b458ad0255af4ef48efaf9e65a8ba5
 	at plc.interpreter.ParserTests.test(ParserTests.java:170)
 	at plc.interpreter.ParserTests.testExample1(ParserTests.java:140)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -178,6 +205,7 @@
 </span>
 </div>
 <div class="test">
+<<<<<<< HEAD
 <a name="testExample2()"></a>
 <h3 class="failures">testExample2()</h3>
 <span class="code">
@@ -298,6 +326,16 @@
 	at plc.interpreter.Parser$TokenStream.get(Parser.java:187)
 	at plc.interpreter.Parser.parseTerm(Parser.java:104)
 	at plc.interpreter.Parser.parseAst(Parser.java:98)
+=======
+<a name="testExample3()"></a>
+<h3 class="failures">testExample3()</h3>
+<span class="code">
+<pre>plc.interpreter.ParseException: Expected opening parentheses or square bracket
+	at plc.interpreter.Parser.parseTerm(Parser.java:107)
+	at plc.interpreter.Parser.parseAst(Parser.java:101)
+	at plc.interpreter.Parser.parseTerm(Parser.java:116)
+	at plc.interpreter.Parser.parseAst(Parser.java:101)
+>>>>>>> b6b1a702f7b458ad0255af4ef48efaf9e65a8ba5
 	at plc.interpreter.Parser.parse(Parser.java:44)
 	at plc.interpreter.Parser.parse(Parser.java:34)
 	at plc.interpreter.ParserTests.test(ParserTests.java:170)
@@ -394,6 +432,7 @@
 </span>
 </div>
 <div class="test">
+<<<<<<< HEAD
 <a name="testIdentifier(String, String, List)[1]"></a>
 <h3 class="failures">[1] Alphanumeric, (print abc123), [(print abc123)]</h3>
 <span class="code">
@@ -410,6 +449,21 @@
 	at plc.interpreter.Parser.parse(Parser.java:34)
 	at plc.interpreter.ParserTests.test(ParserTests.java:170)
 	at plc.interpreter.ParserTests.testIdentifier(ParserTests.java:72)
+=======
+<a name="testString(String, String, List)[3]"></a>
+<h3 class="failures">[3] Escape, (print &quot;new\nline&quot;), [(print &quot;new
+line&quot;)]</h3>
+<span class="code">
+<pre>plc.interpreter.ParseException: ERR
+	at plc.interpreter.Lexer.lexString(Lexer.java:155)
+	at plc.interpreter.Lexer.lexToken(Lexer.java:109)
+	at plc.interpreter.Lexer.lex(Lexer.java:48)
+	at plc.interpreter.Lexer.lex(Lexer.java:34)
+	at plc.interpreter.Parser.&lt;init&gt;(Parser.java:27)
+	at plc.interpreter.Parser.parse(Parser.java:34)
+	at plc.interpreter.ParserTests.test(ParserTests.java:170)
+	at plc.interpreter.ParserTests.testString(ParserTests.java:111)
+>>>>>>> b6b1a702f7b458ad0255af4ef48efaf9e65a8ba5
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -558,6 +612,7 @@
 </span>
 </div>
 <div class="test">
+<<<<<<< HEAD
 <a name="testIdentifier(String, String, List)[2]"></a>
 <h3 class="failures">[2] Symbols, (print &lt;=&gt;), [(print &lt;=&gt;)]</h3>
 <span class="code">
@@ -574,6 +629,19 @@
 	at plc.interpreter.Parser.parse(Parser.java:34)
 	at plc.interpreter.ParserTests.test(ParserTests.java:170)
 	at plc.interpreter.ParserTests.testIdentifier(ParserTests.java:72)
+=======
+<a name="testTerm(String, String, List)[3]"></a>
+<h3 class="failures">[3] Multiple Args, (print x y z), [(print x y z)]</h3>
+<span class="code">
+<pre>org.opentest4j.AssertionFailedError: expected: &lt;(source (print x y z))&gt; but was: &lt;(source (print z))&gt;
+	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
+	at org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1124)
+	at plc.interpreter.ParserTests.test(ParserTests.java:170)
+	at plc.interpreter.ParserTests.testTerm(ParserTests.java:42)
+>>>>>>> b6b1a702f7b458ad0255af4ef48efaf9e65a8ba5
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -721,6 +789,7 @@
 </pre>
 </span>
 </div>
+<<<<<<< HEAD
 <div class="test">
 <a name="testInvalidCharacter()"></a>
 <h3 class="failures">testInvalidCharacter()</h3>
@@ -2974,6 +3043,8 @@ Caused by: java.lang.IndexOutOfBoundsException: Index -1 out of bounds for lengt
 </pre>
 </span>
 </div>
+=======
+>>>>>>> b6b1a702f7b458ad0255af4ef48efaf9e65a8ba5
 </div>
 <div id="tab1" class="tab">
 <h2>Tests</h2>
@@ -2989,6 +3060,7 @@ Caused by: java.lang.IndexOutOfBoundsException: Index -1 out of bounds for lengt
 <tr>
 <td class="failures">testExample1()</td>
 <td class="failures">testExample1()</td>
+<<<<<<< HEAD
 <td class="failures">0.014s</td>
 <td class="failures">failed</td>
 </tr>
@@ -2997,6 +3069,16 @@ Caused by: java.lang.IndexOutOfBoundsException: Index -1 out of bounds for lengt
 <td class="failures">testExample2()</td>
 <td class="failures">0.002s</td>
 <td class="failures">failed</td>
+=======
+<td class="failures">0.023s</td>
+<td class="failures">failed</td>
+</tr>
+<tr>
+<td class="success">testExample2()</td>
+<td class="success">testExample2()</td>
+<td class="success">0.002s</td>
+<td class="success">passed</td>
+>>>>>>> b6b1a702f7b458ad0255af4ef48efaf9e65a8ba5
 </tr>
 <tr>
 <td class="failures">testExample3()</td>
@@ -3005,6 +3087,7 @@ Caused by: java.lang.IndexOutOfBoundsException: Index -1 out of bounds for lengt
 <td class="failures">failed</td>
 </tr>
 <tr>
+<<<<<<< HEAD
 <td class="failures">[1] Alphanumeric, (print abc123), [(print abc123)]</td>
 <td class="failures">testIdentifier(String, String, List)[1]</td>
 <td class="failures">0.001s</td>
@@ -3039,6 +3122,42 @@ Caused by: java.lang.IndexOutOfBoundsException: Index -1 out of bounds for lengt
 <td class="failures">testNumber(String, String, List)[3]</td>
 <td class="failures">0.002s</td>
 <td class="failures">failed</td>
+=======
+<td class="success">[1] Alphanumeric, (print abc123), [(print abc123)]</td>
+<td class="success">testIdentifier(String, String, List)[1]</td>
+<td class="success">0s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">[2] Symbols, (print &lt;=&gt;), [(print &lt;=&gt;)]</td>
+<td class="success">testIdentifier(String, String, List)[2]</td>
+<td class="success">0s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testInvalidCharacter()</td>
+<td class="success">testInvalidCharacter()</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">[1] Decimal, (print 1.5), [(print 1.5)]</td>
+<td class="success">testNumber(String, String, List)[1]</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">[2] Signed, (print -2), [(print -2)]</td>
+<td class="success">testNumber(String, String, List)[2]</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">[3] Precision, (print 123456789123456789.123456789123456789), [(print 123456789123456789.123456789123456789)]</td>
+<td class="success">testNumber(String, String, List)[3]</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+>>>>>>> b6b1a702f7b458ad0255af4ef48efaf9e65a8ba5
 </tr>
 <tr>
 <td class="success">[1] Empty, , []</td>
@@ -3047,6 +3166,7 @@ Caused by: java.lang.IndexOutOfBoundsException: Index -1 out of bounds for lengt
 <td class="success">passed</td>
 </tr>
 <tr>
+<<<<<<< HEAD
 <td class="failures">[2] Single, (print x), [(print x)]</td>
 <td class="failures">testSource(String, String, List)[2]</td>
 <td class="failures">0.001s</td>
@@ -3071,6 +3191,32 @@ Caused by: java.lang.IndexOutOfBoundsException: Index -1 out of bounds for lengt
 <td class="failures">testString(String, String, List)[2]</td>
 <td class="failures">0.002s</td>
 <td class="failures">failed</td>
+=======
+<td class="success">[2] Single, (print x), [(print x)]</td>
+<td class="success">testSource(String, String, List)[2]</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">[3] Multiple, (print x)
+(print y)
+(print z), [(print x), (print y), (print z)]</td>
+<td class="success">testSource(String, String, List)[3]</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">[1] Empty, (print &quot;&quot;), [(print &quot;&quot;)]</td>
+<td class="success">testString(String, String, List)[1]</td>
+<td class="success">0s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">[2] Alphanumeric, (print &quot;abc123&quot;), [(print &quot;abc123&quot;)]</td>
+<td class="success">testString(String, String, List)[2]</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+>>>>>>> b6b1a702f7b458ad0255af4ef48efaf9e65a8ba5
 </tr>
 <tr>
 <td class="failures">[3] Escape, (print &quot;new\nline&quot;), [(print &quot;new
@@ -3080,6 +3226,7 @@ line&quot;)]</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
+<<<<<<< HEAD
 <td class="failures">[1] Empty Args, (print), [(print )]</td>
 <td class="failures">testTerm(String, String, List)[1]</td>
 <td class="failures">0.014s</td>
@@ -3090,6 +3237,18 @@ line&quot;)]</td>
 <td class="failures">testTerm(String, String, List)[2]</td>
 <td class="failures">0.002s</td>
 <td class="failures">failed</td>
+=======
+<td class="success">[1] Empty Args, (print), [(print )]</td>
+<td class="success">testTerm(String, String, List)[1]</td>
+<td class="success">0.011s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">[2] Single Arg, (print x), [(print x)]</td>
+<td class="success">testTerm(String, String, List)[2]</td>
+<td class="success">0s</td>
+<td class="success">passed</td>
+>>>>>>> b6b1a702f7b458ad0255af4ef48efaf9e65a8ba5
 </tr>
 <tr>
 <td class="failures">[3] Multiple Args, (print x y z), [(print x y z)]</td>
@@ -3098,6 +3257,7 @@ line&quot;)]</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
+<<<<<<< HEAD
 <td class="failures">[4] Nested, (print (f x)), [(print (f x))]</td>
 <td class="failures">testTerm(String, String, List)[4]</td>
 <td class="failures">0.002s</td>
@@ -3108,8 +3268,85 @@ line&quot;)]</td>
 <td class="failures">testTerm(String, String, List)[5]</td>
 <td class="failures">0.004s</td>
 <td class="failures">failed</td>
+=======
+<td class="success">[4] Nested, (print (f x)), [(print (f x))]</td>
+<td class="success">testTerm(String, String, List)[4]</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">[5] Missing Identifier, (), null</td>
+<td class="success">testTerm(String, String, List)[5]</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+>>>>>>> b6b1a702f7b458ad0255af4ef48efaf9e65a8ba5
 </tr>
 </table>
+</div>
+<div id="tab2" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>Operator
++
+Number
+Operator
+print
+String
+Operator
+let
+Operator
+Operator
+print
+Operator
+print
+Identifier
+Operator
+print
+Identifier
+Operator
+print
+Operator
+f
+Identifier
+Operator
+Operator
+print
+Operator
+Operator
+print
+Number
+Operator
+print
+Number
+Operator
+print
+Number
+Operator
+print
+Identifier
+Operator
+print
+Identifier
+Operator
+print
+Identifier
+Operator
+print
+Identifier
+Operator
+print
+String
+Operator
+print
+String
+Operator
+print
+Identifier
+Operator
+print
+Identifier
+</pre>
+</span>
 </div>
 </div>
 <div id="footer">
@@ -3119,7 +3356,11 @@ line&quot;)]</td>
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
+<<<<<<< HEAD
 <a href="http://www.gradle.org">Gradle 6.6</a> at Oct 6, 2020, 10:16:11 AM</p>
+=======
+<a href="http://www.gradle.org">Gradle 6.6</a> at Oct 6, 2020, 12:01:55 AM</p>
+>>>>>>> b6b1a702f7b458ad0255af4ef48efaf9e65a8ba5
 </div>
 </div>
 </body>
