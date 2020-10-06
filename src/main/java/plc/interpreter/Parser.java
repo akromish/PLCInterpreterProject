@@ -108,7 +108,7 @@ public final class Parser {
         if (!match("(") && !match('[')) {
             throw new ParseException("Expected opening parentheses or square bracket", tokens.index);
         }
-        if (!peek(Token.Type.IDENTIFIER)) {
+        if (!match(Token.Type.IDENTIFIER)) {
             throw new ParseException("Expected an identifier.", tokens.index);
         }
         String name = tokens.get(-1).getLiteral();
@@ -135,7 +135,7 @@ public final class Parser {
         if (!match(Token.Type.NUMBER)) {
             throw new ParseException("Expected Number", tokens.index);
             }
-        return new Ast.NumberLiteral(new BigDecimal(tokens.get(0).getLiteral()));
+        return new Ast.NumberLiteral(new BigDecimal(tokens.get(-1).getLiteral()));
 
     }
 
@@ -143,7 +143,7 @@ public final class Parser {
         if(!match(Token.Type.STRING)) {
             throw new ParseException("Expected String", tokens.index);
         } // add more tests
-        return new Ast.StringLiteral(tokens.get(0).getLiteral().replaceAll("\"",""));
+        return new Ast.StringLiteral(tokens.get(-1).getLiteral().replaceAll("\"",""));
     }
 
     /**
