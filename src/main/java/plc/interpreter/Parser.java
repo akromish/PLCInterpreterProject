@@ -39,11 +39,11 @@ public final class Parser {
      * {@link Ast.Term} with the identifier {@code "source"}.
      */
     private Ast parse() {
-        List<Ast> hi= new ArrayList<Ast>();
+        List<Ast> astList= new ArrayList<Ast>();
         while(tokens.has(0)) {
-            hi.add(parseAst());
+            astList.add(parseAst());
         }
-        return new Ast.Term("source", hi);
+        return new Ast.Term("source", astList);
     }
 
     /**
@@ -85,6 +85,7 @@ public final class Parser {
      */
     private Ast parseAst() {
         if(match(Token.Type.IDENTIFIER)) {
+
             return parseIdentifier();
         }
         else if(match(Token.Type.STRING)) {
@@ -104,14 +105,15 @@ public final class Parser {
         return new Ast.Term(name, args);
     }
 
-    private Ast.Identifier parseIdentifier() {
+    private Ast.Identifier parseIdentifier() { // try
 
         return new Ast.Identifier(tokens.get(-1).getLiteral());
     }
 
     private Ast.NumberLiteral parseNumberLiteral() {
 
-        return new Ast.NumberLiteral();
+        //return new Ast.NumberLiteral();
+        throw new UnsupportedOperationException();
     }
 
     private Ast.StringLiteral parseStringLiteral() {
