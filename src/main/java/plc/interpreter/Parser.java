@@ -127,7 +127,7 @@ public final class Parser {
         if (!match(Token.Type.IDENTIFIER)) {
             throw new ParseException("Expected Identifier.", tokens.index);
         }
-        return new Ast.Identifier(tokens.get(0).getLiteral());
+        return new Ast.Identifier(tokens.get(-1).getLiteral());
 
     }
 

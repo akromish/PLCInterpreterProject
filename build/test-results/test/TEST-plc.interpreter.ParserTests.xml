@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="plc.interpreter.ParserTests" tests="1" skipped="0" failures="1" errors="0" timestamp="2020-10-06T19:51:08" hostname="AKRAM" time="0.032">
+<testsuite name="plc.interpreter.ParserTests" tests="1" skipped="0" failures="1" errors="0" timestamp="2020-10-06T19:55:39" hostname="AKRAM" time="0.027">
   <properties/>
-  <testcase name="[1] Alphanumeric, (print abc123), [(print abc123)]" classname="plc.interpreter.ParserTests" time="0.032">
-    <failure message="org.opentest4j.AssertionFailedError: expected: &lt;(source (print abc123))&gt; but was: &lt;(source (( abc123 )))&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;(source (print abc123))&gt; but was: &lt;(source (( abc123 )))&gt;
+  <testcase name="[1] Alphanumeric, (print abc123), [(print abc123)]" classname="plc.interpreter.ParserTests" time="0.027">
+    <failure message="org.opentest4j.AssertionFailedError: expected: &lt;(source (print abc123))&gt; but was: &lt;(source (( print abc123))&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;(source (print abc123))&gt; but was: &lt;(source (( print abc123))&gt;
 	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
 	at org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
 	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
