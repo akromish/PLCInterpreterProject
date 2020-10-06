@@ -131,12 +131,11 @@ public final class Lexer {
         // need exception error?
     }
 
+    //needs to be able to read all chars, not just listed
     private Token lexString() throws ParseException {
         match("\"");
 
-//        while (match("[^\"\\\\]|\\\\[bnrt'\"\\\\A-Za-z]")) ;
-
-        while (match("[A-Za-z]") || match("[\\]","[bnrt]"))
+        while (match("[A-Za-z,._;/!@#$%^&()~` ]") || match("[\\\\]","[bnrt]")) ;
 
         if (!match("\"")) {
             throw new ParseException("no terminating end quote", chars.index);

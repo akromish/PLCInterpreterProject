@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="plc.interpreter.LexerTests" tests="5" skipped="0" failures="1" errors="0" timestamp="2020-10-06T17:22:14" hostname="AKRAM" time="0.03">
+<testsuite name="plc.interpreter.LexerTests" tests="5" skipped="0" failures="1" errors="0" timestamp="2020-10-06T17:42:33" hostname="AKRAM" time="0.035">
   <properties/>
-  <testcase name="[1] &quot;&quot;, true" classname="plc.interpreter.LexerTests" time="0.021"/>
-  <testcase name="[2] &quot;abc&quot;, true" classname="plc.interpreter.LexerTests" time="0.001"/>
-  <testcase name="[3] &quot;Hello,\nWorld&quot;, true" classname="plc.interpreter.LexerTests" time="0.001">
+  <testcase name="[1] &quot;&quot;, true" classname="plc.interpreter.LexerTests" time="0.022">
     <failure message="plc.interpreter.ParseException: no terminating end quote" type="plc.interpreter.ParseException">plc.interpreter.ParseException: no terminating end quote
-	at plc.interpreter.Lexer.lexString(Lexer.java:142)
+	at plc.interpreter.Lexer.lexString(Lexer.java:141)
 	at plc.interpreter.Lexer.lexToken(Lexer.java:102)
 	at plc.interpreter.Lexer.lex(Lexer.java:47)
 	at plc.interpreter.Lexer.lex(Lexer.java:33)
@@ -157,6 +155,8 @@
 	at java.base/java.lang.Thread.run(Thread.java:832)
 </failure>
   </testcase>
+  <testcase name="[2] &quot;abc&quot;, true" classname="plc.interpreter.LexerTests" time="0.004"/>
+  <testcase name="[3] &quot;Hello,\nWorld&quot;, true" classname="plc.interpreter.LexerTests" time="0.002"/>
   <testcase name="[4] &quot;unterminated, false" classname="plc.interpreter.LexerTests" time="0.002"/>
   <testcase name="[5] &quot;invalid\escape&quot;, false" classname="plc.interpreter.LexerTests" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
