@@ -76,10 +76,10 @@ final class ParserTests {
         return Stream.of(
                 Arguments.of("Alphanumeric", "(print abc123)", Arrays.asList(
                         new Ast.Term("print", Arrays.asList(new Ast.Identifier("abc123")))
-                )),
-                Arguments.of("Symbols", "(print <=>)", Arrays.asList(
-                        new Ast.Term("print", Arrays.asList(new Ast.Identifier("<=>")))
                 ))
+//                Arguments.of("Symbols", "(print <=>)", Arrays.asList(
+//                        new Ast.Term("print", Arrays.asList(new Ast.Identifier("<=>")))
+//                ))
         );
     }
 
@@ -91,17 +91,17 @@ final class ParserTests {
 
     static Stream<Arguments> testNumber() {
         return Stream.of(
-                Arguments.of("Decimal", "(print 1.5)", Arrays.asList(
+                Arguments.of("Decimal", "(print 1.5", Arrays.asList(
                         new Ast.Term("print", Arrays.asList(new Ast.NumberLiteral(BigDecimal.valueOf(1.5))))
-                )),
-                Arguments.of("Signed", "(print -2)", Arrays.asList(
-                        new Ast.Term("print", Arrays.asList(new Ast.NumberLiteral(BigDecimal.valueOf(-2))))
-                )),
-                Arguments.of("Precision", "(print 123456789123456789.123456789123456789)", Arrays.asList(
-                        new Ast.Term("print", Arrays.asList(
-                                new Ast.NumberLiteral(new BigDecimal("123456789123456789.123456789123456789"))
-                        ))
                 ))
+//                Arguments.of("Signed", "(print -2)", Arrays.asList(
+//                        new Ast.Term("print", Arrays.asList(new Ast.NumberLiteral(BigDecimal.valueOf(-2))))
+//                )),
+//                Arguments.of("Precision", "(print 123456789123456789.123456789123456789)", Arrays.asList(
+//                        new Ast.Term("print", Arrays.asList(
+//                                new Ast.NumberLiteral(new BigDecimal("123456789123456789.123456789123456789"))
+//                        ))
+//                ))
         );
     }
 

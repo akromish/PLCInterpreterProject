@@ -84,7 +84,7 @@ public final class Parser {
      * </pre>
      */
     private Ast parseAst() {
-        System.out.println(tokens.get(0).getLiteral());
+//        System.out.println(tokens.get(-1).getLiteral());
         if(peek(Token.Type.NUMBER)) {
             System.out.println("Number");
             return parseNumberLiteral();
@@ -97,12 +97,11 @@ public final class Parser {
             System.out.println("String");
             return parseStringLiteral();
         }
-        else if(peek(Token.Type.OPERATOR)) {
+        else {
                 System.out.println("Operator");
                 return parseTerm();
 
         }
-        return null;
     }
 
     private Ast.Term parseTerm() {
@@ -115,7 +114,8 @@ public final class Parser {
         String name = tokens.get(-1).getLiteral();
        // System.out.println(name);
         List<Ast> args = new ArrayList<>();
-        while (!match(")") && !match("]")) {
+        while (!peek(")") && !peek("]")) { //error
+            while (match(")") || match("]")) ;
             args.add(parseAst());
         }
         if (!match(")") && !match("]")) {
@@ -160,7 +160,7 @@ public final class Parser {
     private boolean peek(Object... patterns) {
         for (int i = 0; i < patterns.length; i++) {
             if (patterns[i] instanceof Token.Type) {
-                if(!tokens.has(i) || tokens.get(i).getType() != (Token.Type)patterns[i]) {
+                if(!tokens.has(i) || tokens.get(i).getType() != patterns[i]) {
                     return false;
                 }
             }
