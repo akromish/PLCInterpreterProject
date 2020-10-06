@@ -134,9 +134,10 @@ public final class Lexer {
     //needs to be able to read all chars, not just listed
     private Token lexString() throws ParseException {
         match("\"");
-
+        if(chars.input.length()==2){ // find better soln
+            return chars.emit(Token.Type.STRING);
+        }
         while (match("[A-Za-z,._;/!@#$%^&()~` ]") || match("[\\\\]","[bnrt]")) ;
-
         if (!match("\"")) {
             throw new ParseException("no terminating end quote", chars.index);
         }
