@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="plc.interpreter.ParserTests" tests="22" skipped="0" failures="1" errors="0" timestamp="2020-10-06T20:46:45" hostname="AKRAM" time="0.09">
+<testsuite name="plc.interpreter.ParserTests" tests="22" skipped="0" failures="1" errors="0" timestamp="2020-10-06T22:02:34" hostname="AKRAM" time="0.086">
   <properties/>
-  <testcase name="testExample1()" classname="plc.interpreter.ParserTests" time="0.019"/>
-  <testcase name="testExample2()" classname="plc.interpreter.ParserTests" time="0.002"/>
-  <testcase name="testExample3()" classname="plc.interpreter.ParserTests" time="0.002"/>
+  <testcase name="testExample1()" classname="plc.interpreter.ParserTests" time="0.016"/>
+  <testcase name="testExample2()" classname="plc.interpreter.ParserTests" time="0.001"/>
+  <testcase name="testExample3()" classname="plc.interpreter.ParserTests" time="0.001"/>
   <testcase name="[1] Empty Args, (print), [(print )]" classname="plc.interpreter.ParserTests" time="0.013"/>
-  <testcase name="[2] Single Arg, (print x), [(print x)]" classname="plc.interpreter.ParserTests" time="0.0"/>
-  <testcase name="[3] Multiple Args, (print x y z), [(print x y z)]" classname="plc.interpreter.ParserTests" time="0.002"/>
+  <testcase name="[2] Single Arg, (print x), [(print x)]" classname="plc.interpreter.ParserTests" time="0.001"/>
+  <testcase name="[3] Multiple Args, (print x y z), [(print x y z)]" classname="plc.interpreter.ParserTests" time="0.001"/>
   <testcase name="[4] Nested, (print (f x)), [(print (f x))]" classname="plc.interpreter.ParserTests" time="0.001"/>
   <testcase name="[5] Missing Identifier, (), null" classname="plc.interpreter.ParserTests" time="0.001"/>
   <testcase name="testInvalidCharacter()" classname="plc.interpreter.ParserTests" time="0.0"/>
-  <testcase name="[1] Decimal, (print 1.5), [(print 1.5)]" classname="plc.interpreter.ParserTests" time="0.0"/>
+  <testcase name="[1] Decimal, (print 1.5), [(print 1.5)]" classname="plc.interpreter.ParserTests" time="0.001"/>
   <testcase name="[2] Signed, (print -2), [(print -2)]" classname="plc.interpreter.ParserTests" time="0.001"/>
   <testcase name="[3] Precision, (print 123456789123456789.123456789123456789), [(print 123456789123456789.123456789123456789)]" classname="plc.interpreter.ParserTests" time="0.001"/>
-  <testcase name="[1] Empty, , []" classname="plc.interpreter.ParserTests" time="0.0"/>
-  <testcase name="[2] Single, (print x), [(print x)]" classname="plc.interpreter.ParserTests" time="0.0"/>
-  <testcase name="[3] Multiple, (print x)&#10;(print y)&#10;(print z), [(print x), (print y), (print z)]" classname="plc.interpreter.ParserTests" time="0.002"/>
+  <testcase name="[1] Empty, , []" classname="plc.interpreter.ParserTests" time="0.001"/>
+  <testcase name="[2] Single, (print x), [(print x)]" classname="plc.interpreter.ParserTests" time="0.001"/>
+  <testcase name="[3] Multiple, (print x)&#10;(print y)&#10;(print z), [(print x), (print y), (print z)]" classname="plc.interpreter.ParserTests" time="0.001"/>
   <testcase name="[1] Empty, (print &quot;&quot;), [(print &quot;&quot;)]" classname="plc.interpreter.ParserTests" time="0.001">
     <failure message="plc.interpreter.ParseException: no terminating end quote" type="plc.interpreter.ParseException">plc.interpreter.ParseException: no terminating end quote
 	at plc.interpreter.Lexer.lexString(Lexer.java:142)
@@ -173,61 +173,11 @@
 </failure>
   </testcase>
   <testcase name="[2] Alphanumeric, (print &quot;abc123&quot;), [(print &quot;abc123&quot;)]" classname="plc.interpreter.ParserTests" time="0.001"/>
-  <testcase name="[3] Escape, (print &quot;new\nline&quot;), [(print &quot;new&#10;line&quot;)]" classname="plc.interpreter.ParserTests" time="0.001"/>
-  <testcase name="[4] Escape, (print &quot;new\bline&quot;), [(print &quot;new?line&quot;)]" classname="plc.interpreter.ParserTests" time="0.001"/>
+  <testcase name="[3] Escape, (print &quot;new\nline&quot;), [(print &quot;new&#10;line&quot;)]" classname="plc.interpreter.ParserTests" time="0.0"/>
+  <testcase name="[4] Escape, (print &quot;new\bline&quot;), [(print &quot;new?line&quot;)]" classname="plc.interpreter.ParserTests" time="0.0"/>
   <testcase name="[5] Escape, (print &quot;new\rline&quot;), [(print &quot;new&#13;line&quot;)]" classname="plc.interpreter.ParserTests" time="0.0"/>
   <testcase name="[1] Alphanumeric, (print abc123), [(print abc123)]" classname="plc.interpreter.ParserTests" time="0.001"/>
   <testcase name="[2] Symbols, (print &lt;=&gt;), [(print &lt;=&gt;)]" classname="plc.interpreter.ParserTests" time="0.001"/>
-  <system-out><![CDATA[Operator
-Number
-Number
-Operator
-String
-Operator
-Operator
-Number
-Operator
-Identifier
-Number
-Operator
-Operator
-Identifier
-Operator
-Identifier
-Identifier
-Identifier
-Operator
-Operator
-Identifier
-Operator
-Operator
-Operator
-Operator
-Number
-Operator
-Number
-Operator
-Number
-Operator
-Identifier
-Operator
-Identifier
-Operator
-Identifier
-Operator
-Identifier
-Operator
-String
-Operator
-String
-Operator
-String
-Operator
-String
-Operator
-Identifier
-Operator
-Identifier
-]]></system-out>
+  <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

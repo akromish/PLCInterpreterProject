@@ -86,19 +86,15 @@ public final class Parser {
     private Ast parseAst() {
 //        System.out.println(tokens.get(-1).getLiteral());
         if(peek(Token.Type.NUMBER)) {
-            System.out.println("Number");
             return parseNumberLiteral();
         }
         else if(peek(Token.Type.IDENTIFIER)) {
-            System.out.println("Identifier");
             return parseIdentifier();
         }
         else if(peek(Token.Type.STRING)) {
-            System.out.println("String");
             return parseStringLiteral();
         }
         else {
-                System.out.println("Operator");
                 return parseTerm();
 
         }
@@ -112,7 +108,6 @@ public final class Parser {
             throw new ParseException("Expected an identifier.", tokens.index);
         }
         String name = tokens.get(-1).getLiteral();
-       // System.out.println(name);
         List<Ast> args = new ArrayList<>();
         while (!peek(")") && !peek("]")) {
             args.add(parseAst());
@@ -157,6 +152,12 @@ public final class Parser {
         while(lit.contains("\\t")){
             lit = lit.replace("\\t", "\t");
         }
+//        while(lit.contains("\\")){
+//            lit = lit.replace("\\", "\"");
+//        }
+//        while(lit.contains("\\'")){
+//            lit = lit.replace("\\'", "\'");
+//        }
         return new Ast.StringLiteral(lit);
     }
 
