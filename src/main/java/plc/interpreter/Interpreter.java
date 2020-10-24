@@ -185,7 +185,10 @@ public final class Interpreter {
 
         scope.define("range", (Function<List<Ast>, Object>) args -> {
             LinkedList<BigDecimal> range = new LinkedList<>();
-            if ((((BigDecimal)eval(args.get(0))).compareTo((BigDecimal)eval(args.get(1)))) == 0) {
+            if(args.size() == 0){
+                throw new EvalException("No arguments.");
+            }
+            else if ((((BigDecimal)eval(args.get(0))).compareTo((BigDecimal)eval(args.get(1)))) == 0) {
                    return range;
             }
             else if(((BigDecimal)(eval(args.get(0)))).stripTrailingZeros().scale() != 0 || ((BigDecimal)(eval(args.get(0)))).stripTrailingZeros().scale() != 0) {
@@ -195,8 +198,8 @@ public final class Interpreter {
                 throw new EvalException("Second argument less than first.");
             }
             else {
-                int small = (int)eval(args.get(0));
-                int big = (int)eval(args.get(1));
+                int small = (((BigDecimal)eval(args.get(0)))).intValue();
+                int big = (((BigDecimal)eval(args.get(1)))).intValue();
                 for(int i = small; i < big; i++) {
                     range.add(BigDecimal.valueOf(i));
                 }
