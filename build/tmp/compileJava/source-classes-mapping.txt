@@ -17,3 +17,10 @@ plc/interpreter/Lexer.java
 plc/interpreter/Parser.java
  plc.interpreter.Parser
  plc.interpreter.Parser$TokenStream
+plc/interpreter/EvalException.java
+ plc.interpreter.EvalException
+plc/interpreter/Scope.java
+ plc.interpreter.Scope
+plc/interpreter/Interpreter.java
+ plc.interpreter.Interpreter
+ plc.interpreter.Interpreter$1

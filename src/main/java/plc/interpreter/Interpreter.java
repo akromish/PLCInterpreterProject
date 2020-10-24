@@ -28,7 +28,7 @@ public final class Interpreter {
     public Interpreter(PrintWriter out, Scope scope) {
         this.out = out;
         this.scope = scope;
-        init(scope);
+        init();
     }
 
     /**
@@ -56,7 +56,8 @@ public final class Interpreter {
      * to the type {@code Function<List<Ast>, Object>}.
      */
     private Object eval(Ast.Term ast) {
-        throw new UnsupportedOperationException(); //TODO
+        return requireType(Function.class, scope.lookup(ast.getName())).apply(ast.getArgs());
+        //throw new UnsupportedOperationException(); //TODO
     }
 
     /**
@@ -64,28 +65,31 @@ public final class Interpreter {
      * identifier's name in the current scope.
      */
     private Object eval(Ast.Identifier ast) {
-        throw new UnsupportedOperationException(); //TODO
+        return scope.lookup(ast.getName());
+        //throw new UnsupportedOperationException(); //TODO
     }
 
     /**
      * Evaluates the NumberLiteral ast, which returns the stored number value.
      */
     private BigDecimal eval(Ast.NumberLiteral ast) {
-        throw new UnsupportedOperationException(); //TODO
+        return ast.getValue();
+        //throw new UnsupportedOperationException(); //TODO
     }
 
     /**
      * Evaluates the StringLiteral ast, which returns the stored string value.
      */
     private String eval(Ast.StringLiteral ast) {
-        throw new UnsupportedOperationException(); //TODO
+        return ast.getValue();
+        //throw new UnsupportedOperationException(); //TODO
     }
 
     /**
-     * Initializes the given scope with fields and functions in the standard
+     * Initializes the interpreter with fields and functions in the standard
      * library.
      */
-    private void init(Scope scope) {
+    private void init() {
         scope.define("print", (Function<List<Ast>, Object>) args -> {
             List<Object> evaluated = args.stream().map(this::eval).collect(Collectors.toList());
             evaluated.forEach(out::print);
