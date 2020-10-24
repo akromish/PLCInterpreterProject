@@ -111,6 +111,7 @@ public final class Interpreter {
                 return num;
             }
         });
+
         scope.define("+", (Function<List<Ast>, Object>) args -> {
             List<Object> evaluated = args.stream().map(this::eval).collect(Collectors.toList());
             BigDecimal result = BigDecimal.ZERO;
@@ -119,6 +120,28 @@ public final class Interpreter {
             }
             return result;
         });
+
+        scope.define("while", (Function<List<Ast>, Object>) args -> {
+            if ( args.size() != 2 ) {
+                throw new EvalException( "Expected 2 arguments, received " + args.size() + "." );
+            }
+            while ( requireType( Boolean.class, eval( args.get(0) ) ) ) {
+                eval( args.get(1) );
+            }
+            return VOID;
+        });
+
+        scope.define("do", (Function<List<Ast>, Object>) args -> {
+            scope = new Scope(scope);  // define the scope for the <current> do
+            // perform evals
+            List<Object> evaluated = args.stream().map(this::eval).collect(Collectors.toList());
+            // return to previous <parent> scope
+            scope = scope.getParent();
+            // return last evaluated argument or VOID
+            int temp = evaluated.size()-1;
+            return !evaluated.isEmpty() ? evaluated.get(temp) : VOID;
+        });
+
 
         //TODO: Additional standard library functions
     }
