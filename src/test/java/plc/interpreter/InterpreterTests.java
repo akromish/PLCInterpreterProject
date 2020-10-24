@@ -72,6 +72,26 @@ final class InterpreterTests {
         );
     }
 
+    @ParameterizedTest
+    @MethodSource
+    void testRange(String test, Ast ast, BigDecimal expected) {
+        test(ast, expected, Collections.emptyMap());
+    }
+
+    private static Stream<Arguments> testRange() {
+        return Stream.of(
+                Arguments.of("Zero Arguments", new Ast.Term("range", Arrays.asList()), null),
+                Arguments.of("Two Arguments Equal", new Ast.Term("range", Arrays.asList(
+                        new Ast.NumberLiteral(BigDecimal.ONE),
+                        new Ast.NumberLiteral(BigDecimal.ONE)
+                )), BigDecimal.valueOf(-1)),
+                Arguments.of("Multiple Arguments", new Ast.Term("range", Arrays.asList(
+                        new Ast.NumberLiteral(BigDecimal.ONE),
+                        new Ast.NumberLiteral(BigDecimal.valueOf(8))
+                )), BigDecimal.valueOf(-4))
+        );
+    }
+
     private static void test(Ast ast, Object expected, Map<String, Object> map) {
         Scope scope = new Scope(null);
         map.forEach(scope::define);

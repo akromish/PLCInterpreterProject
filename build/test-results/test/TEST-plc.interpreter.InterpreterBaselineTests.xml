@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="plc.interpreter.InterpreterBaselineTests" tests="14" skipped="0" failures="5" errors="0" timestamp="2020-10-24T03:09:56" hostname="AKRAM" time="0.067">
+<testsuite name="plc.interpreter.InterpreterBaselineTests" tests="14" skipped="0" failures="5" errors="0" timestamp="2020-10-24T18:33:03" hostname="DESKTOP-EL2G3TJ" time="0.062">
   <properties/>
-  <testcase name="testSet()" classname="plc.interpreter.InterpreterBaselineTests" time="0.016">
+  <testcase name="testSet()" classname="plc.interpreter.InterpreterBaselineTests" time="0.013">
     <failure message="plc.interpreter.EvalException: The identifier set! is not defined." type="plc.interpreter.EvalException">plc.interpreter.EvalException: The identifier set! is not defined.
 	at plc.interpreter.Scope.lookup(Scope.java:43)
 	at plc.interpreter.Scope.lookup(Scope.java:41)
@@ -98,13 +98,13 @@
 	at java.base/java.lang.Thread.run(Thread.java:832)
 </failure>
   </testcase>
-  <testcase name="testTerm()" classname="plc.interpreter.InterpreterBaselineTests" time="0.005"/>
-  <testcase name="testScopeReuse()" classname="plc.interpreter.InterpreterBaselineTests" time="0.002"/>
-  <testcase name="[1] Zero Arguments, (do ), plc.interpreter.Interpreter$1@72db6fa5" classname="plc.interpreter.InterpreterBaselineTests" time="0.012"/>
-  <testcase name="[2] Multiple Arguments, (do &quot;string&quot; (+ 1 2 3)), 6" classname="plc.interpreter.InterpreterBaselineTests" time="0.0"/>
-  <testcase name="[1] Zero Arguments, (+ ), 0" classname="plc.interpreter.InterpreterBaselineTests" time="0.0"/>
+  <testcase name="testTerm()" classname="plc.interpreter.InterpreterBaselineTests" time="0.006"/>
+  <testcase name="testScopeReuse()" classname="plc.interpreter.InterpreterBaselineTests" time="0.003"/>
+  <testcase name="[1] Zero Arguments, (do ), plc.interpreter.Interpreter$1@6930298a" classname="plc.interpreter.InterpreterBaselineTests" time="0.012"/>
+  <testcase name="[2] Multiple Arguments, (do &quot;string&quot; (+ 1 2 3)), 6" classname="plc.interpreter.InterpreterBaselineTests" time="0.001"/>
+  <testcase name="[1] Zero Arguments, (+ ), 0" classname="plc.interpreter.InterpreterBaselineTests" time="0.001"/>
   <testcase name="[2] Multiple Arguments, (+ 1 2 3), 6" classname="plc.interpreter.InterpreterBaselineTests" time="0.0"/>
-  <testcase name="[1] True, true" classname="plc.interpreter.InterpreterBaselineTests" time="0.001">
+  <testcase name="[1] True, true" classname="plc.interpreter.InterpreterBaselineTests" time="0.0">
     <failure message="plc.interpreter.EvalException: The identifier true is not defined." type="plc.interpreter.EvalException">plc.interpreter.EvalException: The identifier true is not defined.
 	at plc.interpreter.Scope.lookup(Scope.java:43)
 	at plc.interpreter.Interpreter.eval(Interpreter.java:68)
@@ -257,7 +257,7 @@
 	at java.base/java.lang.Thread.run(Thread.java:832)
 </failure>
   </testcase>
-  <testcase name="[2] False, false" classname="plc.interpreter.InterpreterBaselineTests" time="0.001">
+  <testcase name="[2] False, false" classname="plc.interpreter.InterpreterBaselineTests" time="0.0">
     <failure message="plc.interpreter.EvalException: The identifier false is not defined." type="plc.interpreter.EvalException">plc.interpreter.EvalException: The identifier false is not defined.
 	at plc.interpreter.Scope.lookup(Scope.java:43)
 	at plc.interpreter.Interpreter.eval(Interpreter.java:68)
@@ -520,7 +520,7 @@
 	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
 	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
 	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
-	at plc.interpreter.Interpreter.lambda$init$5(Interpreter.java:137)
+	at plc.interpreter.Interpreter.lambda$init$5(Interpreter.java:136)
 	at plc.interpreter.Interpreter.eval(Interpreter.java:59)
 	at plc.interpreter.Interpreter.eval(Interpreter.java:40)
 	at plc.interpreter.InterpreterBaselineTests.testDoScope(InterpreterBaselineTests.java:128)
@@ -614,7 +614,7 @@
 	at java.base/java.lang.Thread.run(Thread.java:832)
 </failure>
   </testcase>
-  <testcase name="testNumber()" classname="plc.interpreter.InterpreterBaselineTests" time="0.001"/>
+  <testcase name="testNumber()" classname="plc.interpreter.InterpreterBaselineTests" time="0.0"/>
   <testcase name="testString()" classname="plc.interpreter.InterpreterBaselineTests" time="0.0"/>
   <testcase name="testIdentifier()" classname="plc.interpreter.InterpreterBaselineTests" time="0.001"/>
   <system-out><![CDATA[Hello, World!

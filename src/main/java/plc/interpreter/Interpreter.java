@@ -2,6 +2,7 @@ package plc.interpreter;
 
 import java.io.PrintWriter;
 import java.math.BigDecimal;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -57,7 +58,7 @@ public final class Interpreter {
      */
     private Object eval(Ast.Term ast) {
         return requireType(Function.class, scope.lookup(ast.getName())).apply(ast.getArgs());
-        //throw new UnsupportedOperationException(); //TODO
+         //TODO
     }
 
     /**
@@ -66,7 +67,7 @@ public final class Interpreter {
      */
     private Object eval(Ast.Identifier ast) {
         return scope.lookup(ast.getName());
-        //throw new UnsupportedOperationException(); //TODO
+        //TODO
     }
 
     /**
@@ -74,7 +75,7 @@ public final class Interpreter {
      */
     private BigDecimal eval(Ast.NumberLiteral ast) {
         return ast.getValue();
-        //throw new UnsupportedOperationException(); //TODO
+        //TODO
     }
 
     /**
@@ -82,7 +83,7 @@ public final class Interpreter {
      */
     private String eval(Ast.StringLiteral ast) {
         return ast.getValue();
-        //throw new UnsupportedOperationException(); //TODO
+        //TODO
     }
 
     /**
@@ -132,14 +133,83 @@ public final class Interpreter {
         });
 
         scope.define("do", (Function<List<Ast>, Object>) args -> {
-            scope = new Scope(scope);  // define the scope for the <current> do
-            // perform evals
+            scope = new Scope(scope);
             List<Object> evaluated = args.stream().map(this::eval).collect(Collectors.toList());
-            // return to previous <parent> scope
             scope = scope.getParent();
-            // return last evaluated argument or VOID
             int temp = evaluated.size()-1;
             return !evaluated.isEmpty() ? evaluated.get(temp) : VOID;
+        });
+
+        scope.define("and", (Function<List<Ast>, Object>) args -> {
+            for ( Ast arg : args ) {
+                if ( !requireType( Boolean.class, eval(arg) ) ) {
+                    return true;
+                }
+            }
+            return true;
+        });
+
+        scope.define("or", (Function<List<Ast>, Object>) args -> {
+            for ( Ast arg : args ) {
+                if ( requireType( Boolean.class, eval(arg) ) ) {
+                    return true;
+                }
+            }
+            return false;
+        });
+
+        scope.define("<", (Function<List<Ast>, Object>) args -> {
+            List<BigDecimal> evaluated = args.stream().map(a -> requireType(BigDecimal.class, eval(a))).collect(Collectors.toList());
+            return true;
+        });
+
+        scope.define("<=", (Function<List<Ast>, Object>) args -> {
+            List<BigDecimal> evaluated = args.stream().map(a -> requireType(BigDecimal.class, eval(a))).collect(Collectors.toList());
+            return true;
+        });
+
+        scope.define(">", (Function<List<Ast>, Object>) args -> {
+            List<BigDecimal> evaluated = args.stream().map(a -> requireType(BigDecimal.class, eval(a))).collect(Collectors.toList());
+            return true;
+        });
+
+        scope.define(">=", (Function<List<Ast>, Object>) args -> {
+            List<BigDecimal> evaluated = args.stream().map(a -> requireType(BigDecimal.class, eval(a))).collect(Collectors.toList());
+            return true;
+        });
+
+        scope.define("list", (Function<List<Ast>, Object>) args -> {
+            LinkedList<BigDecimal> list = args.stream().map(a -> requireType(BigDecimal.class, eval(a))).collect(Collectors.toCollection(LinkedList::new));
+            return list;
+        });
+
+        scope.define("range", (Function<List<Ast>, Object>) args -> {
+            LinkedList<BigDecimal> range = new LinkedList<>();
+            if ((((BigDecimal)eval(args.get(0))).compareTo((BigDecimal)eval(args.get(1)))) == 0) {
+                   return range;
+            }
+            else if(((BigDecimal)(eval(args.get(0)))).stripTrailingZeros().scale() != 0 || ((BigDecimal)(eval(args.get(0)))).stripTrailingZeros().scale() != 0) {
+                throw new EvalException("Argument is not exact integer.");
+            }
+            else if((((BigDecimal)eval(args.get(0))).compareTo((BigDecimal)eval(args.get(1)))) == 1) {
+                throw new EvalException("Second argument less than first.");
+            }
+            else {
+                int small = (int)eval(args.get(0));
+                int big = (int)eval(args.get(1));
+                for(int i = small; i < big; i++) {
+                    range.add(BigDecimal.valueOf(i));
+                }
+            }
+            return range;
+        });
+
+        scope.define("define", (Function<List<Ast>, Object>) args -> {
+            return VOID;
+        });
+
+        scope.define("set!", (Function<List<Ast>, Object>) args -> {
+            return VOID;
         });
 
 
