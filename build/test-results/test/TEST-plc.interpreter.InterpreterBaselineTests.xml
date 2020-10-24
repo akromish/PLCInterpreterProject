@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="plc.interpreter.InterpreterBaselineTests" tests="14" skipped="0" failures="0" errors="0" timestamp="2020-10-24T23:32:38" hostname="LAPTOP-ABSEL6BP" time="0.111">
+  <properties/>
+  <testcase name="testSet()" classname="plc.interpreter.InterpreterBaselineTests" time="0.031"/>
+  <testcase name="testTerm()" classname="plc.interpreter.InterpreterBaselineTests" time="0.004"/>
+  <testcase name="testScopeReuse()" classname="plc.interpreter.InterpreterBaselineTests" time="0.001"/>
+  <testcase name="[1] Zero Arguments, (do ), plc.interpreter.Interpreter$1@eb0814" classname="plc.interpreter.InterpreterBaselineTests" time="0.022"/>
+  <testcase name="[2] Multiple Arguments, (do &quot;string&quot; (+ 1 2 3)), 6" classname="plc.interpreter.InterpreterBaselineTests" time="0.001"/>
+  <testcase name="[1] Zero Arguments, (+ ), 0" classname="plc.interpreter.InterpreterBaselineTests" time="0.001"/>
+  <testcase name="[2] Multiple Arguments, (+ 1 2 3), 6" classname="plc.interpreter.InterpreterBaselineTests" time="0.001"/>
+  <testcase name="[1] True, true" classname="plc.interpreter.InterpreterBaselineTests" time="0.001"/>
+  <testcase name="[2] False, false" classname="plc.interpreter.InterpreterBaselineTests" time="0.001"/>
+  <testcase name="testDefine()" classname="plc.interpreter.InterpreterBaselineTests" time="0.001"/>
+  <testcase name="testDoScope()" classname="plc.interpreter.InterpreterBaselineTests" time="0.001"/>
+  <testcase name="testNumber()" classname="plc.interpreter.InterpreterBaselineTests" time="0.001"/>
+  <testcase name="testString()" classname="plc.interpreter.InterpreterBaselineTests" time="0.001"/>
+  <testcase name="testIdentifier()" classname="plc.interpreter.InterpreterBaselineTests" time="0.001"/>
+  <system-out><![CDATA[Hello, World!
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

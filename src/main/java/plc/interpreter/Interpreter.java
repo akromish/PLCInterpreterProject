@@ -158,24 +158,116 @@ public final class Interpreter {
             return false;
         });
 
+        scope.define("true",true);
+
+        scope.define("false",false);
+
         scope.define("<", (Function<List<Ast>, Object>) args -> {
-            List<BigDecimal> evaluated = args.stream().map(a -> requireType(BigDecimal.class, eval(a))).collect(Collectors.toList());
-            return true;
+            if(args.size() == 0) {
+                return true;
+            }
+            try{
+                List<BigDecimal> evaluated = args.stream().map(a -> requireType(BigDecimal.class, eval(a))).collect(Collectors.toList());
+                for (int i = 0; i < evaluated.size()-1; i++) {
+                    if (((evaluated.get(i)).compareTo(evaluated.get(i+1))) > -1) {
+                        return false;
+                    }
+                }
+                return true;
+            } catch(Exception notNumber) {
+                try {
+                    List<String> evaluated = args.stream().map(a -> requireType(String.class, eval(a))).collect(Collectors.toList());
+                    for (int i = 0; i < evaluated.size()-1; i++) {
+                        if (((evaluated.get(i)).compareTo(evaluated.get(i+1))) > -1) {
+                            return false;
+                        }
+                    }
+                    return true;
+                } catch (Exception notComparable) {
+                    throw new EvalException("Arguments not comparable.");
+                }
+            }
         });
 
         scope.define("<=", (Function<List<Ast>, Object>) args -> {
-            List<BigDecimal> evaluated = args.stream().map(a -> requireType(BigDecimal.class, eval(a))).collect(Collectors.toList());
-            return true;
+            if(args.size() == 0) {
+                return true;
+            }
+            try{
+                List<BigDecimal> evaluated = args.stream().map(a -> requireType(BigDecimal.class, eval(a))).collect(Collectors.toList());
+                for (int i = 0; i < evaluated.size()-1; i++) {
+                    if (((evaluated.get(i)).compareTo(evaluated.get(i+1))) == 1) {
+                        return false;
+                    }
+                }
+                return true;
+            } catch(Exception notNumber) {
+                try {
+                    List<String> evaluated = args.stream().map(a -> requireType(String.class, eval(a))).collect(Collectors.toList());
+                    for (int i = 0; i < evaluated.size()-1; i++) {
+                        if (((evaluated.get(i)).compareTo(evaluated.get(i+1))) == 1) {
+                            return false;
+                        }
+                    }
+                    return true;
+                } catch (Exception notComparable) {
+                    throw new EvalException("Arguments not comparable.");
+                }
+            }
         });
 
         scope.define(">", (Function<List<Ast>, Object>) args -> {
-            List<BigDecimal> evaluated = args.stream().map(a -> requireType(BigDecimal.class, eval(a))).collect(Collectors.toList());
-            return true;
+            if(args.size() == 0) {
+                return true;
+            }
+            try{
+                List<BigDecimal> evaluated = args.stream().map(a -> requireType(BigDecimal.class, eval(a))).collect(Collectors.toList());
+                for (int i = 0; i < evaluated.size()-1; i++) {
+                    if (((evaluated.get(i)).compareTo(evaluated.get(i+1))) < 1) {
+                        return false;
+                    }
+                }
+                return true;
+            } catch(Exception notNumber) {
+                try {
+                    List<String> evaluated = args.stream().map(a -> requireType(String.class, eval(a))).collect(Collectors.toList());
+                    for (int i = 0; i < evaluated.size()-1; i++) {
+                        if (((evaluated.get(i)).compareTo(evaluated.get(i+1))) < 1) {
+                            return false;
+                        }
+                    }
+                    return true;
+                } catch (Exception notComparable) {
+                    throw new EvalException("Arguments not comparable.");
+                }
+            }
         });
 
         scope.define(">=", (Function<List<Ast>, Object>) args -> {
-            List<BigDecimal> evaluated = args.stream().map(a -> requireType(BigDecimal.class, eval(a))).collect(Collectors.toList());
-            return true;
+            if(args.size() == 0) {
+                return true;
+            }
+            try{
+                List<BigDecimal> evaluated = args.stream().map(a -> requireType(BigDecimal.class, eval(a))).collect(Collectors.toList());
+                for (int i = 0; i < evaluated.size()-1; i++) {
+                    if (((evaluated.get(i)).compareTo(evaluated.get(i+1))) == -1) {
+                        return false;
+                    }
+                }
+                return true;
+            } catch(Exception notNumber) {
+                try {
+                    List<String> evaluated = args.stream().map(a -> requireType(String.class, eval(a))).collect(Collectors.toList());
+                    for (int i = 0; i < evaluated.size()-1; i++) {
+                        if (((evaluated.get(i)).compareTo(evaluated.get(i+1))) == -1) {
+                            return false;
+                        }
+                    }
+                    return true;
+                } catch (Exception notComparable) {
+                    throw new EvalException("Arguments not comparable.");
+                }
+            }
         });
 
         scope.define("list", (Function<List<Ast>, Object>) args -> {
@@ -208,13 +300,21 @@ public final class Interpreter {
         });
 
         scope.define("define", (Function<List<Ast>, Object>) args -> {
+            if(args.size() == 0) {
+                throw new EvalException("No arguments.");
+            }
+            scope.define(args.get(0).toString(), eval(args.get(1)));
             return VOID;
         });
 
         scope.define("set!", (Function<List<Ast>, Object>) args -> {
+            scope.set(args.get(0).toString(), eval(args.get(1)));
             return VOID;
         });
 
+        scope.define("for", (Function<List<Ast>, Object>) args -> {
+            return VOID;
+        });
 
         //TODO: Additional standard library functions
     }

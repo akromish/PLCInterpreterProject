@@ -92,6 +92,157 @@ final class InterpreterTests {
         );
     }
 
+    @ParameterizedTest
+    @MethodSource
+    void testList(String test, Ast ast, BigDecimal expected) {
+        test(ast, expected, Collections.emptyMap());
+    }
+
+    private static Stream<Arguments> testList() {
+        return Stream.of(
+                Arguments.of("Zero Arguments", new Ast.Term("list", Arrays.asList()), BigDecimal.valueOf(1)),
+                Arguments.of("Multiple Arguments", new Ast.Term("list", Arrays.asList(
+                        new Ast.NumberLiteral(BigDecimal.ONE),
+                        new Ast.NumberLiteral(BigDecimal.valueOf(2)),
+                        new Ast.NumberLiteral(BigDecimal.valueOf(3))
+                )), BigDecimal.valueOf(1))
+        );
+    }
+
+    @ParameterizedTest
+    @MethodSource
+    void testLessThan(String test, Ast ast, boolean expected) {
+        test(ast, expected, Collections.emptyMap());
+    }
+
+    private static Stream<Arguments> testLessThan() {
+        return Stream.of(
+                Arguments.of("Zero Arguments", new Ast.Term("<", Arrays.asList()), true),
+                Arguments.of("String Arguments", new Ast.Term("<", Arrays.asList(
+                        new Ast.StringLiteral("a"),
+                        new Ast.StringLiteral("b"),
+                        new Ast.StringLiteral("c")
+                )), true),
+                Arguments.of("Number Arguments", new Ast.Term("<", Arrays.asList(
+                        new Ast.NumberLiteral(BigDecimal.valueOf(1)),
+                        new Ast.NumberLiteral(BigDecimal.valueOf(2)),
+                        new Ast.NumberLiteral(BigDecimal.valueOf(3))
+                )), true),
+                Arguments.of("Not strictly increasing", new Ast.Term("<", Arrays.asList(
+                        new Ast.NumberLiteral(BigDecimal.valueOf(4)),
+                        new Ast.NumberLiteral(BigDecimal.valueOf(3)),
+                        new Ast.NumberLiteral(BigDecimal.valueOf(2))
+                )), false),
+                Arguments.of("Incomparable Arguments", new Ast.Term("<", Arrays.asList(
+                        new Ast.NumberLiteral(BigDecimal.valueOf(1)),
+                        new Ast.StringLiteral("x"),
+                        new Ast.NumberLiteral(BigDecimal.valueOf(3))
+                )), false)
+        );
+    }
+
+    @ParameterizedTest
+    @MethodSource
+    void testLessThanOrEqual(String test, Ast ast, boolean expected) {
+        test(ast, expected, Collections.emptyMap());
+    }
+
+    private static Stream<Arguments> testLessThanOrEqual() {
+        return Stream.of(
+                Arguments.of("Zero Arguments", new Ast.Term("<=", Arrays.asList()), true),
+                Arguments.of("String Arguments", new Ast.Term("<=", Arrays.asList(
+                        new Ast.StringLiteral("a"),
+                        new Ast.StringLiteral("a"),
+                        new Ast.StringLiteral("b"),
+                        new Ast.StringLiteral("c")
+                )), true),
+                Arguments.of("Number Arguments", new Ast.Term("<=", Arrays.asList(
+                        new Ast.NumberLiteral(BigDecimal.valueOf(1)),
+                        new Ast.NumberLiteral(BigDecimal.valueOf(1)),
+                        new Ast.NumberLiteral(BigDecimal.valueOf(2)),
+                        new Ast.NumberLiteral(BigDecimal.valueOf(3))
+                )), true),
+                Arguments.of("Not strictly increasing", new Ast.Term("<=", Arrays.asList(
+                        new Ast.NumberLiteral(BigDecimal.valueOf(4)),
+                        new Ast.NumberLiteral(BigDecimal.valueOf(4)),
+                        new Ast.NumberLiteral(BigDecimal.valueOf(3)),
+                        new Ast.NumberLiteral(BigDecimal.valueOf(2))
+                )), false),
+                Arguments.of("Incomparable Arguments", new Ast.Term("<=", Arrays.asList(
+                        new Ast.NumberLiteral(BigDecimal.valueOf(1)),
+                        new Ast.StringLiteral("x"),
+                        new Ast.NumberLiteral(BigDecimal.valueOf(3))
+                )), false)
+        );
+    }
+
+    @ParameterizedTest
+    @MethodSource
+    void testGreaterThan(String test, Ast ast, boolean expected) {
+        test(ast, expected, Collections.emptyMap());
+    }
+
+    private static Stream<Arguments> testGreaterThan() {
+        return Stream.of(
+                Arguments.of("Zero Arguments", new Ast.Term(">", Arrays.asList()), true),
+                Arguments.of("String Arguments", new Ast.Term(">", Arrays.asList(
+                        new Ast.StringLiteral("c"),
+                        new Ast.StringLiteral("b"),
+                        new Ast.StringLiteral("a")
+                )), true),
+                Arguments.of("Number Arguments", new Ast.Term(">", Arrays.asList(
+                        new Ast.NumberLiteral(BigDecimal.valueOf(3)),
+                        new Ast.NumberLiteral(BigDecimal.valueOf(2)),
+                        new Ast.NumberLiteral(BigDecimal.valueOf(1))
+                )), true),
+                Arguments.of("Not strictly increasing", new Ast.Term(">", Arrays.asList(
+                        new Ast.NumberLiteral(BigDecimal.valueOf(2)),
+                        new Ast.NumberLiteral(BigDecimal.valueOf(3)),
+                        new Ast.NumberLiteral(BigDecimal.valueOf(4))
+                )), false),
+                Arguments.of("Incomparable Arguments", new Ast.Term(">", Arrays.asList(
+                        new Ast.NumberLiteral(BigDecimal.valueOf(1)),
+                        new Ast.StringLiteral("x"),
+                        new Ast.NumberLiteral(BigDecimal.valueOf(3))
+                )), false)
+        );
+    }
+
+    @ParameterizedTest
+    @MethodSource
+    void testGreaterThanOrEqual(String test, Ast ast, boolean expected) {
+        test(ast, expected, Collections.emptyMap());
+    }
+
+    private static Stream<Arguments> testGreaterThanOrEqual() {
+        return Stream.of(
+                Arguments.of("Zero Arguments", new Ast.Term(">=", Arrays.asList()), true),
+                Arguments.of("String Arguments", new Ast.Term(">=", Arrays.asList(
+                        new Ast.StringLiteral("c"),
+                        new Ast.StringLiteral("c"),
+                        new Ast.StringLiteral("b"),
+                        new Ast.StringLiteral("a")
+                )), true),
+                Arguments.of("Number Arguments", new Ast.Term(">=", Arrays.asList(
+                        new Ast.NumberLiteral(BigDecimal.valueOf(3)),
+                        new Ast.NumberLiteral(BigDecimal.valueOf(3)),
+                        new Ast.NumberLiteral(BigDecimal.valueOf(2)),
+                        new Ast.NumberLiteral(BigDecimal.valueOf(1))
+                )), true),
+                Arguments.of("Not strictly increasing", new Ast.Term(">=", Arrays.asList(
+                        new Ast.NumberLiteral(BigDecimal.valueOf(2)),
+                        new Ast.NumberLiteral(BigDecimal.valueOf(2)),
+                        new Ast.NumberLiteral(BigDecimal.valueOf(3)),
+                        new Ast.NumberLiteral(BigDecimal.valueOf(4))
+                )), false),
+                Arguments.of("Incomparable Arguments", new Ast.Term(">=", Arrays.asList(
+                        new Ast.NumberLiteral(BigDecimal.valueOf(1)),
+                        new Ast.StringLiteral("x"),
+                        new Ast.NumberLiteral(BigDecimal.valueOf(3))
+                )), false)
+        );
+    }
+
     private static void test(Ast ast, Object expected, Map<String, Object> map) {
         Scope scope = new Scope(null);
         map.forEach(scope::define);
