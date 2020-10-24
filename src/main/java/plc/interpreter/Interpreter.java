@@ -191,7 +191,7 @@ public final class Interpreter {
             else if ((((BigDecimal)eval(args.get(0))).compareTo((BigDecimal)eval(args.get(1)))) == 0) {
                    return range;
             }
-            else if(((BigDecimal)(eval(args.get(0)))).stripTrailingZeros().scale() != 0 || ((BigDecimal)(eval(args.get(0)))).stripTrailingZeros().scale() != 0) {
+            else if((((BigDecimal)(eval(args.get(0)))).stripTrailingZeros()).scale() > 0 || (((BigDecimal)(eval(args.get(1)))).stripTrailingZeros()).scale() > 0) {
                 throw new EvalException("Argument is not exact integer.");
             }
             else if((((BigDecimal)eval(args.get(0))).compareTo((BigDecimal)eval(args.get(1)))) == 1) {

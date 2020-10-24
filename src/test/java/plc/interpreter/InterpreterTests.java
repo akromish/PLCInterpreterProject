@@ -83,11 +83,11 @@ final class InterpreterTests {
                 Arguments.of("Zero Arguments", new Ast.Term("range", Arrays.asList()), null),
                 Arguments.of("Two Arguments Equal", new Ast.Term("range", Arrays.asList(
                         new Ast.NumberLiteral(BigDecimal.ONE),
-                        new Ast.NumberLiteral(BigDecimal.ONE)
+                        new Ast.NumberLiteral(BigDecimal.valueOf(1))
                 )), BigDecimal.valueOf(0)),
                 Arguments.of("Multiple Arguments", new Ast.Term("range", Arrays.asList(
                         new Ast.NumberLiteral(BigDecimal.ONE),
-                        new Ast.NumberLiteral(BigDecimal.valueOf(20.00))
+                        new Ast.NumberLiteral(BigDecimal.valueOf(20))
                 )), BigDecimal.valueOf(1))
         );
     }
