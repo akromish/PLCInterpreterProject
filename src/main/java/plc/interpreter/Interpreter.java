@@ -105,12 +105,21 @@ public final class Interpreter {
                 return evaluated.get(0).negate();
             } else {
                 BigDecimal num = evaluated.get(0);
-                for (int i = 0; i < evaluated.size(); i++) {
+                for (int i = 1; i < evaluated.size(); i++) {
                     num = num.subtract(evaluated.get(i));
                 }
                 return num;
             }
         });
+        scope.define("+", (Function<List<Ast>, Object>) args -> {
+            List<Object> evaluated = args.stream().map(this::eval).collect(Collectors.toList());
+            BigDecimal result = BigDecimal.ZERO;
+            for (Object obj : evaluated) {
+                result = result.add(requireType(BigDecimal.class, obj));
+            }
+            return result;
+        });
+
         //TODO: Additional standard library functions
     }
 
