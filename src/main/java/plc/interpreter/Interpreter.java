@@ -166,7 +166,7 @@ public final class Interpreter {
             if(args.size() == 0) {
                 return true;
             }
-            try{
+            if(args.stream().allMatch(i -> eval(i) instanceof BigDecimal)) {
                 List<BigDecimal> evaluated = args.stream().map(a -> requireType(BigDecimal.class, eval(a))).collect(Collectors.toList());
                 for (int i = 0; i < evaluated.size()-1; i++) {
                     if (((evaluated.get(i)).compareTo(evaluated.get(i+1))) > -1) {
@@ -174,18 +174,18 @@ public final class Interpreter {
                     }
                 }
                 return true;
-            } catch(Exception notNumber) {
-                try {
-                    List<String> evaluated = args.stream().map(a -> requireType(String.class, eval(a))).collect(Collectors.toList());
-                    for (int i = 0; i < evaluated.size()-1; i++) {
-                        if (((evaluated.get(i)).compareTo(evaluated.get(i+1))) > -1) {
-                            return false;
-                        }
+            }
+            else if(args.stream().allMatch(i -> eval(i) instanceof String)) {
+                List<String> evaluated = args.stream().map(a -> requireType(String.class, eval(a))).collect(Collectors.toList());
+                for (int i = 0; i < evaluated.size() - 1; i++) {
+                    if (((evaluated.get(i)).compareTo(evaluated.get(i + 1))) > -1) {
+                        return false;
                     }
-                    return true;
-                } catch (Exception notComparable) {
-                    throw new EvalException("Arguments not comparable.");
                 }
+                return true;
+            }
+            else {
+                throw new EvalException("Arguments not comparable.");
             }
         });
 
@@ -193,7 +193,7 @@ public final class Interpreter {
             if(args.size() == 0) {
                 return true;
             }
-            try{
+            if(args.stream().allMatch(i -> eval(i) instanceof BigDecimal)) {
                 List<BigDecimal> evaluated = args.stream().map(a -> requireType(BigDecimal.class, eval(a))).collect(Collectors.toList());
                 for (int i = 0; i < evaluated.size()-1; i++) {
                     if (((evaluated.get(i)).compareTo(evaluated.get(i+1))) == 1) {
@@ -201,18 +201,18 @@ public final class Interpreter {
                     }
                 }
                 return true;
-            } catch(Exception notNumber) {
-                try {
-                    List<String> evaluated = args.stream().map(a -> requireType(String.class, eval(a))).collect(Collectors.toList());
-                    for (int i = 0; i < evaluated.size()-1; i++) {
-                        if (((evaluated.get(i)).compareTo(evaluated.get(i+1))) == 1) {
-                            return false;
-                        }
+            }
+            else if(args.stream().allMatch(i -> eval(i) instanceof String)) git{
+                List<String> evaluated = args.stream().map(a -> requireType(String.class, eval(a))).collect(Collectors.toList());
+                for (int i = 0; i < evaluated.size() - 1; i++) {
+                    if (((evaluated.get(i)).compareTo(evaluated.get(i + 1))) == 1) {
+                        return false;
                     }
-                    return true;
-                } catch (Exception notComparable) {
-                    throw new EvalException("Arguments not comparable.");
                 }
+                return true;
+            }
+            else {
+                throw new EvalException("Arguments not comparable.");
             }
         });
 
@@ -220,7 +220,7 @@ public final class Interpreter {
             if(args.size() == 0) {
                 return true;
             }
-            try{
+            if(args.stream().allMatch(i -> eval(i) instanceof BigDecimal)) {
                 List<BigDecimal> evaluated = args.stream().map(a -> requireType(BigDecimal.class, eval(a))).collect(Collectors.toList());
                 for (int i = 0; i < evaluated.size()-1; i++) {
                     if (((evaluated.get(i)).compareTo(evaluated.get(i+1))) < 1) {
@@ -228,18 +228,18 @@ public final class Interpreter {
                     }
                 }
                 return true;
-            } catch(Exception notNumber) {
-                try {
-                    List<String> evaluated = args.stream().map(a -> requireType(String.class, eval(a))).collect(Collectors.toList());
-                    for (int i = 0; i < evaluated.size()-1; i++) {
-                        if (((evaluated.get(i)).compareTo(evaluated.get(i+1))) < 1) {
-                            return false;
-                        }
+            }
+            else if(args.stream().allMatch(i -> eval(i) instanceof String)) {
+                List<String> evaluated = args.stream().map(a -> requireType(String.class, eval(a))).collect(Collectors.toList());
+                for (int i = 0; i < evaluated.size() - 1; i++) {
+                    if (((evaluated.get(i)).compareTo(evaluated.get(i + 1))) < 1) {
+                        return false;
                     }
-                    return true;
-                } catch (Exception notComparable) {
-                    throw new EvalException("Arguments not comparable.");
                 }
+                return true;
+            }
+            else {
+                throw new EvalException("Arguments not comparable.");
             }
         });
 
@@ -247,7 +247,7 @@ public final class Interpreter {
             if(args.size() == 0) {
                 return true;
             }
-            try{
+            if(args.stream().allMatch(i -> eval(i) instanceof BigDecimal)) {
                 List<BigDecimal> evaluated = args.stream().map(a -> requireType(BigDecimal.class, eval(a))).collect(Collectors.toList());
                 for (int i = 0; i < evaluated.size()-1; i++) {
                     if (((evaluated.get(i)).compareTo(evaluated.get(i+1))) == -1) {
@@ -255,18 +255,18 @@ public final class Interpreter {
                     }
                 }
                 return true;
-            } catch(Exception notNumber) {
-                try {
-                    List<String> evaluated = args.stream().map(a -> requireType(String.class, eval(a))).collect(Collectors.toList());
-                    for (int i = 0; i < evaluated.size()-1; i++) {
-                        if (((evaluated.get(i)).compareTo(evaluated.get(i+1))) == -1) {
-                            return false;
-                        }
+            }
+            else if(args.stream().allMatch(i -> eval(i) instanceof String)) {
+                List<String> evaluated = args.stream().map(a -> requireType(String.class, eval(a))).collect(Collectors.toList());
+                for (int i = 0; i < evaluated.size() - 1; i++) {
+                    if (((evaluated.get(i)).compareTo(evaluated.get(i + 1))) == -1) {
+                        return false;
                     }
-                    return true;
-                } catch (Exception notComparable) {
-                    throw new EvalException("Arguments not comparable.");
                 }
+                return true;
+            }
+            else {
+                throw new EvalException("Arguments not comparable.");
             }
         });
 
