@@ -10,7 +10,6 @@ plc/interpreter/Regex.java
  plc.interpreter.Regex
 plc/interpreter/Lexer.java
  plc.interpreter.Lexer
- plc.interpreter.Lexer$1
  plc.interpreter.Lexer$CharStream
 plc/interpreter/EvalException.java
  plc.interpreter.EvalException
@@ -18,7 +17,6 @@ plc/interpreter/ParseException.java
  plc.interpreter.ParseException
 plc/interpreter/Parser.java
  plc.interpreter.Parser
- plc.interpreter.Parser$1
  plc.interpreter.Parser$TokenStream
 plc/interpreter/Token.java
  plc.interpreter.Token

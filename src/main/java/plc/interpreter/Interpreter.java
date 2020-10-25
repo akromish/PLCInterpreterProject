@@ -2,8 +2,10 @@ package plc.interpreter;
 
 import java.io.PrintWriter;
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Objects;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -58,7 +60,6 @@ public final class Interpreter {
      */
     private Object eval(Ast.Term ast) {
         return requireType(Function.class, scope.lookup(ast.getName())).apply(ast.getArgs());
-         //TODO
     }
 
     /**
@@ -67,7 +68,6 @@ public final class Interpreter {
      */
     private Object eval(Ast.Identifier ast) {
         return scope.lookup(ast.getName());
-        //TODO
     }
 
     /**
@@ -75,7 +75,6 @@ public final class Interpreter {
      */
     private BigDecimal eval(Ast.NumberLiteral ast) {
         return ast.getValue();
-        //TODO
     }
 
     /**
@@ -83,7 +82,6 @@ public final class Interpreter {
      */
     private String eval(Ast.StringLiteral ast) {
         return ast.getValue();
-        //TODO
     }
 
     /**
@@ -115,11 +113,50 @@ public final class Interpreter {
 
         scope.define("+", (Function<List<Ast>, Object>) args -> {
             List<Object> evaluated = args.stream().map(this::eval).collect(Collectors.toList());
-            BigDecimal result = BigDecimal.ZERO;
+            BigDecimal result = BigDecimal.ZERO; //auto zero
             for (Object obj : evaluated) {
                 result = result.add(requireType(BigDecimal.class, obj));
             }
             return result;
+        });
+
+        scope.define("*", (Function<List<Ast>, Object>) args -> {
+            List<Object> evaluated = args.stream().map(this::eval).collect(Collectors.toList());
+            BigDecimal result = BigDecimal.ONE; //auto one
+            for (Object obj : evaluated) {
+                result = result.multiply(requireType(BigDecimal.class, obj));
+            }
+            return result;
+        });
+
+        scope.define("/", (Function<List<Ast>, Object>) args -> {
+            List<BigDecimal> evaluated = args.stream().map(a -> requireType(BigDecimal.class, eval(a))).collect(Collectors.toList());
+            if(evaluated.isEmpty()){
+                throw new EvalException(("Arguments to / cannot be empty."));
+            }else if(evaluated.size() == 1){
+                return  BigDecimal.ZERO;
+            }else {
+                BigDecimal num = evaluated.get(0);
+                for (int i = 1; i < evaluated.size(); i++) {
+                    num = num.divide(evaluated.get(i),3, RoundingMode.HALF_EVEN);
+                }
+                return num;
+            }
+        });
+
+        scope.define("true",true);
+
+        scope.define("false",false);
+
+        scope.define("equals?", (Function<List<Ast>, Object>) args -> {
+            return Objects.deepEquals(args.get(0), args.get(1));
+        });
+
+        scope.define("not", (Function<List<Ast>, Object>) args -> {
+            if(args.isEmpty()){
+                throw new EvalException(("Arguments to not cannot be empty."));
+            }
+            return !requireType(Boolean.class, eval(args.get(0)));
         });
 
         scope.define("while", (Function<List<Ast>, Object>) args -> {
@@ -157,10 +194,6 @@ public final class Interpreter {
             }
             return false;
         });
-
-        scope.define("true",true);
-
-        scope.define("false",false);
 
         scope.define("<", (Function<List<Ast>, Object>) args -> {
             if(args.size() == 0) {

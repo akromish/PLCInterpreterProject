@@ -74,6 +74,112 @@ final class InterpreterTests {
 
     @ParameterizedTest
     @MethodSource
+    void testMultiplication(String test, Ast ast, BigDecimal expected) {
+        test(ast, expected, Collections.emptyMap());
+    }
+
+    private static Stream<Arguments> testMultiplication() {
+        return Stream.of(
+                Arguments.of("Zero Arguments", new Ast.Term("*", Arrays.asList()), BigDecimal.valueOf(1)),
+                Arguments.of("Multiple Arguments", new Ast.Term("*", Arrays.asList(
+                        new Ast.NumberLiteral(BigDecimal.ONE),
+                        new Ast.NumberLiteral(BigDecimal.valueOf(2)),
+                        new Ast.NumberLiteral(BigDecimal.valueOf(3))
+                )), BigDecimal.valueOf(6))
+        );
+    }
+
+    @ParameterizedTest
+    @MethodSource
+    void testDivision(String test, Ast ast, BigDecimal expected) {
+        test(ast, expected, Collections.emptyMap());
+    }
+
+    private static Stream<Arguments> testDivision() {
+        return Stream.of(
+                Arguments.of("Zero Arguments", new Ast.Term("/", Arrays.asList()), null),
+                Arguments.of("Multiple Arguments", new Ast.Term("/", Arrays.asList(
+                        new Ast.NumberLiteral(BigDecimal.valueOf(1.000)),
+                        new Ast.NumberLiteral(BigDecimal.valueOf(2)),
+                        new Ast.NumberLiteral(BigDecimal.valueOf(3))
+                )), BigDecimal.valueOf(0.167)),
+                Arguments.of("One Argument", new Ast.Term("/", Arrays.asList(
+                        new Ast.NumberLiteral(BigDecimal.valueOf(2))
+                )), BigDecimal.valueOf(0))
+        );
+    }
+
+    @ParameterizedTest
+    @MethodSource
+    void testTrue(String test, Ast ast, boolean expected) {
+        test(ast, expected, Collections.emptyMap());
+    }
+
+    private static Stream<Arguments> testTrue() {
+        return Stream.of(
+                Arguments.of("True Argument", new Ast.Term("true", Arrays.asList()), true)
+        );
+    }
+
+    @ParameterizedTest
+    @MethodSource
+    void testFalse(String test, Ast ast, boolean expected) {
+        test(ast, expected, Collections.emptyMap());
+    }
+
+    private static Stream<Arguments> testFalse() {
+        return Stream.of(
+                Arguments.of("False Argument", new Ast.Term("false", Arrays.asList()), false)
+        );
+    }
+
+    @ParameterizedTest
+    @MethodSource
+    void testEquals(String test, Ast ast, boolean expected) {
+        test(ast, expected, Collections.emptyMap());
+    }
+
+    private static Stream<Arguments> testEquals() {
+        return Stream.of(
+                Arguments.of("Variable Arguments", new Ast.Term("equals?", Arrays.asList(
+                        new Ast.StringLiteral("x"),
+                        new Ast.StringLiteral("y")
+                )), false),
+                Arguments.of("Number Arguments", new Ast.Term("equals?", Arrays.asList(
+                        new Ast.NumberLiteral(BigDecimal.valueOf(10)),
+                        new Ast.NumberLiteral(BigDecimal.valueOf(10))
+                )), true)
+        );
+    }
+
+    @ParameterizedTest
+    @MethodSource
+    void testNot(String test, Ast ast, boolean expected) {
+        test(ast, expected, Collections.emptyMap());
+    }
+
+    private static Stream<Arguments> testNot() {
+        return Stream.of(
+                Arguments.of("True Arguments", new Ast.Term("not", Arrays.asList(
+                        new Ast.StringLiteral("true")
+                )), false)
+        );
+    }
+
+    @ParameterizedTest
+    @MethodSource
+    void testAnd(String test, Ast ast, boolean expected) {
+        test(ast, expected, Collections.emptyMap());
+    }
+
+    private static Stream<Arguments> testAnd() {
+        return Stream.of(
+                Arguments.of("Zero Arguments", new Ast.Term("and", Arrays.asList()), null)
+        );
+    }
+
+    @ParameterizedTest
+    @MethodSource
     void testRange(String test, Ast ast, BigDecimal expected) {
         test(ast, expected, Collections.emptyMap());
     }
