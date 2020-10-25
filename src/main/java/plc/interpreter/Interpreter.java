@@ -202,7 +202,7 @@ public final class Interpreter {
                 }
                 return true;
             }
-            else if(args.stream().allMatch(i -> eval(i) instanceof String)) git{
+            else if(args.stream().allMatch(i -> eval(i) instanceof String)) {
                 List<String> evaluated = args.stream().map(a -> requireType(String.class, eval(a))).collect(Collectors.toList());
                 for (int i = 0; i < evaluated.size() - 1; i++) {
                     if (((evaluated.get(i)).compareTo(evaluated.get(i + 1))) == 1) {
