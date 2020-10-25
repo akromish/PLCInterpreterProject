@@ -309,7 +309,7 @@ public final class Interpreter {
         });
 
         scope.define("range", (Function<List<Ast>, Object>) args -> {
-            LinkedList<BigDecimal> range = new LinkedList<>();
+            LinkedList<Ast.NumberLiteral> range = new LinkedList<>();
             if(args.size() == 0){
                 throw new EvalException("No arguments.");
             }
@@ -326,7 +326,7 @@ public final class Interpreter {
                 int small = (((BigDecimal)eval(args.get(0)))).intValue();
                 int big = (((BigDecimal)eval(args.get(1)))).intValue();
                 for(int i = small; i < big; i++) {
-                    range.add(BigDecimal.valueOf(i));
+                    range.add(new Ast.NumberLiteral(((BigDecimal.valueOf(i)))));
                 }
             }
             return range;
@@ -346,6 +346,20 @@ public final class Interpreter {
         });
 
         scope.define("for", (Function<List<Ast>, Object>) args -> {
+            if ( args.size() != 2 ) {
+                throw new EvalException( "Expected 2 arguments, received " + args.size() + "." );
+            }
+            if(args.get(0) instanceof Ast.Term) {
+
+            }
+            scope = new Scope(scope);
+            LinkedList<Object> list = args.stream().map(a -> requireType(Object.class, eval(a))).collect(Collectors.toCollection(LinkedList::new));
+            Object iterator;
+            for(int i = 0; i < list.size(); i++) {
+                iterator = list.get(i);
+                eval(args.get(i+1));
+            }
+            scope = scope.getParent();
             return VOID;
         });
 

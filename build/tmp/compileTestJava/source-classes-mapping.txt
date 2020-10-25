@@ -4,7 +4,7 @@ plc/interpreter/ParserTests.java
  plc.interpreter.ParserTests
 plc/interpreter/LexerTests.java
  plc.interpreter.LexerTests
-plc/interpreter/InterpreterBaselineTests.java
- plc.interpreter.InterpreterBaselineTests
 plc/interpreter/InterpreterTests.java
  plc.interpreter.InterpreterTests
+plc/interpreter/InterpreterBaselineTests.java
+ plc.interpreter.InterpreterBaselineTests
