@@ -112,7 +112,7 @@ public final class Interpreter {
         });
 
         scope.define("+", (Function<List<Ast>, Object>) args -> {
-            List<Object> evaluated = args.stream().map(this::eval).collect(Collectors.toList());
+            List<BigDecimal> evaluated = args.stream().map(a -> requireType(BigDecimal.class, eval(a))).collect(Collectors.toList());
             BigDecimal result = BigDecimal.ZERO; //auto zero
             for (Object obj : evaluated) {
                 result = result.add(requireType(BigDecimal.class, obj));
@@ -134,7 +134,9 @@ public final class Interpreter {
             if(evaluated.isEmpty()){
                 throw new EvalException(("Arguments to / cannot be empty."));
             }else if(evaluated.size() == 1){
-                return  BigDecimal.ZERO;
+                BigDecimal num = BigDecimal.ONE;
+                num = num.divide(evaluated.get(0),3, RoundingMode.HALF_EVEN);
+                return num;
             }else {
                 BigDecimal num = evaluated.get(0);
                 for (int i = 1; i < evaluated.size(); i++) {
@@ -149,12 +151,21 @@ public final class Interpreter {
         scope.define("false",false);
 
         scope.define("equals?", (Function<List<Ast>, Object>) args -> {
+            if(args.isEmpty()){
+                System.out.println("0 arg");
+                throw new EvalException(("Arguments to not cannot be empty."));
+            }else if(args.size() == 1){
+                System.out.println("1 arg");
+                throw new EvalException(("Arguments to not cannot be 1."));
+            }
             return Objects.deepEquals(args.get(0), args.get(1));
         });
 
         scope.define("not", (Function<List<Ast>, Object>) args -> {
             if(args.isEmpty()){
                 throw new EvalException(("Arguments to not cannot be empty."));
+            }else if(args.size()>1){
+                throw new EvalException(("Arguments to not cannot be >1."));
             }
             return !requireType(Boolean.class, eval(args.get(0)));
         });
@@ -180,7 +191,7 @@ public final class Interpreter {
         scope.define("and", (Function<List<Ast>, Object>) args -> {
             for ( Ast arg : args ) {
                 if ( !requireType( Boolean.class, eval(arg) ) ) {
-                    return true;
+                    return false;
                 }
             }
             return true;
@@ -218,7 +229,7 @@ public final class Interpreter {
                 return true;
             }
             else {
-                throw new EvalException("Arguments not comparable.");
+                throw new ClassCastException("Arguments not comparable.");
             }
         });
 
@@ -245,7 +256,7 @@ public final class Interpreter {
                 return true;
             }
             else {
-                throw new EvalException("Arguments not comparable.");
+                throw new ClassCastException("Arguments not comparable.");
             }
         });
 
@@ -272,7 +283,7 @@ public final class Interpreter {
                 return true;
             }
             else {
-                throw new EvalException("Arguments not comparable.");
+                throw new ClassCastException("Arguments not comparable.");
             }
         });
 
@@ -299,7 +310,7 @@ public final class Interpreter {
                 return true;
             }
             else {
-                throw new EvalException("Arguments not comparable.");
+                throw new ClassCastException("Arguments not comparable.");
             }
         });
 
@@ -312,6 +323,10 @@ public final class Interpreter {
             LinkedList<Ast.NumberLiteral> range = new LinkedList<>();
             if(args.size() == 0){
                 throw new EvalException("No arguments.");
+            }else if(args.size() == 1){
+                throw new EvalException("not enough arguments.");
+            }else if(args.size() > 2){
+                throw new EvalException("too many arguments.");
             }
             else if ((((BigDecimal)eval(args.get(0))).compareTo((BigDecimal)eval(args.get(1)))) == 0) {
                    return range;
@@ -363,7 +378,6 @@ public final class Interpreter {
             return VOID;
         });
 
-        //TODO: Additional standard library functions
     }
 
     /**

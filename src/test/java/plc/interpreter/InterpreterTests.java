@@ -48,7 +48,15 @@ final class InterpreterTests {
                         new Ast.NumberLiteral(BigDecimal.ONE),
                         new Ast.NumberLiteral(BigDecimal.valueOf(2)),
                         new Ast.NumberLiteral(BigDecimal.valueOf(3))
-                )), BigDecimal.valueOf(6))
+                )), BigDecimal.valueOf(6)),
+                Arguments.of("Different type Arguments", new Ast.Term("+", Arrays.asList(
+                        new Ast.NumberLiteral(BigDecimal.ONE),
+                        new Ast.StringLiteral("howdy"),
+                        new Ast.NumberLiteral(BigDecimal.valueOf(3))
+                )), null),
+                Arguments.of("Single Argument", new Ast.Term("+", Arrays.asList(
+                        new Ast.NumberLiteral(BigDecimal.valueOf(7))
+                )), BigDecimal.valueOf(7))
         );
     }
 
@@ -68,7 +76,12 @@ final class InterpreterTests {
                         new Ast.NumberLiteral(BigDecimal.ONE),
                         new Ast.NumberLiteral(BigDecimal.valueOf(2)),
                         new Ast.NumberLiteral(BigDecimal.valueOf(3))
-                )), BigDecimal.valueOf(-4))
+                )), BigDecimal.valueOf(-4)),
+                Arguments.of("Different type Arguments", new Ast.Term("-", Arrays.asList(
+                        new Ast.NumberLiteral(BigDecimal.ONE),
+                        new Ast.StringLiteral("howdy"),
+                        new Ast.NumberLiteral(BigDecimal.valueOf(3))
+                )), null)
         );
     }
 
@@ -85,7 +98,15 @@ final class InterpreterTests {
                         new Ast.NumberLiteral(BigDecimal.ONE),
                         new Ast.NumberLiteral(BigDecimal.valueOf(2)),
                         new Ast.NumberLiteral(BigDecimal.valueOf(3))
-                )), BigDecimal.valueOf(6))
+                )), BigDecimal.valueOf(6)),
+                Arguments.of("Different type Arguments", new Ast.Term("*", Arrays.asList(
+                        new Ast.NumberLiteral(BigDecimal.ONE),
+                        new Ast.StringLiteral("howdy"),
+                        new Ast.NumberLiteral(BigDecimal.valueOf(3))
+                )), null),
+                Arguments.of("Single Argument", new Ast.Term("*", Arrays.asList(
+                        new Ast.NumberLiteral(BigDecimal.valueOf(4))
+                )), BigDecimal.valueOf(4))
         );
     }
 
@@ -105,31 +126,12 @@ final class InterpreterTests {
                 )), BigDecimal.valueOf(0.167)),
                 Arguments.of("One Argument", new Ast.Term("/", Arrays.asList(
                         new Ast.NumberLiteral(BigDecimal.valueOf(2))
-                )), BigDecimal.valueOf(0))
-        );
-    }
-
-    @ParameterizedTest
-    @MethodSource
-    void testTrue(String test, Ast ast, boolean expected) {
-        test(ast, expected, Collections.emptyMap());
-    }
-
-    private static Stream<Arguments> testTrue() {
-        return Stream.of(
-                Arguments.of("True Argument", new Ast.Term("true", Arrays.asList()), true)
-        );
-    }
-
-    @ParameterizedTest
-    @MethodSource
-    void testFalse(String test, Ast ast, boolean expected) {
-        test(ast, expected, Collections.emptyMap());
-    }
-
-    private static Stream<Arguments> testFalse() {
-        return Stream.of(
-                Arguments.of("False Argument", new Ast.Term("false", Arrays.asList()), false)
+                )), BigDecimal.valueOf(0.500)),
+                Arguments.of("Different type Arguments", new Ast.Term("/", Arrays.asList(
+                        new Ast.NumberLiteral(BigDecimal.ONE),
+                        new Ast.StringLiteral("howdy"),
+                        new Ast.NumberLiteral(BigDecimal.valueOf(3))
+                )), null)
         );
     }
 
@@ -148,7 +150,12 @@ final class InterpreterTests {
                 Arguments.of("Number Arguments", new Ast.Term("equals?", Arrays.asList(
                         new Ast.NumberLiteral(BigDecimal.valueOf(10)),
                         new Ast.NumberLiteral(BigDecimal.valueOf(10))
-                )), true)
+                )), true),
+                Arguments.of("Different type Arguments", new Ast.Term("equals?", Arrays.asList(
+                        new Ast.NumberLiteral(BigDecimal.valueOf(10)),
+                        new Ast.StringLiteral("10")
+                )), false),
+                Arguments.of("Zero Arguments", new Ast.Term("equals?", Arrays.asList()), null)
         );
     }
 
