@@ -43,24 +43,24 @@ public class RegexTests {
      */
     public static Stream<Arguments> testEmailRegex() {
         return Stream.of(
-                Arguments.of("Alphanumeric", "thelegend27@gmail.com", true),
-                Arguments.of("UF Domain", "otherdomain@ufl.edu", true),
-                Arguments.of("Missing Domain Dot", "missingdot@gmailcom", false),
-                Arguments.of("Symbols", "symbols#$%@gmail.com", false),
-                Arguments.of("Dot before @", "dot.before@gmail.com", true),
-                Arguments.of("Yahoo Domain", "yahoodomain@yahoo.com", true),
-                Arguments.of("Dash before @", "dash-before@gmail.com", true),
-                Arguments.of("Two Dots before @", "two.dots.before@yahoo.com", true),
-                Arguments.of("Number as domain", "numberdomain@1.com", true),
-                Arguments.of("Dot in the beginning", ".dotatstart@outlook.com", true),
-                Arguments.of("Multiple dots in a row", "multipledots@yahoo..com", false),
-                Arguments.of("Spaces in email", "spaces in email @gmail.com", false),
-                Arguments.of("Multiple @ signs", "multiple@signs@gmail.com", false),
-                Arguments.of("Two Dots after @", "twodots@after.com.com", false),
-                Arguments.of("One letter after domain", "oneletter@gmail.c", false),
-                Arguments.of("Parentheses", "parentheses()@yahoo.com", false),
-                Arguments.of("Missing @ sign", "missingatsigngmail.com", false),
-                Arguments.of("Symbols as domain", "symbolsdomain@#$%.com", false)
+                Arguments.of("Local Part Missing", "@domain.tld", false),
+                Arguments.of("Local Part Numeric", "123@domain.tld", true),
+                Arguments.of("Local Part Valid Symbols", "._-@domain.tld", true),
+                Arguments.of("Local Part Invalid Characters", "#$%@domain.tld", false),
+                Arguments.of("At Sign Missing", "localdomain.tld", false),
+                Arguments.of("Domain Name Missing", "local@.tld", true),
+                Arguments.of("Domain Name Numbers", "local@123.tld", true),
+                Arguments.of("Domain Name Hyphen", "local@a-b-c.tld", true),
+                Arguments.of("Domain Name No Underscore", "local@a_b_c.tld", false),
+                Arguments.of("Domain Name Invalid Characters", "local@#$%.tld", false),
+                Arguments.of("Domain Period Missing", "local@domaintld", false),
+                Arguments.of("Domain Subdomains", "local@domain.sub.tld", false),
+                Arguments.of("TLD Uppercase Characters", "local@domain.TLD", false),
+                Arguments.of("TLD Invalid Characters", "local@domain.#$%", false),
+                Arguments.of("TLD 0 Characters", "local@domain.", false),
+                Arguments.of("TLD 1 Characters", "local@domain.a", false),
+                Arguments.of("TLD 2 Characters", "local@domain.ab", true),
+                Arguments.of("TLD 4+ Characters", "local@domain.abcd", false)
         );
     }
 

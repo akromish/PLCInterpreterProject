@@ -10,11 +10,11 @@ public class Regex {
 
     public static final Pattern
             EMAIL = Pattern.compile("[A-Za-z0-9._-]+@[A-Za-z0-9-]*\\.[a-z]{2,3}"),
-            FILE_NAMES = Pattern.compile("(?<name>(^([^.]*)))(.*\\.(class|java))"),
-            EVEN_STRINGS = Pattern.compile("(?=(^(..)*$))(^(.){10,20}$)"),
-            INTEGER_LIST = Pattern.compile("\\[\\]|\\[([1-9][0-9]*,\\s?)*([1-9][0-9]*)+\\]"),
-            IDENTIFIER = Pattern.compile("([A-Za-z_+\\-\\*/:!?<>=][A-Za-z_+\\-\\*/:!?<>=0-9]*|[A-Za-z_+\\-\\*/.:!?<>=][A-Za-z_+\\-\\*/.:!?<>=0-9]+)"),
-            NUMBER = Pattern.compile("(\\+|-)?\\d+\\.\\d+|(\\+|-)?\\d+"),
-            STRING = Pattern.compile("\\\"(\\\\n|\\\\b|\\\\r|\\\\t|[^\\\\])*\\\"");
+            FILE_NAMES = Pattern.compile("(?<name>[^.]+)(\\.[^.]+)*\\.(java|class)"),
+            EVEN_STRINGS = Pattern.compile("(..){5,10}"),
+            INTEGER_LIST = Pattern.compile("\\[([1-9]\\d*(, ?[1-9]\\d*)*)?]"),
+            IDENTIFIER = Pattern.compile("[A-Za-z_+\\-*/:!?<>=][A-Za-z0-9_+\\-*/.:!?<>=]*|\\.[A-Za-z0-9_+\\-*/.:!?<>=]+"),
+            NUMBER = Pattern.compile("[+-]?[0-9]+(\\.[0-9]+)?"),
+            STRING = Pattern.compile("\"([^\"\\\\]|\\\\[bnrt\'\"\\\\])*\"");
 
 }
