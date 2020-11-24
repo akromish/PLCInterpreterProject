@@ -232,7 +232,7 @@ public final class Interpreter {
                 return true;
             }
             else {
-                throw new ClassCastException("Arguments not comparable.");
+                throw new EvalException("Arguments not comparable.");
             }
         });
 
@@ -243,7 +243,7 @@ public final class Interpreter {
             if(args.stream().allMatch(i -> eval(i) instanceof BigDecimal)) {
                 List<BigDecimal> evaluated = args.stream().map(a -> requireType(BigDecimal.class, eval(a))).collect(Collectors.toList());
                 for (int i = 0; i < evaluated.size()-1; i++) {
-                    if (((evaluated.get(i)).compareTo(evaluated.get(i+1))) == 1) {
+                    if (((evaluated.get(i)).compareTo(evaluated.get(i+1))) > 0) {
                         return false;
                     }
                 }
@@ -252,14 +252,14 @@ public final class Interpreter {
             else if(args.stream().allMatch(i -> eval(i) instanceof String)) {
                 List<String> evaluated = args.stream().map(a -> requireType(String.class, eval(a))).collect(Collectors.toList());
                 for (int i = 0; i < evaluated.size() - 1; i++) {
-                    if (((evaluated.get(i)).compareTo(evaluated.get(i + 1))) == 1) {
+                    if (((evaluated.get(i)).compareTo(evaluated.get(i + 1))) > 0) {
                         return false;
                     }
                 }
                 return true;
             }
             else {
-                throw new ClassCastException("Arguments not comparable.");
+                throw new EvalException("Arguments not comparable.");
             }
         });
 
@@ -286,7 +286,7 @@ public final class Interpreter {
                 return true;
             }
             else {
-                throw new ClassCastException("Arguments not comparable.");
+                throw new EvalException("Arguments not comparable.");
             }
         });
 
@@ -297,7 +297,7 @@ public final class Interpreter {
             if(args.stream().allMatch(i -> eval(i) instanceof BigDecimal)) {
                 List<BigDecimal> evaluated = args.stream().map(a -> requireType(BigDecimal.class, eval(a))).collect(Collectors.toList());
                 for (int i = 0; i < evaluated.size()-1; i++) {
-                    if (((evaluated.get(i)).compareTo(evaluated.get(i+1))) == -1) {
+                    if (((evaluated.get(i)).compareTo(evaluated.get(i+1))) < 0) {
                         return false;
                     }
                 }
@@ -306,14 +306,14 @@ public final class Interpreter {
             else if(args.stream().allMatch(i -> eval(i) instanceof String)) {
                 List<String> evaluated = args.stream().map(a -> requireType(String.class, eval(a))).collect(Collectors.toList());
                 for (int i = 0; i < evaluated.size() - 1; i++) {
-                    if (((evaluated.get(i)).compareTo(evaluated.get(i + 1))) == -1) {
+                    if (((evaluated.get(i)).compareTo(evaluated.get(i + 1))) < 0) {
                         return false;
                     }
                 }
                 return true;
             }
             else {
-                throw new ClassCastException("Arguments not comparable.");
+                throw new EvalException("Arguments not comparable.");
             }
         });
 
