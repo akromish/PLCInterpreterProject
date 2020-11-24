@@ -135,12 +135,12 @@ public final class Interpreter {
                 throw new EvalException(("Arguments to / cannot be empty."));
             }else if(evaluated.size() == 1){
                 BigDecimal num = BigDecimal.ONE;
-                num = num.divide(evaluated.get(0),3, RoundingMode.HALF_EVEN);
+                num = num.divide(evaluated.get(0),0, RoundingMode.HALF_EVEN);
                 return num;
             }else {
                 BigDecimal num = evaluated.get(0);
                 for (int i = 1; i < evaluated.size(); i++) {
-                    num = num.divide(evaluated.get(i),3, RoundingMode.HALF_EVEN);
+                    num = num.divide(evaluated.get(i),0, RoundingMode.HALF_EVEN);
                 }
                 return num;
             }
@@ -158,7 +158,10 @@ public final class Interpreter {
                 System.out.println("1 arg");
                 throw new EvalException(("Arguments to not cannot be 1."));
             }
-            return Objects.deepEquals(args.get(0), args.get(1));
+            if(args.get(0).getClass().equals(args.get(1).getClass())){
+                return Objects.deepEquals(args.get(0), args.get(1));
+            }
+            throw new EvalException("Arguments to not cannot be empty.");
         });
 
         scope.define("not", (Function<List<Ast>, Object>) args -> {
@@ -315,7 +318,7 @@ public final class Interpreter {
         });
 
         scope.define("list", (Function<List<Ast>, Object>) args -> {
-            LinkedList<BigDecimal> list = args.stream().map(a -> requireType(BigDecimal.class, eval(a))).collect(Collectors.toCollection(LinkedList::new));
+            LinkedList<Object> list = args.stream().map(a -> requireType(Object.class, eval(a))).collect(Collectors.toCollection(LinkedList::new));
             return list;
         });
 

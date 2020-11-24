@@ -120,18 +120,26 @@ final class InterpreterTests {
         return Stream.of(
                 Arguments.of("Zero Arguments", new Ast.Term("/", Arrays.asList()), null),
                 Arguments.of("Multiple Arguments", new Ast.Term("/", Arrays.asList(
-                        new Ast.NumberLiteral(BigDecimal.valueOf(1.000)),
-                        new Ast.NumberLiteral(BigDecimal.valueOf(2)),
-                        new Ast.NumberLiteral(BigDecimal.valueOf(3))
-                )), BigDecimal.valueOf(0.167)),
-                Arguments.of("One Argument", new Ast.Term("/", Arrays.asList(
+                        new Ast.NumberLiteral(BigDecimal.valueOf(100)),
+                        new Ast.NumberLiteral(BigDecimal.valueOf(5)),
                         new Ast.NumberLiteral(BigDecimal.valueOf(2))
-                )), BigDecimal.valueOf(0.500)),
+                )), BigDecimal.valueOf(10)),
+                Arguments.of("One Argument", new Ast.Term("/", Arrays.asList(
+                        new Ast.NumberLiteral(BigDecimal.valueOf(0.5))
+                )), BigDecimal.valueOf(2)),
                 Arguments.of("Different type Arguments", new Ast.Term("/", Arrays.asList(
                         new Ast.NumberLiteral(BigDecimal.ONE),
                         new Ast.StringLiteral("howdy"),
                         new Ast.NumberLiteral(BigDecimal.valueOf(3))
-                )), null)
+                )), null),
+                Arguments.of("Multiple Arguments", new Ast.Term("/", Arrays.asList(
+                        new Ast.NumberLiteral(BigDecimal.valueOf(9)),
+                        new Ast.NumberLiteral(BigDecimal.valueOf(2))
+                )), BigDecimal.valueOf(4)),
+                Arguments.of("Multiple Arguments", new Ast.Term("/", Arrays.asList(
+                        new Ast.NumberLiteral(BigDecimal.valueOf(11)),
+                        new Ast.NumberLiteral(BigDecimal.valueOf(2))
+                )), BigDecimal.valueOf(6))
         );
     }
 
@@ -143,18 +151,19 @@ final class InterpreterTests {
 
     private static Stream<Arguments> testEquals() {
         return Stream.of(
-                Arguments.of("Variable Arguments", new Ast.Term("equals?", Arrays.asList(
-                        new Ast.StringLiteral("x"),
-                        new Ast.StringLiteral("y")
-                )), false),
-                Arguments.of("Number Arguments", new Ast.Term("equals?", Arrays.asList(
-                        new Ast.NumberLiteral(BigDecimal.valueOf(10)),
-                        new Ast.NumberLiteral(BigDecimal.valueOf(10))
-                )), true),
+//                Arguments.of("Variable Arguments", new Ast.Term("equals?", Arrays.asList(
+//                        new Ast.StringLiteral("x"),
+//                        new Ast.StringLiteral("y")
+//                )), false),
+//                Arguments.of("Number Arguments", new Ast.Term("equals?", Arrays.asList(
+//                        new Ast.NumberLiteral(BigDecimal.valueOf(10)),
+//                        new Ast.NumberLiteral(BigDecimal.valueOf(10))
+//                )), true),
                 Arguments.of("Different type Arguments", new Ast.Term("equals?", Arrays.asList(
-                        new Ast.NumberLiteral(BigDecimal.valueOf(10)),
-                        new Ast.StringLiteral("10")
-                )), false),
+                        new Ast.StringLiteral("true"),
+                        new Ast.StringLiteral("false"),
+                        new Ast.NumberLiteral(BigDecimal.valueOf(3))
+                        )), false),
                 Arguments.of("Zero Arguments", new Ast.Term("equals?", Arrays.asList()), null)
         );
     }
@@ -218,6 +227,11 @@ final class InterpreterTests {
                         new Ast.NumberLiteral(BigDecimal.ONE),
                         new Ast.NumberLiteral(BigDecimal.valueOf(2)),
                         new Ast.NumberLiteral(BigDecimal.valueOf(3))
+                )), BigDecimal.valueOf(1)),
+                Arguments.of("strings Arguments", new Ast.Term("list", Arrays.asList(
+                        new Ast.StringLiteral("\"a\""),
+                        new Ast.StringLiteral("\"b\""),
+                        new Ast.StringLiteral("\"c\"")
                 )), BigDecimal.valueOf(1))
         );
     }
