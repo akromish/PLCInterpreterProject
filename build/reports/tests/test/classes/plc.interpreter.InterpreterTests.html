@@ -29,7 +29,7 @@
 </td>
 <td>
 <div class="infoBox" id="failures">
-<div class="counter">13</div>
+<div class="counter">12</div>
 <p>failures</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.048s</div>
+<div class="counter">0.054s</div>
 <p>duration</p>
 </div>
 </td>
@@ -51,7 +51,7 @@
 </td>
 <td>
 <div class="infoBox failures" id="successRate">
-<div class="percent">75%</div>
+<div class="percent">76%</div>
 <p>successful</p>
 </div>
 </td>
@@ -373,167 +373,8 @@ Caused by: org.junit.jupiter.params.converter.ArgumentConversionException: Canno
 	at plc.interpreter.Interpreter.lambda$init$28(Interpreter.java:289)
 	at plc.interpreter.Interpreter.eval(Interpreter.java:62)
 	at plc.interpreter.Interpreter.eval(Interpreter.java:43)
-	at plc.interpreter.InterpreterTests.test(InterpreterTests.java:377)
+	at plc.interpreter.InterpreterTests.test(InterpreterTests.java:378)
 	at plc.interpreter.InterpreterTests.testGreaterThan(InterpreterTests.java:309)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:686)
-	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
-	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
-	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
-	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestTemplateMethod(TimeoutExtension.java:92)
-	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
-	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
-	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
-	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$6(TestMethodTestDescriptor.java:212)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:208)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:137)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:71)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:135)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask$DefaultDynamicTestExecutor.execute(NodeTestTask.java:198)
-	at org.junit.jupiter.engine.descriptor.TestTemplateTestDescriptor.execute(TestTemplateTestDescriptor.java:138)
-	at org.junit.jupiter.engine.descriptor.TestTemplateTestDescriptor.lambda$execute$2(TestTemplateTestDescriptor.java:106)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
-	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:177)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
-	at java.base/java.util.stream.ReferencePipeline$11$1.accept(ReferencePipeline.java:442)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
-	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:948)
-	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:658)
-	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:274)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
-	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:948)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
-	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
-	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:497)
-	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:274)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
-	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
-	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
-	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:497)
-	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:274)
-	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
-	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
-	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:497)
-	at org.junit.jupiter.engine.descriptor.TestTemplateTestDescriptor.execute(TestTemplateTestDescriptor.java:106)
-	at org.junit.jupiter.engine.descriptor.TestTemplateTestDescriptor.execute(TestTemplateTestDescriptor.java:41)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:135)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:248)
-	at org.junit.platform.launcher.core.DefaultLauncher.lambda$execute$5(DefaultLauncher.java:211)
-	at org.junit.platform.launcher.core.DefaultLauncher.withInterceptedStreams(DefaultLauncher.java:226)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:199)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:132)
-	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:99)
-	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:79)
-	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:75)
-	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:61)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
-	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
-	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
-	at com.sun.proxy.$Proxy2.stop(Unknown Source)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.stop(TestWorker.java:133)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
-	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:182)
-	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:164)
-	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:414)
-	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
-	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:48)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
-	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:56)
-	at java.base/java.lang.Thread.run(Thread.java:832)
-</pre>
-</span>
-</div>
-<div class="test">
-<a name="testGreaterThanOrEqual(String, Ast, boolean)[2]"></a>
-<h3 class="failures">[2] String Arguments, (&gt;= &quot;x&quot; &quot;y&quot; &quot;z&quot;), true</h3>
-<span class="code">
-<pre>org.opentest4j.AssertionFailedError: expected: &lt;true&gt; but was: &lt;false&gt;
-	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
-	at org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
-	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1124)
-	at plc.interpreter.InterpreterTests.test(InterpreterTests.java:377)
-	at plc.interpreter.InterpreterTests.testGreaterThanOrEqual(InterpreterTests.java:341)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -689,7 +530,7 @@ Caused by: org.junit.jupiter.params.converter.ArgumentConversionException: Canno
 	at plc.interpreter.Interpreter.lambda$init$33(Interpreter.java:316)
 	at plc.interpreter.Interpreter.eval(Interpreter.java:62)
 	at plc.interpreter.Interpreter.eval(Interpreter.java:43)
-	at plc.interpreter.InterpreterTests.test(InterpreterTests.java:377)
+	at plc.interpreter.InterpreterTests.test(InterpreterTests.java:378)
 	at plc.interpreter.InterpreterTests.testGreaterThanOrEqual(InterpreterTests.java:341)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
@@ -846,7 +687,7 @@ Caused by: org.junit.jupiter.params.converter.ArgumentConversionException: Canno
 	at plc.interpreter.Interpreter.lambda$init$18(Interpreter.java:235)
 	at plc.interpreter.Interpreter.eval(Interpreter.java:62)
 	at plc.interpreter.Interpreter.eval(Interpreter.java:43)
-	at plc.interpreter.InterpreterTests.test(InterpreterTests.java:377)
+	at plc.interpreter.InterpreterTests.test(InterpreterTests.java:378)
 	at plc.interpreter.InterpreterTests.testLessThan(InterpreterTests.java:242)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
@@ -1003,7 +844,7 @@ Caused by: org.junit.jupiter.params.converter.ArgumentConversionException: Canno
 	at plc.interpreter.Interpreter.lambda$init$23(Interpreter.java:262)
 	at plc.interpreter.Interpreter.eval(Interpreter.java:62)
 	at plc.interpreter.Interpreter.eval(Interpreter.java:43)
-	at plc.interpreter.InterpreterTests.test(InterpreterTests.java:377)
+	at plc.interpreter.InterpreterTests.test(InterpreterTests.java:378)
 	at plc.interpreter.InterpreterTests.testLessThanOrEqual(InterpreterTests.java:274)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
@@ -1162,7 +1003,7 @@ Caused by: org.junit.jupiter.params.converter.ArgumentConversionException: Canno
 	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
 	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
 	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1124)
-	at plc.interpreter.InterpreterTests.test(InterpreterTests.java:377)
+	at plc.interpreter.InterpreterTests.test(InterpreterTests.java:378)
 	at plc.interpreter.InterpreterTests.testList(InterpreterTests.java:220)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
@@ -1321,7 +1162,7 @@ Caused by: org.junit.jupiter.params.converter.ArgumentConversionException: Canno
 	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
 	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
 	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1124)
-	at plc.interpreter.InterpreterTests.test(InterpreterTests.java:377)
+	at plc.interpreter.InterpreterTests.test(InterpreterTests.java:378)
 	at plc.interpreter.InterpreterTests.testList(InterpreterTests.java:220)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
@@ -1480,7 +1321,7 @@ Caused by: org.junit.jupiter.params.converter.ArgumentConversionException: Canno
 	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
 	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
 	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1124)
-	at plc.interpreter.InterpreterTests.test(InterpreterTests.java:377)
+	at plc.interpreter.InterpreterTests.test(InterpreterTests.java:378)
 	at plc.interpreter.InterpreterTests.testList(InterpreterTests.java:220)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
@@ -1634,11 +1475,11 @@ Caused by: org.junit.jupiter.params.converter.ArgumentConversionException: Canno
 <h3 class="failures">[1] True Arguments, (not &quot;true&quot;), false</h3>
 <span class="code">
 <pre>plc.interpreter.EvalException: Expected true to have type Boolean.
-	at plc.interpreter.Interpreter.requireType(Interpreter.java:398)
+	at plc.interpreter.Interpreter.requireType(Interpreter.java:401)
 	at plc.interpreter.Interpreter.lambda$init$9(Interpreter.java:173)
 	at plc.interpreter.Interpreter.eval(Interpreter.java:62)
 	at plc.interpreter.Interpreter.eval(Interpreter.java:43)
-	at plc.interpreter.InterpreterTests.test(InterpreterTests.java:377)
+	at plc.interpreter.InterpreterTests.test(InterpreterTests.java:378)
 	at plc.interpreter.InterpreterTests.testNot(InterpreterTests.java:174)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
@@ -1797,7 +1638,7 @@ Caused by: org.junit.jupiter.params.converter.ArgumentConversionException: Canno
 	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
 	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
 	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1124)
-	at plc.interpreter.InterpreterTests.test(InterpreterTests.java:377)
+	at plc.interpreter.InterpreterTests.test(InterpreterTests.java:378)
 	at plc.interpreter.InterpreterTests.testRange(InterpreterTests.java:200)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
@@ -1956,7 +1797,7 @@ Caused by: org.junit.jupiter.params.converter.ArgumentConversionException: Canno
 	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
 	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
 	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1124)
-	at plc.interpreter.InterpreterTests.test(InterpreterTests.java:377)
+	at plc.interpreter.InterpreterTests.test(InterpreterTests.java:378)
 	at plc.interpreter.InterpreterTests.testRange(InterpreterTests.java:200)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
@@ -2120,7 +1961,7 @@ Caused by: org.junit.jupiter.params.converter.ArgumentConversionException: Canno
 <tr>
 <td class="success">[1] Zero Arguments, (+ ), 0</td>
 <td class="success">testAddition(String, Ast, BigDecimal)[1]</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -2132,7 +1973,7 @@ Caused by: org.junit.jupiter.params.converter.ArgumentConversionException: Canno
 <tr>
 <td class="success">[3] Different type Arguments, (+ 1 &quot;howdy&quot; 3), null</td>
 <td class="success">testAddition(String, Ast, BigDecimal)[3]</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -2150,37 +1991,37 @@ Caused by: org.junit.jupiter.params.converter.ArgumentConversionException: Canno
 <tr>
 <td class="success">[1] Zero Arguments, (/ ), null</td>
 <td class="success">testDivision(String, Ast, BigDecimal)[1]</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">[2] Multiple Arguments, (/ 100 5 2), 10</td>
 <td class="success">testDivision(String, Ast, BigDecimal)[2]</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">[3] One Argument, (/ 0.5), 2</td>
 <td class="success">testDivision(String, Ast, BigDecimal)[3]</td>
-<td class="success">0.001s</td>
+<td class="success">0s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">[4] Different type Arguments, (/ 1 &quot;howdy&quot; 3), null</td>
 <td class="success">testDivision(String, Ast, BigDecimal)[4]</td>
-<td class="success">0.001s</td>
+<td class="success">0s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">[5] Multiple Arguments, (/ 9 2), 4</td>
 <td class="success">testDivision(String, Ast, BigDecimal)[5]</td>
-<td class="success">0.001s</td>
+<td class="success">0s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">[6] Multiple Arguments, (/ 11 2), 6</td>
 <td class="success">testDivision(String, Ast, BigDecimal)[6]</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -2198,7 +2039,7 @@ Caused by: org.junit.jupiter.params.converter.ArgumentConversionException: Canno
 <tr>
 <td class="success">[1] Zero Arguments, (&gt; ), true</td>
 <td class="success">testGreaterThan(String, Ast, boolean)[1]</td>
-<td class="success">0.001s</td>
+<td class="success">0s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -2216,7 +2057,7 @@ Caused by: org.junit.jupiter.params.converter.ArgumentConversionException: Canno
 <tr>
 <td class="success">[4] Not strictly increasing, (&gt; 2 3 4), false</td>
 <td class="success">testGreaterThan(String, Ast, boolean)[4]</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -2228,25 +2069,25 @@ Caused by: org.junit.jupiter.params.converter.ArgumentConversionException: Canno
 <tr>
 <td class="success">[1] Zero Arguments, (&gt;= ), true</td>
 <td class="success">testGreaterThanOrEqual(String, Ast, boolean)[1]</td>
-<td class="success">0.025s</td>
+<td class="success">0.024s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="failures">[2] String Arguments, (&gt;= &quot;x&quot; &quot;y&quot; &quot;z&quot;), true</td>
-<td class="failures">testGreaterThanOrEqual(String, Ast, boolean)[2]</td>
-<td class="failures">0.002s</td>
-<td class="failures">failed</td>
+<td class="success">[2] String Arguments, (&gt;= &quot;c&quot; &quot;c&quot; &quot;b&quot; &quot;a&quot;), true</td>
+<td class="success">testGreaterThanOrEqual(String, Ast, boolean)[2]</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">[3] Number Arguments, (&gt;= 3 3 2 1), true</td>
 <td class="success">testGreaterThanOrEqual(String, Ast, boolean)[3]</td>
-<td class="success">0.001s</td>
+<td class="success">0s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">[4] Not strictly increasing, (&gt;= 2 2 3 4), false</td>
 <td class="success">testGreaterThanOrEqual(String, Ast, boolean)[4]</td>
-<td class="success">0.001s</td>
+<td class="success">0s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -2258,7 +2099,7 @@ Caused by: org.junit.jupiter.params.converter.ArgumentConversionException: Canno
 <tr>
 <td class="success">testIdentifier()</td>
 <td class="success">testIdentifier()</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -2270,7 +2111,7 @@ Caused by: org.junit.jupiter.params.converter.ArgumentConversionException: Canno
 <tr>
 <td class="success">[2] String Arguments, (&lt; &quot;a&quot; &quot;b&quot; &quot;c&quot;), true</td>
 <td class="success">testLessThan(String, Ast, boolean)[2]</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -2288,7 +2129,7 @@ Caused by: org.junit.jupiter.params.converter.ArgumentConversionException: Canno
 <tr>
 <td class="failures">[5] Incomparable Arguments, (&lt; 1 &quot;x&quot; 3), false</td>
 <td class="failures">testLessThan(String, Ast, boolean)[5]</td>
-<td class="failures">0.001s</td>
+<td class="failures">0s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
@@ -2300,7 +2141,7 @@ Caused by: org.junit.jupiter.params.converter.ArgumentConversionException: Canno
 <tr>
 <td class="success">[2] String Arguments, (&lt;= &quot;a&quot; &quot;a&quot; &quot;b&quot; &quot;c&quot;), true</td>
 <td class="success">testLessThanOrEqual(String, Ast, boolean)[2]</td>
-<td class="success">0.001s</td>
+<td class="success">0.002s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -2312,13 +2153,13 @@ Caused by: org.junit.jupiter.params.converter.ArgumentConversionException: Canno
 <tr>
 <td class="success">[4] Not strictly increasing, (&lt;= 4 4 3 2), false</td>
 <td class="success">testLessThanOrEqual(String, Ast, boolean)[4]</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="failures">[5] Incomparable Arguments, (&lt;= 1 &quot;x&quot; 3), false</td>
 <td class="failures">testLessThanOrEqual(String, Ast, boolean)[5]</td>
-<td class="failures">0.001s</td>
+<td class="failures">0s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
@@ -2342,13 +2183,13 @@ Caused by: org.junit.jupiter.params.converter.ArgumentConversionException: Canno
 <tr>
 <td class="success">[1] Zero Arguments, (* ), 1</td>
 <td class="success">testMultiplication(String, Ast, BigDecimal)[1]</td>
-<td class="success">0s</td>
+<td class="success">0.002s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">[2] Multiple Arguments, (* 1 2 3), 6</td>
 <td class="success">testMultiplication(String, Ast, BigDecimal)[2]</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -2366,7 +2207,7 @@ Caused by: org.junit.jupiter.params.converter.ArgumentConversionException: Canno
 <tr>
 <td class="failures">[1] True Arguments, (not &quot;true&quot;), false</td>
 <td class="failures">testNot(String, Ast, boolean)[1]</td>
-<td class="failures">0s</td>
+<td class="failures">0.001s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
@@ -2384,7 +2225,7 @@ Caused by: org.junit.jupiter.params.converter.ArgumentConversionException: Canno
 <tr>
 <td class="failures">[2] Two Arguments Equal, (range 1 1), 0</td>
 <td class="failures">testRange(String, Ast, BigDecimal)[2]</td>
-<td class="failures">0s</td>
+<td class="failures">0.001s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
@@ -2396,19 +2237,19 @@ Caused by: org.junit.jupiter.params.converter.ArgumentConversionException: Canno
 <tr>
 <td class="success">testString()</td>
 <td class="success">testString()</td>
-<td class="success">0.001s</td>
+<td class="success">0s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">[1] Zero Arguments, (- ), null</td>
 <td class="success">testSubtraction(String, Ast, BigDecimal)[1]</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">[2] Single Argument, (- 1), -1</td>
 <td class="success">testSubtraction(String, Ast, BigDecimal)[2]</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -2420,13 +2261,13 @@ Caused by: org.junit.jupiter.params.converter.ArgumentConversionException: Canno
 <tr>
 <td class="success">[4] Different type Arguments, (- 1 &quot;howdy&quot; 3), null</td>
 <td class="success">testSubtraction(String, Ast, BigDecimal)[4]</td>
-<td class="success">0.001s</td>
+<td class="success">0s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testTerm()</td>
 <td class="success">testTerm()</td>
-<td class="success">0.001s</td>
+<td class="success">0.002s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -2439,7 +2280,7 @@ Caused by: org.junit.jupiter.params.converter.ArgumentConversionException: Canno
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 6.6</a> at Nov 23, 2020, 7:11:50 PM</p>
+<a href="http://www.gradle.org">Gradle 6.6</a> at Nov 23, 2020, 7:16:54 PM</p>
 </div>
 </div>
 </body>

@@ -359,6 +359,9 @@ public final class Interpreter {
         });
 
         scope.define("set!", (Function<List<Ast>, Object>) args -> {
+            if(args.isEmpty()){
+                throw new EvalException("Empty set!");
+            }
             scope.set(args.get(0).toString(), eval(args.get(1)));
             return VOID;
         });
